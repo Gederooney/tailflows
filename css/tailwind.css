@@ -22,6 +22,11 @@
   @apply my-5;
 }
 
+.logo_svg__c-style {
+  @apply fill-current;
+  @apply dark:fill-current;
+}
+
 /* https://stackoverflow.com/questions/61083813/how-to-avoid-internal-autofill-selected-style-to-be-applied */
 input:-webkit-autofill,
 input:-webkit-autofill:focus {
