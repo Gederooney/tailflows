@@ -13,6 +13,10 @@ const headerNavLinks = [
     title: 'Composants',
   },
   {
+    href: '/templates-en-tailwindcss',
+    tilte: 'Templates',
+  },
+  {
     href: '/blog',
     title: 'Blog',
   },
