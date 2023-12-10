@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useMemo, useState, useCallback } from 'react'
 import chroma from 'chroma-js'
 
-type Coordinates = {
+type Point = {
   x: number
   y: number
 }
@@ -16,19 +16,20 @@ interface PickerViewProps {
   color: number[]
 }
 
-type Picker = { position: Position; coords: Coordinates }
+type Picker = { position: Position; coords: Point }
 
 interface WheelViewState {
   isDraggingHue: boolean
   color: number[]
   isDraggingBrightness: boolean
+  point: Point
   wheelBg: string
   brightness: number
   picker: Picker
   brightPicker: Picker
 }
 
-function coordsToHue({ x, y }: Coordinates) {
+function coordsToHue({ x, y }: Point) {
   const angleRad = Math.atan2(y, x)
   let angleDeg = (angleRad * 180) / Math.PI
 
@@ -41,7 +42,7 @@ function coordsToHue({ x, y }: Coordinates) {
   return angleDeg
 }
 
-function coordsTobrightness({ x, y }: Coordinates, radius: number) {
+function coordsTobrightness({ x, y }: Point, radius: number) {
   return (radius - y) / (radius * 2)
 }
 function getWheelBg(brightness: number) {
@@ -123,6 +124,79 @@ function hslString(color: number[]) {
   return `hsla(${colorStr})`
 }
 
+function getPosition(p: Point, radius: number): Position {
+  const w = radius * 2
+  return {
+    left: (p.x * 100) / w,
+    top: (p.y * 100) / w,
+  }
+}
+
+function getCoordinates(p: Point, radius: number) {
+  return {
+    x: p.x - radius,
+    y: radius - p.y,
+  }
+}
+
+function getSaturation(p: Point, radius: number) {
+  const sat = Math.sqrt(p.x * p.x + p.y * p.y) / radius
+
+  return sat
+}
+
+/**
+ * @name pIsInCercle
+ * @param P {x:number, y: number}
+ * @param r radius of the circle
+ * @desc verify weither a point P(x, y)
+ * is in circle C of radius R. Where origin
+ * is the center of the circle
+ * @return true if the P is in C or flase if not
+ */
+function pIsInCercle(p: Point, r: number) {
+  // distance to center
+  const d = Math.sqrt(p.x * p.x + p.y * p.y)
+
+  return d <= r
+}
+
+/**
+ * @name findIntersectionPoint
+ * @param P {x:number, y: number}
+ * @param r radius of the circle
+ * @desc find a point Q(x, y)
+ * where q is the intersection of the perimeter of circle of radius r
+ * and the line formed by p and the center of the circle
+ * @return Q(x, y)
+ */
+function findIntersectionPoint(p: Point, r: number) {
+  // distance to center
+  const d = Math.sqrt(p.x * p.x + p.y * p.y)
+  const x = (p.x * r) / d
+  const y = (p.y * r) / d
+
+  return { x, y }
+}
+
+function getHuePositionAndCoordinates(point: Point, radius: number) {
+  let position: Position, coords: Point
+
+  position = getPosition(point, radius)
+
+  coords = getCoordinates(point, radius)
+
+  const thePointIsInTheCircle = pIsInCercle(coords, radius)
+  if (!thePointIsInTheCircle) {
+    // intersectionPointcoords
+    coords = findIntersectionPoint(coords, radius)
+
+    // intersectionPosition
+    position = getPosition({ x: coords.x + radius, y: radius - coords.y }, radius)
+  }
+  return { position, coords }
+}
+
 const PickerView = ({ position, color }: PickerViewProps) => {
   return (
     <span
@@ -143,6 +217,10 @@ const WheelView = () => {
     brightness: 0.5,
     color: [180, 1, 0.5, 1],
     wheelBg: getWheelBg(0.5),
+    point: {
+      x: 0,
+      y: 0,
+    },
     picker: {
       coords: {
         x: 0,
@@ -179,6 +257,7 @@ const WheelView = () => {
    */
   function handleIsDragging() {
     if (isDraggingHue || isDraggingBrightness) {
+      handleMouseMove()
       document.addEventListener('mouseup', handleMouseUp)
       document.addEventListener('mousemove', handleMouseMove)
     }
@@ -209,125 +288,66 @@ const WheelView = () => {
   }
 
   /**
-   * @name pIsInCercle
-   * @param P {x:number, y: number}
-   * @param r radius of the circle
-   * @desc verify weither a point P(x, y)
-   * is in circle C of radius R. Where origin
-   * is the center of the circle
-   * @return true if the P is in C or flase if not
-   */
-  function pIsInCercle(p: { x: number; y: number }, r: number) {
-    // distance to center
-    const d = Math.sqrt(p.x * p.x + p.y * p.y)
-
-    return d <= r
-  }
-
-  /**
-   * @name findIntersectionPoint
-   * @param P {x:number, y: number}
-   * @param r radius of the circle
-   * @desc find a point Q(x, y)
-   * where q is the intersection of the perimeter of circle of radius r
-   * and the line formed by p and the center of the circle
-   * @return Q(x, y)
-   */
-  function findIntersectionPoint(p: { x: number; y: number }, r: number) {
-    // distance to center
-    const d = Math.sqrt(p.x * p.x + p.y * p.y)
-    const x = (p.x * r) / d
-    const y = (p.y * r) / d
-
-    return { x, y }
-  }
-
-  /**
-   * @name handleMouseMoveOnHue
+   * @name handleMouseMove
    * @param e MouseEvent
    * @description Calculate the mouse position and update the picker state
    * @return void
    */
-  function handleMouseMove(e: MouseEvent) {
-    if (isDraggingHue) handleHueMove(e)
-    if (isDraggingBrightness) handleBrightMove(e)
-  }
+  function handleMouseMove(e?: MouseEvent) {
+    if (isDraggingHue && !wheelRef.current) return
 
-  function handleHueMove(e: MouseEvent) {
-    const wheel = wheelRef.current
-    if (!wheel) return
-    const rect = wheel.getBoundingClientRect()
+    if (isDraggingBrightness && !brightRef.current) return
 
-    const x = e.clientX - rect.left
-    const y = e.clientY - rect.top
+    const el: HTMLDivElement | null = isDraggingHue ? wheelRef.current : brightRef.current
+
+    if (!el) return
+
+    const rect = el.getBoundingClientRect()
+
+    const point: Point = e
+      ? {
+          x: e.clientX - rect.left,
+          y: e.clientY - rect.top,
+        }
+      : {
+          x: state.point.x - rect.left,
+          y: state.point.y - rect.top,
+        }
 
     const radius = rect.width / 2
 
-    let position = {
-      left: (x * 100) / rect.width,
-      top: (y * 100) / rect.height,
-    }
-    let coords = {
-      x: x - radius,
-      y: radius - y,
-    }
-    const isInCircle = pIsInCercle(coords, radius)
-    if (!isInCircle) {
+    let position: Position,
+      coords: Point,
+      [hue, saturation, brightness] = state.color
+
+    if (isDraggingHue) {
+      const rtn = getHuePositionAndCoordinates(point, radius)
+      position = rtn.position
+      coords = rtn.coords
+      ;(hue = coordsToHue(coords)), (saturation = getSaturation(coords, radius))
+    } else {
+      coords = getCoordinates(point, radius)
+
+      // intersection point
       coords = findIntersectionPoint(coords, radius)
-      position = {
-        left: ((coords.x + radius) * 100) / rect.width,
-        top: ((radius - coords.y) * 100) / rect.height,
-      }
+      position = getPosition({ x: coords.x + radius, y: radius - coords.y }, radius)
+      brightness = coordsTobrightness(coords, radius)
     }
-    const hue = coordsToHue(coords),
-      s = Math.sqrt(coords.x * coords.x + coords.y * coords.y) / radius
 
-    const color: number[] = chroma({ h: hue, s, l: state.brightness }).hsl()
+    const color: number[] = chroma({ h: hue, s: saturation, l: brightness }).hsl()
 
     setState((prev) => {
-      return {
-        ...prev,
-        color,
-        picker: {
-          ...prev.picker,
-          position,
-          coords,
-        },
-      }
-    })
-  }
-  function handleBrightMove(e: MouseEvent) {
-    const bright = brightRef.current
-    if (!bright) return
-    const rect = bright.getBoundingClientRect()
-
-    const x = e.clientX - rect.left
-    const y = e.clientY - rect.top
-
-    const radius = rect.width / 2
-
-    let coords = {
-      x: x - radius,
-      y: radius - y,
-    }
-
-    coords = findIntersectionPoint(coords, radius)
-    const position = {
-      left: ((coords.x + radius) * 100) / rect.width,
-      top: ((radius - coords.y) * 100) / rect.height,
-    }
-
-    const brightness = coordsTobrightness(coords, radius)
-
-    const color: number[] = chroma({
-      h: state.color[0],
-      s: state.color[1],
-      l: brightness,
-      a: state.color[3],
-    }).hsl()
-
-    setState((prev) => {
-      console.log(color, prev.color)
+      if (isDraggingHue)
+        return {
+          ...prev,
+          color,
+          picker: {
+            ...prev.picker,
+            position,
+            coords,
+          },
+        }
+      else isDraggingBrightness
       return {
         ...prev,
         color,
@@ -344,24 +364,25 @@ const WheelView = () => {
 
   function handleMouseDown(e: React.MouseEvent<HTMLDivElement, MouseEvent>, picker: 'H' | 'B') {
     e.stopPropagation()
+    const point = { x: e.clientX, y: e.clientY }
     switch (picker) {
       case 'H':
-        handleHueMove(e as unknown as MouseEvent)
         setState((prev) => {
           return {
             ...prev,
             isDraggingHue: true,
             isDraggingBrightness: false,
+            point,
           }
         })
         break
       case 'B':
-        handleBrightMove(e as unknown as MouseEvent)
         setState((prev) => {
           return {
             ...prev,
             isDraggingHue: false,
             isDraggingBrightness: true,
+            point,
           }
         })
         break
@@ -383,7 +404,7 @@ const WheelView = () => {
           role="button"
           tabIndex={0}
         >
-          <PickerView {...state.brightPicker} color={[state.color[0], 1, 0.5, 1]} />
+          <PickerView {...state.brightPicker} color={state.color} />
           <div
             className="w-[220px] rounded-full aspect-square flex items-center justify-center  border bg-white pointer-events-auto"
             onMouseDown={(e) => e.stopPropagation()}
@@ -402,7 +423,7 @@ const WheelView = () => {
                 // id="wheel2"
                 style={{ background: state.wheelBg }}
               ></div>
-              <PickerView {...state.picker} color={state.color} />
+              <PickerView {...state.picker} color={[state.color[0], state.color[1], 0.5, 1]} />
             </div>
           </div>
         </div>

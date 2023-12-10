@@ -16,7 +16,6 @@ const Page = () => {
   return (
     <div className="max-w-7xl px-4 py-12">
       <section>
-        {/* <Picker /> */}
         <WheelView />
       </section>
       <section></section>
