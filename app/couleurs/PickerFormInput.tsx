@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import ColorContext from './context'
 import chroma from 'chroma-js'
-import { brightnessToPickerCoordinates, hslToPickerCoordinates } from '@/utils/colors'
+import { brightnessToPickerCoordinates, hslToPickerCoordinates } from './colors'
 
 interface InputProps {
   name: string

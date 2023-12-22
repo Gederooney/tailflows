@@ -120,7 +120,6 @@ const Page = () => {
       lab: makeShadesWithMode(state.hex, 'hsv'),
     }
 
-    console.log(shades)
     return { nearestColor, shades }
   }, [state])
 

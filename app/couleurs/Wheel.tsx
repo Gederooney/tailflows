@@ -11,7 +11,7 @@ import {
   getSaturation,
   findIntersectionPoint,
   getHuePositionAndCoordinates,
-} from '@/utils/colors'
+} from './colors.utils'
 
 interface PickerViewProps {
   position: Position
