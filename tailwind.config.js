@@ -19,6 +19,15 @@ module.exports = {
         padding: '1rem',
         center: true,
       },
+      fontSize: {
+        xxs: ['0.6rem', '0.7rem'],
+      },
+      aspectRatio: {
+        '9/16': '9 / 16',
+      },
+      width: {
+        '1/10': '10%',
+      },
       lineHeight: {
         11: '2.75rem',
         12: '3rem',

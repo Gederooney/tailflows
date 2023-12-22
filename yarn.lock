@@ -9337,6 +9337,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"nearest-color@npm:^0.4.4":
+  version: 0.4.4
+  resolution: "nearest-color@npm:0.4.4"
+  checksum: a2fd874f522acccac575d11e48fcfa45478ec141aba752f1d5ba56ced7fbaa72c0f314331b4310110d25d3722c05eccbce5eabce49981d4df51db54332ec8d0e
+  languageName: node
+  linkType: hard
+
 "needle@npm:^2.5.2":
   version: 2.9.1
   resolution: "needle@npm:2.9.1"
@@ -12191,6 +12198,7 @@ __metadata:
     image-size: 1.0.0
     install: ^0.13.0
     lint-staged: ^13.0.0
+    nearest-color: ^0.4.4
     next: 14.0.3
     next-contentlayer: ^0.3.4
     next-themes: ^0.2.1
