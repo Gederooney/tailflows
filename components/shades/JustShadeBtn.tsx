@@ -26,7 +26,7 @@ const JustShadeBtn = ({ colorHex }: { colorHex: string }) => {
         navigator.clipboard.writeText(colorHex)
         setCopied(true)
       }}
-      className="flex flex-col w-full text-center items-center"
+      className="relative flex flex-col w-full text-center items-center"
     >
       <span
         className="w-full aspect-9/16 lg:aspect-square lg:rounded-md flex items-center justify-center"

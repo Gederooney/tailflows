@@ -48,12 +48,6 @@ type Props = {
   searchParams: { [key: string]: string | string[] | undefined }
 }
 
-export async function generateMetada({ params, searchParams }: Props) {
-  return {
-    title: `test`,
-  }
-}
-
 export default function Layout({ children }: { children: React.ReactNode }) {
   return <>{children}</>
 }
