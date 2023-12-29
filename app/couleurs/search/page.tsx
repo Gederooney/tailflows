@@ -1,34 +1,53 @@
 'use client'
-import { useState, useMemo } from 'react'
-import WheelView from './Wheel'
-import WheelForm from './WheelForm'
-import ColorContext from './context'
-import { Color as IColor, WheelView as IWheelView } from './colors'
-import { makeShadeNoMode, makeShadesWithMode, nearest } from './colors.utils'
+import { useState, useMemo, useEffect } from 'react'
+import WheelView from '../Wheel'
+import WheelForm from '../WheelForm'
+import ColorContext from '../context'
+import { Color as IColor, WheelView as IWheelView } from '../colors'
+import {
+  hueSatToCoordinates,
+  makeShadeNoMode,
+  makeShadesWithMode,
+  nearest,
+  getPosition,
+} from '../colors.utils'
 import JustShadeBtn from '@/components/shades/JustShadeBtn'
-import { getWheelBg } from './colors.utils'
+import { getWheelBg } from '../colors.utils'
+import NotFound from '@/app/not-found'
+import Color from 'color'
 
-const Page = () => {
+const Page = ({ searchParams }: { searchParams: { color: string; name: string } }) => {
+  const { color, name } = searchParams
+
+  const colorObj = new Color(color)
+
+  const hsl = colorObj.hsl().round().array()
+  const rgb = colorObj.rgb().array()
+  const lab = colorObj.lab().round().array()
+
+  const coords = hueSatToCoordinates(hsl[0], hsl[1])
+  const position = getPosition({ x: coords.x + 100, y: 100 - coords.y }, 100)
+
   const [state, setState] = useState<IColor & IWheelView>({
-    hex: '00ffff',
-    hexToDisplay: '00ffff',
+    hex: color,
+    hexToDisplay: color.slice(1),
     currentMode: 'hsl',
     alpha: 0.5,
     mode: {
       hsl: {
-        h: 180,
-        s: 1,
-        l: 0.5,
+        h: hsl[0],
+        s: hsl[1] / 100,
+        l: hsl[2] / 100,
       },
       rgb: {
-        r: 180,
-        g: 100,
-        b: 50,
+        r: rgb[0],
+        g: rgb[1],
+        b: rgb[2],
       },
       lab: {
-        l: 1,
-        a: 1,
-        b: 1,
+        l: lab[0],
+        a: lab[1],
+        b: lab[2],
       },
     },
     isDraggingHue: false,
@@ -37,14 +56,8 @@ const Page = () => {
     color: '#00ffff',
     wheelBg: getWheelBg(),
     picker: {
-      coords: {
-        x: 0,
-        y: -100,
-      },
-      position: {
-        left: 50,
-        top: 100,
-      },
+      coords,
+      position,
     },
     brightPicker: {
       position: {
@@ -72,6 +85,8 @@ const Page = () => {
     return { nearestColor, shades }
   }, [state])
 
+  if (!color.length) return <NotFound />
+
   return (
     <ColorContext.Provider value={{ state, setState }}>
       <div className="max-w-7xl px-4 py-12 mx-auto">
@@ -81,9 +96,7 @@ const Page = () => {
             className="aspect-video w-16 rounded-md"
             style={{ backgroundColor: derivedData.nearestColor.value }}
           ></span>
-          <span className="aspect-video w-16 rounded-md flex items-center">
-            {state.hex.toUpperCase()}
-          </span>
+          <span className="aspect-video w-16 rounded-md flex items-center">{state.hex}</span>
         </div>
         <div className="flex flex-col lg:flex-row gap-4 items-center">
           <div className="w-full lg:w-auto flex flex-col md:flex-row gap-3 flex-shrink-0 flex-grow-0 overflow-x-scroll md:overflow-hidden">

@@ -152,6 +152,7 @@ const WheelView = () => {
    */
   function cleanUp() {
     document.removeEventListener('mouseup', handleMouseUp)
+    // document.removeEventListener('touchend', )
     document.removeEventListener('mousemove', handleMouseMove)
   }
 
@@ -241,9 +242,21 @@ const WheelView = () => {
     })
   }
 
-  function handleMouseDown(e: React.MouseEvent<HTMLDivElement, MouseEvent>, picker: 'H' | 'B') {
+  type ToucheMouseEvent = React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>
+
+  function handleMouseDown(e: ToucheMouseEvent, picker: 'H' | 'B') {
+    let point: Point
     e.stopPropagation()
-    const point = { x: e.clientX, y: e.clientY }
+
+    if (e.type === 'mousedown') {
+      e = e as React.MouseEvent<HTMLDivElement>
+      point = { x: e.clientX, y: e.clientY }
+    } else if (e.type === 'touchstart') {
+      e = e as React.TouchEvent<HTMLDivElement>
+      const touch = e.touches[0]
+      point = { x: touch.clientX, y: touch.clientY }
+    }
+
     switch (picker) {
       case 'H':
         setState((prev) => {
@@ -281,6 +294,7 @@ const WheelView = () => {
               }%, 50%), rgb(254, 255, 255))`,
             }}
             onMouseDown={(e) => handleMouseDown(e, 'B')}
+            onTouchStart={(e) => handleMouseDown(e, 'B')}
             role="button"
             tabIndex={0}
           >
@@ -291,6 +305,7 @@ const WheelView = () => {
             <div
               className="w-[220px] rounded-full aspect-square flex items-center justify-center  border bg-white pointer-events-auto"
               onMouseDown={(e) => e.stopPropagation()}
+              onTouchStart={(e) => e.stopPropagation()}
               role="button"
               tabIndex={0}
             >
@@ -298,6 +313,7 @@ const WheelView = () => {
                 <div
                   ref={wheelRef}
                   onMouseDown={(e) => handleMouseDown(e, 'H')}
+                  onTouchStart={(e) => handleMouseDown(e, 'H')}
                   role="button"
                   tabIndex={0}
                   className={`absolute top-0 left-0 h-full w-full rounded-full overflow-hidden ${
