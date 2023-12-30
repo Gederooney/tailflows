@@ -127,20 +127,21 @@ const Page = () => {
           params.append('id', icon.id)
           return (
             <div
-              className="w-1/10 md:w-[5%] shrink-0 grow-0 p-1 md:p-2 text-slate-950 dark:text-slate-50"
+              className="w-1/5 md:w-1/10 shrink-0 grow-0 p-1 md:p-2 text-slate-950/40 dark:text-slate-50/80 aspect-square"
               key={icon.name}
             >
               <Link
                 href={`/icons/search?${params.toString()}`}
-                className="block border dark:border-gray-50/10 p-1 md:p-2.5 rounded-md bg-gray-100 dark:bg-gray-50/10"
+                className="flex gap-2 flex-col items-center justify-center border dark:border-gray-50/10 p-1 md:p-2.5 rounded-md  h-full w-full"
                 target="_blank"
               >
                 <svg
-                  className="w-full h-full fill-current"
+                  className="h-8 w-8 fill-current"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox={icon.viewBox}
                   dangerouslySetInnerHTML={{ __html: icon.svg as string }}
                 ></svg>
+                <span className="w-full block text-center text-xs line-clamp-1">{icon.name}</span>
               </Link>
             </div>
           )
