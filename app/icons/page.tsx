@@ -3,19 +3,33 @@ import icons from './data.json'
 import Search from '@/components/Search/Index'
 import Link from 'next/link'
 
+type Icon = {
+  name: string
+  tags: string[]
+  version: number
+  popularity: number
+  codepoint: number
+  unsupported_families: string[]
+  categories: string[]
+  sizes_px?: number[]
+  svg: string
+  id: string
+  viewBox: string
+}
+
 function Pagination() {
   return (
-    <div className="flex items-center justify-between px-4 py-3 sm:px-6">
-      <div className="flex flex-1 justify-between sm:hidden">
+    <div className="relative z-0 flex items-center justify-between px-4 py-3 sm:px-6">
+      <div className="flex justify-between flex-1 sm:hidden">
         <Link
           href="/icons"
-          className="relative inline-flex items-center rounded-md border border-gray-300  px-4 py-2 text-sm font-light text-gray-700 hover:bg-gray-50"
+          className="relative inline-flex items-center px-4 py-2 text-sm font-light text-gray-700 border border-gray-300 rounded-md hover:bg-gray-50"
         >
           Préc
         </Link>
         <Link
           href="/icons"
-          className="relative ml-3 inline-flex items-center rounded-md border border-gray-300 px-4 py-2 text-sm font-light text-gray-700 hover:bg-gray-50"
+          className="relative inline-flex items-center px-4 py-2 ml-3 text-sm font-light text-gray-700 border border-gray-300 rounded-md hover:bg-gray-50"
         >
           Suiv
         </Link>
@@ -29,15 +43,15 @@ function Pagination() {
         </div>
         <div>
           <nav
-            className="isolate inline-flex -space-x-px rounded-md shadow-sm"
+            className="z-0 inline-flex -space-x-px rounded-md shadow-sm isolate"
             aria-label="Pagination"
           >
             <Link
               href="/icons"
-              className="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
+              className="relative inline-flex items-center px-2 py-2 text-gray-400 rounded-l-md ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
             >
               <span className="sr-only">Previous</span>
-              <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                 <polyline points="15 18 9 12 15 6"></polyline>
               </svg>
             </Link>
@@ -45,7 +59,7 @@ function Pagination() {
             <Link
               href="/icons"
               aria-current="page"
-              className="relative z-10 inline-flex items-center bg-indigo-600 px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              className="relative z-10 inline-flex items-center px-4 py-2 text-sm font-semibold text-white bg-indigo-600 focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
               1
             </Link>
@@ -57,7 +71,7 @@ function Pagination() {
             </Link>
             <Link
               href="/icons"
-              className="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex"
+              className="relative items-center hidden px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex"
             >
               3
             </Link>
@@ -66,7 +80,7 @@ function Pagination() {
             </span>
             <Link
               href="/icons"
-              className="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex"
+              className="relative items-center hidden px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex"
             >
               8
             </Link>
@@ -84,13 +98,13 @@ function Pagination() {
             </Link>
             <Link
               href="/icons"
-              className="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
+              className="relative inline-flex items-center px-2 py-2 text-gray-400 rounded-r-md ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
             >
               <span className="sr-only">Next</span>
-              <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                 <polyline points="9 18 15 12 9 6"></polyline>
               </svg>
-              {/* <ChevronRightIcon className="h-5 w-5" aria-hidden="true" /> */}
+              {/* <ChevronRightIcon className="w-5 h-5" aria-hidden="true" /> */}
             </Link>
           </nav>
         </div>
@@ -99,12 +113,12 @@ function Pagination() {
   )
 }
 
-const sortedIcons = icons.sort((a, b) => b.popularity - a.popularity)
+const sortedIcons = (icons as Icon[]).sort((a, b) => b.popularity - a.popularity)
 
 const Page = () => {
   const handleSearch = () => {}
   return (
-    <div className="max-w-7xl px-4 py-12 mx-auto">
+    <div className="px-4 py-12 mx-auto max-w-7xl">
       <Search />
       <div className="flex flex-wrap flex-grow-0 flex-shrink-0">
         {sortedIcons.slice(0, 200).map((icon) => {
@@ -122,7 +136,7 @@ const Page = () => {
                 target="_blank"
               >
                 <svg
-                  className="h-full w-full fill-current"
+                  className="w-full h-full fill-current"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox={icon.viewBox}
                   dangerouslySetInnerHTML={{ __html: icon.svg as string }}

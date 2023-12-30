@@ -26,6 +26,7 @@ type PropsWithHistoryComponent = SearchProps & {
 const Search = () => {
   const [isFocused, setIsFocused] = useState(false)
   const form = useRef<HTMLFormElement>(null)
+  const bgRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (isFocused) {
@@ -67,8 +68,19 @@ const Search = () => {
     }
   }
 
+  function handleCloseSearch() {
+    if (bgRef.current) {
+      bgRef.current.addEventListener('click', (e) => {
+        e.preventDefault()
+        e.stopPropagation()
+
+        setIsFocused(false)
+      })
+    }
+  }
+
   return (
-    <section className="py-4">
+    <section className="z-20 py-4 ">
       <div className="container">
         <div
           onClick={() => setIsFocused(false)}
@@ -79,8 +91,10 @@ const Search = () => {
               setIsFocused(false)
             }
           }}
-          className={`fixed top-0 left-0 w-screen h-screen cursor-pointer pointer-events-none transition-opacity z-30 ${
-            isFocused ? 'bg-secondary-900/40 opacity-100' : 'bg-transparent opacity-0'
+          className={`fixed inset-0 cursor-pointer transition-opacity z-30 ${
+            isFocused
+              ? 'bg-slate-950/40 opacity-100 pointer-events-auto'
+              : 'bg-transparent opacity-0 pointer-events-none'
           }`}
         ></div>
         <div className={`h-[50px] ${isFocused ? 'rounded-t-sm' : ''}`}>
@@ -131,7 +145,7 @@ const Search = () => {
                 tabIndex={0}
                 className={`block w-full h-full p-4 pl-10 text-xs lg:text-sm outline-none focus:outline-none focus:border-secondary-100/50 focus:ring-0  ${
                   isFocused
-                    ? 'rounded-none bg-gray-50 text-secondary-950 border border-white'
+                    ? 'rounded-t-md bg-gray-50 text-secondary-950 border border-white'
                     : 'rounded-full bg-transparent text-current'
                 }`}
                 role="searchbox"
@@ -155,7 +169,11 @@ const Search = () => {
             </div>
           </form>
           {isFocused && (
-            <div className={'relative z-50 max-w-screen-sm mx-auto bg-white h-96 overflow-auto'}>
+            <div
+              className={
+                'relative z-50 max-w-screen-sm mx-auto bg-white h-96 overflow-auto rounded-b-md'
+              }
+            >
               <div className="flex flex-col w-full h-full gap-0 px-2 overflow-scroll hide-scrollbar">
                 {/* {searchHistory?.map((history, index) => (
                   <div
