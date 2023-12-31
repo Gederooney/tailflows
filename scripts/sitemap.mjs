@@ -24,8 +24,6 @@ const generateColorSitemap = () => {
     )
   }, '')
 
-  console.log(icons.length)
-
   const iconsUrls = icons.reduce((acc, icon) => {
     const params = new URLSearchParams()
     params.append('name', icon.name)
