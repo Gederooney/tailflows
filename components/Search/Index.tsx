@@ -23,7 +23,8 @@ type PropsWithHistoryComponent = SearchProps & {
   HistoryComponent: React.FC<{ history: string }>
 }
 
-const Search = () => {
+const Search = ({ handleSearch }: { handleSearch: (value: string) => void }) => {
+  const [value, setValue] = useState('')
   const [isFocused, setIsFocused] = useState(false)
   const form = useRef<HTMLFormElement>(null)
   const bgRef = useRef<HTMLDivElement>(null)
@@ -48,9 +49,11 @@ const Search = () => {
     }
   }
   const listenToEscKey = (e) => {
-    if (e.key === 'Escape') {
-      setIsFocused(false)
-    }
+    if (form.current)
+      if (e.key === 'Escape') {
+        setIsFocused(false)
+        form.current.querySelector('input')?.blur()
+      }
   }
 
   const isElementAtTop = () => {
@@ -99,6 +102,7 @@ const Search = () => {
         ></div>
         <div className={`h-[50px] ${isFocused ? 'rounded-t-sm' : ''}`}>
           <form
+            ref={form}
             className={`h-full relative z-50 max-w-screen-sm mx-auto ${
               isFocused ? 'rounded-t-sm overflow-hidden' : ''
             }`}
@@ -116,7 +120,9 @@ const Search = () => {
             <div className="relative h-full">
               <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                 <svg
-                  className="w-4 h-4 text-gray-500 dark:text-gray-400"
+                  className={`w-4 h-4 ${
+                    isFocused ? 'text-secondary-900' : 'text-gray-500 dark:text-gray-50/50'
+                  }`}
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -140,20 +146,23 @@ const Search = () => {
                 id="default-search"
                 onFocus={() => setIsFocused(true)}
                 // onBlur={() => setIsFocused(false)}
-                value={'value'}
-                onChange={() => {}}
+                value={value}
+                onChange={(e) => {
+                  handleSearch(value)
+                  setValue(e.target.value)
+                }}
                 tabIndex={0}
-                className={`block w-full h-full p-4 pl-10 text-xs lg:text-sm outline-none focus:outline-none focus:border-secondary-100/50 focus:ring-0  ${
+                className={`block w-full h-full p-4 pl-10 text-xs lg:text-sm outline-none focus:outline-none focus:border-secondary-50/50 focus:ring-0  ${
                   isFocused
-                    ? 'rounded-t-md bg-gray-50 text-secondary-950 border border-white'
-                    : 'rounded-full bg-transparent text-current'
+                    ? 'rounded-t-md bg-gray-50 text-secondary-950 border border-transparent'
+                    : 'rounded-full bg-transparent text-current border-secondary-900/10 dark:border-gray-50/10'
                 }`}
                 role="searchbox"
                 spellCheck="false"
-                aria-label={'placeholder'}
-                title={'placeholder'}
+                aria-label={'Trouver une icone'}
+                title={'Trouver une icone'}
                 aria-autocomplete="list"
-                placeholder={'placeholder'}
+                placeholder={'Trouver une icone...'}
                 aria-controls="search-results"
                 required
               />
@@ -162,31 +171,32 @@ const Search = () => {
                 title="Trouver une icone, une catégorie ou un tag"
                 aria-label="Trouver une icone, une catégorie ou un tag"
                 tabIndex={-1}
-                className="text-white lg:text-sm  absolute right-2.5 bottom-1/2 translate-y-1/2 bg-primary-500 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-full text-xs px-4 py-2 dark:bg-primary-600 dark:hover-bg-primary-700 dark:focus-ring-primary-800"
+                className="text-white lg:text-sm  absolute right-2.5 bottom-1/2 translate-y-1/2 bg-secondary-500 hover:bg-secondary-800 focus:ring-4 focus:outline-none focus:ring-secondary-300 font-medium rounded-full text-xs px-4 py-2 dark:bg-secondary-600 dark:hover-bg-secondary-700 dark:focus-ring-secondary-800 dark:text-gray-50/50"
               >
                 {'btnText'}
               </button>
             </div>
           </form>
           {isFocused && (
-            <div
-              className={
-                'relative z-50 max-w-screen-sm mx-auto bg-white h-96 overflow-auto rounded-b-md'
-              }
-            >
-              <div className="flex flex-col w-full h-full gap-0 px-2 overflow-scroll hide-scrollbar">
-                {/* {searchHistory?.map((history, index) => (
-                  <div
-                    key={history}
-                    className={`w-full h-16 shrink-0 grow-0 ${
-                      index !== searchHistory.length - 1 ? 'border-b' : ''
-                    }`}
-                  >
-                    <HistoryComponent history={history} />
-                  </div>
-                ))} */}
-              </div>
-            </div>
+            <></>
+            // <div
+            //   className={
+            //     'relative z-50 max-w-screen-sm mx-auto bg-white h-96 overflow-auto rounded-b-md'
+            //   }
+            // >
+            //   <div className="flex flex-col w-full h-full gap-0 px-2 overflow-scroll hide-scrollbar">
+            //     {/* {searchHistory?.map((history, index) => (
+            //       <div
+            //         key={history}
+            //         className={`w-full h-16 shrink-0 grow-0 ${
+            //           index !== searchHistory.length - 1 ? 'border-b' : ''
+            //         }`}
+            //       >
+            //         <HistoryComponent history={history} />
+            //       </div>
+            //     ))} */}
+            //   </div>
+            // </div>
           )}
         </div>
       </div>

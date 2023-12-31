@@ -23,6 +23,7 @@
       "@/css/*": ["css/*"],
       "@/app/*": ["app/*"],
       "@/utils/*": ["utils/*"],
+      "@/lib/*": ["lib/*"],
       "contentlayer/generated": ["./.contentlayer/generated"]
     },
     "plugins": [

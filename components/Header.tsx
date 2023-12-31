@@ -9,8 +9,8 @@ import SearchButton from './SearchButton'
 const Header = () => {
   return (
     <>
-      <header className="w-full dark:border-b border-white/5 shadow">
-        <div className="hidden md:flex items-center justify-between py-2 gap-8 max-w-7xl px-6 mx-auto">
+      <header className="w-full shadow dark:border-b border-white/5">
+        <div className="items-center justify-between hidden gap-8 px-6 py-2 mx-auto md:flex max-w-7xl">
           <div>
             <Link href="/" aria-label={siteMetadata.headerTitle}>
               <div className="flex items-center justify-between">
@@ -21,9 +21,9 @@ const Header = () => {
               </div>
             </Link>
           </div>
-          <div className="flex flex-1 justify-between items-center space-x-4 leading-5 sm:space-x-6">
+          <div className="flex items-center justify-between flex-1 space-x-4 leading-5 sm:space-x-6">
             <span></span>
-            <ul className="flex gap-4 items-center">
+            <ul className="flex items-center gap-4">
               <li>
                 <SearchButton />
               </li>
@@ -33,7 +33,7 @@ const Header = () => {
                   <li key={link.title + 'desktop'}>
                     <Link
                       href={link.href}
-                      className="hidden font-medium text-gray-900 dark:text-gray-100 sm:block text-sm"
+                      className="hidden text-sm font-medium text-gray-900 dark:text-gray-50/50 sm:block"
                     >
                       {link.title}
                     </Link>
@@ -44,7 +44,7 @@ const Header = () => {
           </div>
         </div>
 
-        <div className="flex md:hidden items-center justify-between py-2 px-4">
+        <div className="flex items-center justify-between px-4 py-2 md:hidden">
           <div>
             <Link href="/" aria-label={siteMetadata.headerTitle}>
               <div className="flex items-center justify-between">

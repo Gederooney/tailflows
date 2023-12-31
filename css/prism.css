@@ -7,7 +7,7 @@
 
 /* Code title styles */
 .remark-code-title {
-  @apply rounded-t bg-gray-700 px-5 py-3 font-mono text-sm font-bold text-gray-200 dark:bg-gray-800;
+  @apply px-5 py-3 font-mono text-sm font-bold text-gray-200 bg-gray-700 rounded-t dark:bg-gray-800;
 }
 
 .remark-code-title + div > pre {
@@ -20,7 +20,7 @@
 }
 
 .code-line {
-  @apply -mx-4 block border-l-4 border-transparent pl-4 pr-4;
+  @apply block pl-4 pr-4 -mx-4 border-l-4 border-transparent;
 }
 
 .code-line.inserted {
@@ -32,11 +32,11 @@
 }
 
 .highlight-line {
-  @apply -mx-4 border-l-4 border-primary-500 bg-gray-700 bg-opacity-50;
+  @apply -mx-4 bg-gray-700 bg-opacity-50 border-l-4 border-primary-500;
 }
 
 .line-number::before {
-  @apply -ml-2 mr-4 inline-block w-4 text-right text-gray-400;
+  @apply inline-block w-4 mr-4 -ml-2 text-right text-gray-400;
   content: attr(line);
 }
 
@@ -52,11 +52,11 @@
 .token.prolog,
 .token.cdata {
   color: rgb(99, 119, 119);
-  font-style: italic;
+  /* font-style: italic; */
 }
 
 .token.punctuation {
-  color: rgb(199, 146, 234);
+  color: #64748b;
 }
 
 .namespace {
@@ -65,7 +65,7 @@
 
 .token.deleted {
   color: rgba(239, 83, 80, 0.56);
-  font-style: italic;
+  /* font-style: italic; */
 }
 
 .token.symbol,
@@ -76,7 +76,7 @@
 .token.tag,
 .token.operator,
 .token.keyword {
-  color: rgb(127, 219, 202);
+  color: #f472b6;
 }
 
 .token.boolean {
@@ -97,13 +97,13 @@
 .token.selector,
 .token.doctype {
   color: rgb(199, 146, 234);
-  font-style: italic;
+  /* font-style: italic; */
 }
 
 .token.attr-name,
 .token.inserted {
   color: rgb(173, 219, 103);
-  font-style: italic;
+  /* font-style: italic; */
 }
 
 .token.string,
@@ -117,7 +117,7 @@
 .token.class-name,
 .token.atrule,
 .token.attr-value {
-  color: rgb(255, 203, 139);
+  color: #7dd3fc;
 }
 
 .token.regex,

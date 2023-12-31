@@ -39,6 +39,19 @@ module.exports = {
       },
       colors: {
         primary: colors.pink,
+        secondary: {
+          50: '#275E90',
+          100: '#235683',
+          200: '#204D76',
+          300: '#1C4569',
+          400: '#193C5C',
+          500: '#15334F',
+          600: '#122B42',
+          700: '#0E2235',
+          800: '#0B1A27',
+          900: '#07111A',
+          950: '#04090D',
+        },
         gray: colors.gray,
       },
       typography: ({ theme }) => ({
