@@ -3,7 +3,7 @@ import icons from './data.json'
 import Search from '@/components/Search/Index'
 import Link from 'next/link'
 
-type Icon = {
+export type Icon = {
   name: string
   tags: string[]
   version: number
@@ -141,7 +141,9 @@ const Page = () => {
                   viewBox={icon.viewBox}
                   dangerouslySetInnerHTML={{ __html: icon.svg as string }}
                 ></svg>
-                <span className="w-full block text-center text-xs line-clamp-1">{icon.name}</span>
+                <span className="w-full shrink-0 grow-0 block text-center text-xs line-clamp-1">
+                  {icon.name}
+                </span>
               </Link>
             </div>
           )
