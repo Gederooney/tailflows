@@ -17,6 +17,10 @@ const headerNavLinks = [
     tilte: 'Templates',
   },
   {
+    href: '/themes',
+    title: 'Themes',
+  },
+  {
     href: '/blog',
     title: 'Blog',
   },
