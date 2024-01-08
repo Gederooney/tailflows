@@ -1,8 +1,21 @@
 'use client'
 import React, { useMemo, useState } from 'react'
-import icons from './data.json'
+import icons from '@/data/icons.json'
 import Search from '@/components/Search/Index'
 import Link from 'next/link'
+import { formatSvg } from '@/lib/utils'
+
+const possibleSVGAttr = [
+  'xmlns',
+  'height',
+  'viewBox',
+  'width',
+  'fill',
+  'stroke',
+  'stroke-width',
+  'stroke-linecap',
+  'stroke-linejoin',
+]
 
 export type Icon = {
   name: string
@@ -115,32 +128,45 @@ function Pagination() {
 }
 
 const Page = () => {
-  const [value, setvalue] = useState('')
+  const [searchTerm, setsearchTerm] = useState('')
   const handleSearch = (term: string) => {
-    setvalue(term)
+    setsearchTerm(term)
   }
-  const sortedIcons = useMemo(() => {
-    if (value.length) {
-      const result = (icons as Icon[])
-        .filter((icon) => icon.tags.some((tag) => tag.startsWith(value) || tag === value))
-        .sort((a, b) => b.popularity - a.popularity)
+  const defaultIcons = (icons as Icon[]).sort((a, b) => b.popularity - a.popularity)
 
-      console.log(result)
-      return result
+  const sortedIcons = useMemo(() => {
+    if (searchTerm.length) {
+      const searchWords = searchTerm
+        .trim()
+        .toLocaleLowerCase()
+        .split(' ')
+        .filter((word) => word !== '')
+      if (searchWords.length === 0) return defaultIcons
+      const filteredIcons = (icons as Icon[]).filter((icon) =>
+        searchWords.every((word) => icon.tags.some((tag) => tag.includes(word)))
+      )
+
+      return filteredIcons
     }
-    return (icons as Icon[]).sort((a, b) => b.popularity - a.popularity)
-  }, [value])
+    return defaultIcons
+  }, [searchTerm])
+
   return (
     <div className="px-4 py-12 mx-auto max-w-7xl">
-      <Search handleSearch={handleSearch} />
+      <Search handleSearch={handleSearch} inputOnly buttonTexte="Trouver" />
       <div className="flex flex-wrap flex-grow-0 flex-shrink-0 my-12">
+        {/* (icon.svg as string)
+                      .replace('width="24"', '')
+                      .replace('height="24"', 'class="fill-current h-full w-full"'), */}
+
         {sortedIcons.slice(0, 200).map((icon, index) => {
           const params = new URLSearchParams()
           params.append('name', icon.name.replaceAll('_', '-'))
           params.append('id', icon.id)
+          formatSvg(icon.svg)
           return (
             <div
-              className="w-1/5 p-1 md:w-1/10 shrink-0 grow-0 md:p-2 text-slate-950/40 dark:text-gray-50/50 aspect-square"
+              className="w-1/5 p-1 text-secondary-600 md:w-1/10 shrink-0 grow-0 md:p-2 dark:text-gray-50/50 aspect-square"
               key={icon.name + index}
             >
               <Link
@@ -148,12 +174,12 @@ const Page = () => {
                 className="flex gap-2 flex-col items-center justify-center border dark:border-gray-50/10 p-1 md:p-2.5 rounded-md  h-full w-full"
                 target="_blank"
               >
-                <svg
-                  className="w-8 h-8 fill-current"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox={icon.viewBox}
-                  dangerouslySetInnerHTML={{ __html: icon.svg as string }}
-                ></svg>
+                <span
+                  className="inline-block w-8 h-8 text-current"
+                  dangerouslySetInnerHTML={{
+                    __html: formatSvg(icon.svg),
+                  }}
+                ></span>
                 {/* <p className="block w-full text-xs text-center shrink-0 grow-0 line-clamp-1">
                   {icon.name}
                 </p> */}

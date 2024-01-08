@@ -1,5 +1,5 @@
 import colors from '../app/couleurs/colors.json' assert { type: 'json' }
-import icons from '../app/icons/data.json' assert { type: 'json' }
+import icons from '../data/icons.json' assert { type: 'json' }
 import siteMetadata from '../data/siteMetadata.js'
 import fs from 'fs'
 

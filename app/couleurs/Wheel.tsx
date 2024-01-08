@@ -21,7 +21,7 @@ interface PickerViewProps {
 const PickerView = ({ position, color }: PickerViewProps) => {
   return (
     <span
-      className="inline-block absolute -translate-x-1/2 -translate-y-1/2 h-5 w-5 border-4 border-white rounded-full pointer-events-none"
+      className="absolute inline-block w-5 h-5 -translate-x-1/2 -translate-y-1/2 border-4 border-white rounded-full pointer-events-none"
       style={{
         top: `${position.top}%`,
         left: `${position.left}%`,
@@ -44,9 +44,9 @@ const AlphaSelector = () => {
     }))
   }
   return (
-    <div className="relative h-full w-full shadow-sm drop-shadow-sm">
+    <div className="relative w-full h-full shadow-sm drop-shadow-sm">
       <div
-        className="w-full h-full absolute top-0 left-0 z-10 rounded-md overflow-hidden pointer-events-none"
+        className="absolute top-0 left-0 z-10 w-full h-full overflow-hidden rounded-md pointer-events-none"
         style={{
           background: `white`,
         }}
@@ -59,7 +59,7 @@ const AlphaSelector = () => {
         }}
       >
         <div
-          className="w-full h-full absolute top-0 left-0 z-10 rounded-md overflow-hidden pointer-events-none"
+          className="absolute top-0 left-0 z-10 w-full h-full overflow-hidden rounded-md pointer-events-none"
           style={{
             background: `linear-gradient(to bottom, hsl(${state.mode.hsl.h}, ${
               state.mode.hsl.s * 100
@@ -72,7 +72,7 @@ const AlphaSelector = () => {
           style={{
             zIndex: 100,
           }}
-          className="w-full h-full opacity-0 absolute top-0 left-0 cursor-pointer pointer-events-auto"
+          className="absolute top-0 left-0 w-full h-full opacity-0 cursor-pointer pointer-events-auto"
           onChange={handleChange}
           type="range"
           min={0}
@@ -91,7 +91,7 @@ const AlphaSelector = () => {
           backgroundColor: 'white',
           zIndex: 100,
         }}
-        className="absolute left-0 h-2 w-10 rounded-md border-2 border-gray-900 z-50 cursor-pointer pointer-events-none"
+        className="absolute left-0 z-50 w-10 h-2 border-2 border-gray-900 rounded-md cursor-pointer pointer-events-none"
       ></span>
     </div>
   )
@@ -200,6 +200,7 @@ const WheelView = () => {
       l = coordsTobrightness(coords, radius)
     }
 
+    // @ts-ignore
     const newColor = chroma({ h, s, l })
     const hsl = newColor.hsl()
     const rgb = newColor.rgb()
@@ -221,6 +222,7 @@ const WheelView = () => {
       if (isDraggingHue) {
         next = {
           ...next,
+          //  @ts-ignore
           color: hsl,
           picker: {
             position,
@@ -230,6 +232,7 @@ const WheelView = () => {
       } else {
         next = {
           ...next,
+          // @ts-ignore
           color: hsl,
           brightness: l,
           brightPicker: {
