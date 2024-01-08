@@ -92,7 +92,11 @@ const addBodyOverflow = () => {
   const body = document.querySelector('body')
   if (body) body.style.overflow = 'auto'
 }
-const Content = (theme: Theme & { reposInfos: ReposInfos }) => {
+
+type Props = Theme & {
+  reposInfos: ReposInfos
+}
+const Content = (theme: Props) => {
   const [showPreview, setShowPreview] = useState(false)
 
   return (
@@ -250,7 +254,7 @@ const Content = (theme: Theme & { reposInfos: ReposInfos }) => {
                     data={[
                       ...Object.keys(theme.reposInfos?.languages ?? []).map((key) => ({
                         key,
-                        value: theme.reposInfos?.languages[key],
+                        value: theme.reposInfos?.languages[key] ?? 0,
                       })),
                     ]}
                   />

@@ -232,6 +232,7 @@ const WheelView = () => {
       } else {
         next = {
           ...next,
+          // @ts-ignore
           color: hsl,
           brightness: l,
           brightPicker: {

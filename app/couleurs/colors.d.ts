@@ -14,7 +14,7 @@ type Picker = { position: Position; coords: Point }
 
 export interface WheelView {
   isDraggingHue: boolean
-  color: string
+  color: string | number[]
   isDraggingBrightness: boolean
   wheelBg: string
   brightness: number

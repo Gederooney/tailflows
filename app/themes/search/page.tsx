@@ -73,7 +73,7 @@ async function getTheme(themeId: string) {
 
     const { data } = await res.json()
 
-    return data as Theme & ReposInfos
+    return data as Theme & { reposInfos: ReposInfos }
   } catch (error) {
     console.log(error.message)
     return null
