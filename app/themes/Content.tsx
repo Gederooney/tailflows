@@ -30,25 +30,25 @@ const Content = () => {
   return (
     <>
       <Hero />
-      <Search handleSearch={handleSearch} />
+      <Search handleSearch={handleSearch} inputOnly buttonTexte="Trouver" />
       <section>
         <div className="mx-auto max-w-7xl">
-          <div className="w-full flex flex-row flex-wrap flex-shrink-0 flex-grow-0">
+          <div className="flex flex-row flex-wrap flex-grow-0 flex-shrink-0 w-full">
             {themes.map((theme) => (
               <Link
                 href={`/themes/search?id=${theme.id}&name=${theme.title.replaceAll(' ', '_')}`}
                 key={theme.title}
-                className="basis-1/3 p-6"
+                className="p-6 overflow-hidden basis-1/3"
               >
-                <div className="w-full  rounded-md overflow-hidden">
+                <div className="w-full overflow-hidden rounded-md">
                   <Image src={theme.images[0]} width={1600} height={1200} alt="" />
                 </div>
-                <h1 className="my-4 line-clamp-1 font-medium">{theme.title}</h1>
-                <div className="flex flex-nowrap flex-shrink-0 flex-grow-0 overflow-auto gap-2">
-                  {theme.framework.map((key) => (
+                <h1 className="my-4 font-medium line-clamp-1">{theme.title}</h1>
+                <div className="flex flex-grow-0 flex-shrink-0 gap-2 overflow-auto flex-nowrap">
+                  {theme.frameworks.map((key) => (
                     <div
                       key={`${theme.id + key}`}
-                      className="px-2 py-1 bg-gray-100 dark:bg-secondary-600 rounded-md"
+                      className="px-2 py-1 bg-gray-100 rounded-md dark:bg-secondary-600"
                     >
                       <span className="text-xs font-light">{key}</span>
                     </div>

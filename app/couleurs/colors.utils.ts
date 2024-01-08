@@ -25,7 +25,7 @@ export function makeShadesWithMode(hex: string, mode: ColorMode) {
   const chromaColor = chroma(hex)
   const whitest = chromaColor.set('hsl.l', 0.98)
   const blackest = chromaColor.set('hsl.l', 0.05)
-
+  // @ts-ignore
   const shades = chroma.scale([whitest, chromaColor, blackest]).mode(mode).colors(30)
   return shades
 }

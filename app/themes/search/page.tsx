@@ -4,6 +4,7 @@ import siteMetadata from '@/data/siteMetadata'
 import { ResolvingMetadata, Metadata } from 'next'
 import themes from '@/data/themes.json' assert { type: 'json' }
 import { notFound } from 'next/navigation'
+import { Theme, ReposInfos } from 'types'
 
 type Props = {
   params: { search: string }
@@ -27,7 +28,7 @@ export async function generateMetadata(
       'tailwindcss theme',
       'template gratuit',
       ...theme.categories,
-      ...theme.framework,
+      ...theme.frameworks,
     ],
     openGraph: {
       title: siteMetadata.title,
@@ -65,15 +66,14 @@ export async function generateMetadata(
 
 async function getTheme(themeId: string) {
   try {
-    const res = await fetch(`http://localhost:3000/api/themes`, {
+    const res = await fetch(`http://localhost:3000/api/themes?id=${themeId}`, {
       method: 'GET',
     })
     if (!res.ok) return null
 
-    const data = await res.json()
+    const { data } = await res.json()
 
-    console.log(data)
-    return data
+    return data as Theme & ReposInfos
   } catch (error) {
     console.log(error.message)
     return null
@@ -82,9 +82,8 @@ async function getTheme(themeId: string) {
 
 const Page = async ({ searchParams }: { searchParams: { name: string; id: string } }) => {
   const theme = await getTheme(searchParams.id)
-
   if (!theme) return notFound()
-  return <Content />
+  return <Content {...theme} />
 }
 
 export default Page
