@@ -15,7 +15,8 @@ export async function generateMetadata(
   { params, searchParams }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const theme = themes.find((theme) => theme.id === searchParams.id)
+  const theme = await getTheme(searchParams.id as string)
+  // const theme = themes.find((theme) => theme.id === searchParams.id)
   if (!theme) return {} as Metadata
   return {
     metadataBase: new URL(siteMetadata.siteUrl),
@@ -66,7 +67,9 @@ export async function generateMetadata(
 
 async function getTheme(themeId: string) {
   try {
-    const res = await fetch(`http://localhost:3000/api/themes?id=${themeId}`, {
+    const { BASE_URL } = process.env
+
+    const res = await fetch(`${BASE_URL}/api/themes?id=${themeId}`, {
       method: 'GET',
     })
     if (!res.ok) return null
