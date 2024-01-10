@@ -34,28 +34,34 @@ const Content = () => {
           <div className="flex flex-row flex-wrap flex-grow-0 flex-shrink-0 w-full">
             {themes
               .sort((a, b) => b.popularity - a.popularity)
-              .map((theme) => (
-                <Link
-                  href={`/themes/search?id=${theme.id}&name=${theme.title.replaceAll(' ', '_')}`}
-                  key={theme.title}
-                  className="p-6 overflow-hidden basis-1/3"
-                >
-                  <div className="w-full overflow-hidden rounded-md">
-                    <Image src={theme.images[0]} width={1600} height={1200} alt="" />
-                  </div>
-                  <h1 className="my-4 font-medium line-clamp-1">{theme.title}</h1>
-                  <div className="flex flex-grow-0 flex-shrink-0 gap-2 overflow-auto flex-nowrap">
-                    {theme.frameworks.map((key) => (
-                      <div
-                        key={`${theme.id + key}`}
-                        className="px-2 py-1 bg-gray-100 rounded-md dark:bg-secondary-600"
-                      >
-                        <span className="text-xs font-light">{key}</span>
-                      </div>
-                    ))}
-                  </div>
-                </Link>
-              ))}
+              .map((theme) => {
+                const params = new URLSearchParams()
+                params.append('name', theme.title.replaceAll('_', '-').replaceAll(' ', '-'))
+                params.append('id', theme.id)
+
+                return (
+                  <Link
+                    href={`/themes/search?${params.toString()}`}
+                    key={theme.title}
+                    className="p-6 overflow-hidden basis-1/3"
+                  >
+                    <div className="w-full overflow-hidden rounded-md">
+                      <Image src={theme.images[0]} width={1600} height={1200} alt="" />
+                    </div>
+                    <h1 className="my-4 font-medium line-clamp-1">{theme.title}</h1>
+                    <div className="flex flex-grow-0 flex-shrink-0 gap-2 overflow-auto flex-nowrap">
+                      {theme.frameworks.map((key) => (
+                        <div
+                          key={`${theme.id + key}`}
+                          className="px-2 py-1 bg-gray-100 rounded-md dark:bg-secondary-600"
+                        >
+                          <span className="text-xs font-light">{key}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </Link>
+                )
+              })}
           </div>
         </div>
       </section>

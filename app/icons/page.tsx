@@ -163,7 +163,7 @@ const Page = () => {
           const params = new URLSearchParams()
           params.append('name', icon.name.replaceAll('_', '-'))
           params.append('id', icon.id)
-          formatSvg(icon.svg)
+          const svg = formatSvg(icon.svg)
           return (
             <div
               className="w-1/5 p-1 text-secondary-600 md:w-1/10 shrink-0 grow-0 md:p-2 dark:text-gray-50/50 aspect-square"
@@ -177,7 +177,7 @@ const Page = () => {
                 <span
                   className="inline-block w-8 h-8 text-current"
                   dangerouslySetInnerHTML={{
-                    __html: formatSvg(icon.svg),
+                    __html: svg,
                   }}
                 ></span>
                 {/* <p className="block w-full text-xs text-center shrink-0 grow-0 line-clamp-1">
