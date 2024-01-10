@@ -35,7 +35,7 @@ const formatDateToFrench = (dateString: string) => {
 }
 
 const Preview = ({ siteUrl, handleClose }: { siteUrl: string; handleClose: () => void }) => (
-  <section className="fixed inset-0 z-50 bg-gray-50">
+  <section className="fixed inset-0 z-50 shadow bg-gray-50">
     <header className="" style={{ height: '50px' }}>
       <div className="h-full">
         <div className="flex items-center justify-center h-full gap-2">
@@ -175,7 +175,7 @@ const Content = (theme: Props) => {
                 </Link>
               </div>
               <div className="grid w-full grid-cols-2 gap-4 my-32">
-                {theme.images.slice(1).map((img) => (
+                {theme.images.slice(1).map((img: string) => (
                   <Image
                     key={img}
                     className="object-cover w-full h-auto basis-1/2"
@@ -201,7 +201,7 @@ const Content = (theme: Props) => {
                 <div className="flex items-center gap-4 my-2">
                   <span className="font-medium">Category:</span>
                   <div className="flex flex-grow-0 flex-shrink-0 gap-2 overflow-auto flex-nowrap">
-                    {theme.categories.map((key) => (
+                    {theme.categories.map((key: string) => (
                       <div
                         key={`${theme.id + key}`}
                         className="px-2 py-1 bg-gray-100 rounded-md dark:bg-secondary-600"
@@ -214,7 +214,7 @@ const Content = (theme: Props) => {
                 <div className="flex items-center gap-4 my-2">
                   <span className="font-medium">Stack:</span>
                   <div className="flex flex-grow-0 flex-shrink-0 gap-2 overflow-auto flex-nowrap">
-                    {theme.frameworks.map((key) => (
+                    {theme.frameworks.map((key: string) => (
                       <div
                         key={`${theme.id + key}`}
                         className="px-2 py-1 bg-gray-100 rounded-md dark:bg-secondary-600"
@@ -227,13 +227,17 @@ const Content = (theme: Props) => {
                 <div className="flex items-center w-full gap-4 my-2 ">
                   <span className="font-medium">Couleurs:</span>
                   <div className="flex-1 overflow-auto hide-scrollbar">
-                    <div className="flex flex-grow-0 flex-shrink-0 w-full gap-2">
-                      {theme.colors.map((key) => {
+                    <Link
+                      href="/#"
+                      onClick={(e) => e.preventDefault()}
+                      className="flex flex-grow-0 flex-shrink-0 w-full gap-2 py-2"
+                    >
+                      {theme.colors.map((key: string) => {
                         const color = chroma(key)
                         return (
                           <div
                             key={`${theme.id + key}`}
-                            className={`px-2 py-1 rounded-md text-xs font-thin ${
+                            className={`px-2 py-1 rounded-md text-xs font-thin shadow ${
                               color.luminance() > 0.5 ? 'text-secondary-950' : 'text-primary-50'
                             }`}
                             style={{
@@ -244,7 +248,7 @@ const Content = (theme: Props) => {
                           </div>
                         )
                       })}
-                    </div>
+                    </Link>
                   </div>
                 </div>
               </div>

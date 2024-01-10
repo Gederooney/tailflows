@@ -1,0 +1,21 @@
+{
+  "created_at": 1704748021209,
+  "title": "Next-blog",
+  "frameworks": ["Next.js", "TypeScript"],
+  "categories": ["Blog"],
+  "colors": ["#F1F5F9", "#E2E8F0", "#2463EB", "#000000"],
+  "author": "Webexpe13",
+  "description": [
+    "Ce projet est un modèle de blog simple utilisant Next.js, TypeScript et Tailwind CSS."
+  ],
+  "popularity": 4,
+  "images": ["/static/images/themes/next-blog.webp"],
+  "tags": ["Landing Page", "Blog"],
+  "download_link": "https://github.com/webexpe13/blog-template-using-nextjs-typescript-tailwindcss/archive/main.zip",
+  "preview_link": "https://nextjs-simple-blog-template.web.app/",
+  "repos": "https://github.com/webexpe13/blog-template-using-nextjs-typescript-tailwindcss",
+  "repos_api_url": "https://api.github.com/repos/webexpe13/blog-template-using-nextjs-typescript-tailwindcss",
+  "features": ["Responsive", "Blog"],
+  "id": "9bb747c1_65ap_4fb1_ac9b_b1704748021209",
+  "actions": []
+}

@@ -235,3 +235,11 @@ input[type='number']::-webkit-outer-spin-button {
 .conic-gradient-animation {
   transition: background 1s ease-in-out;
 }
+
+.fill-none {
+  fill: none;
+}
+
+.stroke-current {
+  stroke: currentColor;
+}

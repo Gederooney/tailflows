@@ -5,6 +5,7 @@ import WheelForm from './WheelForm'
 import ColorContext from './context'
 import { Color as IColor, WheelView as IWheelView } from './colors'
 import { makeShadeNoMode, makeShadesWithMode, nearest } from './colors.utils'
+// import JustShadeBtn from '@/components/shades/JustShadeBtn'
 import JustShadeBtn from '@/components/shades/JustShadeBtn'
 import { getWheelBg } from './colors.utils'
 
@@ -74,19 +75,19 @@ const Page = () => {
 
   return (
     <ColorContext.Provider value={{ state, setState }}>
-      <div className="max-w-7xl px-4 py-12 mx-auto">
-        <div className="flex justify-start gap-2 mb-4 items-center">
-          <h1 className="text-lg font-bold w-64 line-clamp-1">{derivedData.nearestColor.name}</h1>
+      <div className="px-4 py-12 mx-auto max-w-7xl">
+        <div className="flex items-center justify-start gap-2 mb-4">
+          <h1 className="w-64 text-lg font-bold line-clamp-1">{derivedData.nearestColor.name}</h1>
           <span
-            className="aspect-video w-16 rounded-md"
+            className="w-16 rounded-md aspect-video"
             style={{ backgroundColor: derivedData.nearestColor.value }}
           ></span>
-          <span className="aspect-video w-16 rounded-md flex items-center">
+          <span className="flex items-center w-16 rounded-md aspect-video">
             {state.hex.toUpperCase()}
           </span>
         </div>
-        <div className="flex flex-col lg:flex-row gap-4 items-center">
-          <div className="w-full lg:w-auto flex flex-col md:flex-row gap-3 flex-shrink-0 flex-grow-0 overflow-x-scroll md:overflow-hidden">
+        <div className="flex flex-col items-center gap-4 lg:flex-row">
+          <div className="flex flex-col flex-grow-0 flex-shrink-0 w-full gap-3 overflow-x-scroll lg:w-auto md:flex-row md:overflow-hidden">
             <WheelView />
             <WheelForm />
           </div>
@@ -95,7 +96,7 @@ const Page = () => {
               <div className="container">
                 <div className="w-full">
                   <h1>Nuances sans mode</h1>
-                  <div className="flex flex-wrap flex-shrink-0 flex-grow-0 gap-y-2 lg:gap-y-0">
+                  <div className="flex flex-wrap flex-grow-0 flex-shrink-0 gap-y-2 lg:gap-y-0">
                     {derivedData.shades.noMode.map((shade, index) => (
                       <div
                         key={`noModeShade-${shade}-hsl-${index}`}
@@ -112,10 +113,10 @@ const Page = () => {
         </div>
         <section className="py-12">
           <div className="container">
-            <div className="w-full flex flex-col lg:flex-row gap-4">
+            <div className="flex flex-col w-full gap-4 lg:flex-row">
               <div className="md:w-1/2">
                 <h1>Nuances en mode LCH</h1>
-                <div className="flex flex-wrap flex-shrink-0 flex-grow-0 gap-y-2 lg:gap-y-0">
+                <div className="flex flex-wrap flex-grow-0 flex-shrink-0 gap-y-2 lg:gap-y-0">
                   {derivedData.shades.lch.map((shade, index) => (
                     <div
                       key={`noModeShade-${shade}-lch-${index}`}
@@ -128,7 +129,7 @@ const Page = () => {
               </div>
               <div className="md:w-1/2">
                 <h1>Nuances en mode LAB</h1>
-                <div className="flex flex-wrap flex-shrink-0 flex-grow-0 gap-y-2 lg:gap-y-0">
+                <div className="flex flex-wrap flex-grow-0 flex-shrink-0 gap-y-2 lg:gap-y-0">
                   {derivedData.shades.lab.map((shade, index) => (
                     <div
                       key={`noModeShade-${shade}-lab-${index}`}
