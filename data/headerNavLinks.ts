@@ -10,7 +10,7 @@ const headerNavLinks = [
   },
   {
     href: '/composants-ui',
-    title: 'Composants',
+    title: 'UI/UX',
   },
   {
     href: '/templates-en-tailwindcss',

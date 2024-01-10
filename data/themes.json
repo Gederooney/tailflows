@@ -6,7 +6,7 @@
     "categories": ["Dashboard"],
     "author": "Flowbite",
     "description": ["Un Thème complet de flowbite"],
-    "popularity": 4.5,
+    "popularity": 12,
     "images": ["/static/images/themes/tailwind_dashboard.webp"],
     "tags": ["dashboard", "admin", "flowbite", "React", "Nextjs"],
     "download_link": "https://github.com/themesberg/flowbite-admin-dashboard/archive/main.zip",
@@ -89,6 +89,199 @@
       "Filtres de recherches",
       "Formulaires Dynamiques"
     ],
-    "id": "9bb747c1_65ap_4fb1_ac9b_b40b1553ed56"
+    "id": "9bb747c1_65ap_4fb1_ac9b_b40b1553ed56",
+    "actions": []
+  },
+  {
+    "created_at": 1704731707019,
+    "title": "Nordic Store",
+    "frameworks": ["Html", "Ecommerce", "Blog"],
+    "categories": ["Ecommerce"],
+    "colors": ["#DDC7BA", "#FFFFFF", "#EEECEB"],
+    "author": "Tailwind Toolbox",
+    "description": [
+      "Utilisez cet template Gratuit de tailwind toolbox pour la page d'accueil de votre prochain magasin en ligne"
+    ],
+    "popularity": 0,
+    "images": ["/static/images/themes/nordic-store.webp"],
+    "tags": ["Ecommerce", "Home page", "HTML"],
+    "download_link": "https://github.com/tailwindtoolbox/Nordic-Store/archive/main.zip",
+    "preview_link": "https://tailwindtoolbox.github.io/Nordic-Store/",
+    "repos": "https://github.com/tailwindtoolbox/Nordic-Store",
+    "repos_api_url": "https://api.github.com/repos/tailwindtoolbox/Nordic-Store",
+    "features": ["Page d'accueil de magasin en ligne"],
+    "id": "9bb747c1_65ap_4fb1_ac9b_b40b1557019",
+    "actions": []
+  },
+  {
+    "created_at": 1704733501421,
+    "title": "Impulse",
+    "frameworks": ["Netlify", "Eleventy", "Alpine.js", "Stripe"],
+    "categories": ["Ecommerce", "Blog"],
+    "colors": ["#374151", "#92400D", "#FFFFFF"],
+    "author": "digizultd",
+    "description": [
+      "Construit avec Netlify CMS, Eleventy, Alpine.js & TailwindCSS, Stripe. Idéal pour les blogs et les sites de commerce électronique, Impulse Netlify est fourni avec tout ce dont vous avez besoin pour commencer, y compris le support de NetlifyCMS."
+    ],
+    "popularity": 0,
+    "images": ["/static/images/themes/impulse.webp"],
+    "tags": ["Ecommerce", "Blog", "HTML", "Javascript", "Netlify"],
+    "download_link": "https://github.com/rosstopping/impulse-netlify/archive/main.zip",
+    "preview_link": "https://novolio-impulse.netlify.app/",
+    "repos": "https://github.com/rosstopping/impulse-netlify",
+    "repos_api_url": "https://api.github.com/repos/rosstopping/impulse-netlify",
+    "features": ["Responsive", "Ecommerce", "Blog", "Email", "Contact"],
+    "id": "9bb747c1_65ap_4fb1_ac9b_b1704733501421",
+    "actions": [
+      {
+        "title": "Déployer sur Netlify",
+        "link": "https://app.netlify.com/start/deploy?repository=https://github.com/rosstopping/impulse-netlify&stack=cms"
+      }
+    ]
+  },
+  {
+    "created_at": 1704736234960,
+    "title": "Page d'atterissage HUGO",
+    "frameworks": ["Hugo"],
+    "categories": [],
+    "colors": ["#2F374A", "#D63F8C", "#FFFFFF"],
+    "author": "ttntm",
+    "description": ["Une page d'atterrissage simple construite avec Hugo et Tailwind CSS."],
+    "popularity": 0,
+    "images": ["/static/images/themes/hugo-ttntm.webp"],
+    "tags": ["Ecommerce", "Blog", "HTML", "Javascript", "Netlify"],
+    "download_link": "https://github.com/ttntm/hugo-landing-page/archive/main.zip",
+    "preview_link": "https://awesome.ttntm.me/",
+    "repos": "https://github.com/ttntm/hugo-landing-page",
+    "repos_api_url": "https://api.github.com/repos/ttntm/hugo-landing-page",
+    "features": ["Responsive", "Ecommerce", "Blog", "Email", "Contact"],
+    "id": "9bb747c1_65ap_4fb1_ac9b_b1704734754635",
+    "actions": []
+  },
+  {
+    "created_at": 1704736234960,
+    "title": "portofolio risalamin.com",
+    "frameworks": ["Firebase", "NextJs", "React", "Typescript"],
+    "categories": ["Portfolio", "Blog"],
+    "colors": ["#ED70BE", "#B059F1", "#FFFFFF"],
+    "author": "ccrsxx",
+    "description": ["Site personnel construit avec Next.js, Tailwind CSS, Firestore et Vercel."],
+    "popularity": 0,
+    "images": ["/static/images/themes/risalamin.com.webp"],
+    "tags": ["Ecommerce", "Blog", "HTML", "Typscripte", "Vercel"],
+    "download_link": "https://github.com/ccrsxx/portofolio/archive/main.zip",
+    "preview_link": "https://risalamin.com/blog",
+    "repos": "https://github.com/ccrsxx/portofolio",
+    "repos_api_url": "https://api.github.com/repos/ccrsxx/portofolio",
+    "features": ["Responsive", "Blog", "", "SOmbre Et Claire"],
+    "id": "9bb747c1_65ap_4fb1_ac9b_b1704736234960",
+    "actions": []
+  },
+  {
+    "created_at": 1704737372458,
+    "title": "Fettle",
+    "frameworks": ["HTML", "Javascript"],
+    "categories": ["Landing"],
+    "colors": ["#193231", "#84A9B1", "#FFFFFF"],
+    "author": "",
+    "description": [
+      "Page d'accueil pour sale de gym",
+      "Cet theme fait partie de plusieurs themes dans le repos Github. Dans les layouts, copiez le html pour Fettle"
+    ],
+    "popularity": 10,
+    "images": ["/static/images/themes/fettle.webp"],
+    "tags": ["Landing Page", "Gym"],
+    "download_link": "https://github.com/rosstopping/tailwindcss-templates/archive/master.zip",
+    "preview_link": "https://tailwindcss-templates.tailflows.com/layouts/fettle.html",
+    "repos": "https://github.com/rosstopping/tailwindcss-templates",
+    "repos_api_url": "https://api.github.com/repos/rosstopping/tailwindcss-templates",
+    "features": ["Responsive", "Minimaliste"],
+    "id": "9bb747c1_65ap_4fb1_ac9b_b1704737372458",
+    "actions": []
+  },
+  {
+    "created_at": 1704739303818,
+    "title": "Full Screen",
+    "frameworks": ["HTML", "Javascript"],
+    "categories": ["Landing"],
+    "colors": ["#193231", "#84A9B1", "#FFFFFF"],
+    "author": "",
+    "description": [
+      "Page d'accueil pour sale de Photogrpahe",
+      "Cet theme fait partie de plusieurs themes dans le repos Github. Dans les layouts, copiez le html pour Fettle"
+    ],
+    "popularity": 5,
+    "images": ["/static/images/themes/fullscreen.webp"],
+    "tags": ["Landing Page", "Photographer", "Portfolio"],
+    "download_link": "https://github.com/rosstopping/tailwindcss-templates/archive/master.zip",
+    "preview_link": "https://tailwindcss-templates.tailflows.com/layouts/fullscreen.html",
+    "repos": "https://github.com/rosstopping/tailwindcss-templates",
+    "repos_api_url": "https://api.github.com/repos/rosstopping/tailwindcss-templates",
+    "features": ["Responsive", "Minimaliste"],
+    "id": "9bb747c1_65ap_4fb1_ac9b_b1704739303818",
+    "actions": []
+  },
+  {
+    "created_at": 1704744981208,
+    "title": "AstroWind",
+    "frameworks": ["Astro", "Typescript", "Mdx"],
+    "categories": ["Blog", "Portfolio", "Startup", "Mobile App", "Saas"],
+    "colors": ["#000000", "#BB5B72", "#0161EF", "#FFFFFF"],
+    "author": "Onwidget",
+    "description": [
+      "Un modèle gratuit utilisant Astro 4.0 et Tailwind CSS. Thème de démarrage Astro"
+    ],
+    "popularity": 15,
+    "images": ["/static/images/themes/astrowind.webp"],
+    "tags": ["Landing Page", "Blog", "Portfolio", "Astro Template", "Saas"],
+    "download_link": "https://github.com/onwidget/astrowind/archive/main.zip",
+    "preview_link": "https://astrowind.vercel.app/",
+    "repos": "https://github.com/onwidget/astrowind",
+    "repos_api_url": "https://api.github.com/repos/onwidget/astrowind",
+    "features": ["Responsive", "Minimaliste", "Composants", "Plusieurs pages", "Blog"],
+    "id": "9bb747c1_65ap_4fb1_ac9b_b1704744981208",
+    "actions": []
+  },
+  {
+    "created_at": 1704746968286,
+    "title": "Stone",
+    "frameworks": ["Astro", "Alpine.js"],
+    "categories": ["Blog", "Portfolio", "Startup", "Mobile App"],
+    "colors": ["#FFFFFF", "#D1CDCA", "#B39377", "#0C0A09"],
+    "author": "Onwidget",
+    "description": [
+      "Stone est un thème Astro gratuit et open-source, spécialement conçu pour les sites d'entreprise, de marketing, de SaaS et de startups."
+    ],
+    "popularity": 4,
+    "images": ["/static/images/themes/stone.webp"],
+    "tags": ["Landing Page", "Blog", "Start up", "Astro Template", "Saas"],
+    "download_link": "https://github.com/m6v3l9/astro-theme-stone/archive/main.zip",
+    "preview_link": "https://astro-theme-stone.vercel.app/",
+    "repos": "https://github.com/m6v3l9/astro-theme-stone",
+    "repos_api_url": "https://api.github.com/repos/m6v3l9/astro-theme-stone",
+    "features": ["Responsive", "Minimaliste", "Composants", "Plusieurs pages", "Blog"],
+    "id": "9bb747c1_65ap_4fb1_ac9b_b1704746968286",
+    "actions": []
+  },
+  {
+    "created_at": 1704748021209,
+    "title": "Next-blog",
+    "frameworks": ["Next.js", "TypeScript"],
+    "categories": ["Blog"],
+    "colors": ["#F1F5F9", "#E2E8F0", "#2463EB", "#000000"],
+    "author": "Webexpe13",
+    "description": [
+      "Ce projet est un modèle de blog simple utilisant Next.js, TypeScript et Tailwind CSS."
+    ],
+    "popularity": 3,
+    "images": ["/static/images/themes/next-blog.webp"],
+    "tags": ["Landing Page", "Blog"],
+    "download_link": "https://github.com/webexpe13/blog-template-using-nextjs-typescript-tailwindcss/archive/main.zip",
+    "preview_link": "https://nextjs-simple-blog-template.web.app/",
+    "repos": "https://github.com/webexpe13/blog-template-using-nextjs-typescript-tailwindcss",
+    "repos_api_url": "https://api.github.com/repos/webexpe13/blog-template-using-nextjs-typescript-tailwindcss",
+    "features": ["Responsive", "Blog"],
+    "id": "9bb747c1_65ap_4fb1_ac9b_b1704748021209",
+    "actions": []
   }
 ]
