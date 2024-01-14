@@ -27,10 +27,10 @@ export function makeShadesWithMode(hex: string, mode: ColorMode) {
   const darkest = chromaColor.set('hsl.l', 0.05)
 
   const shades = chroma
-    .scale([whitest, chromaColor.set('hsl.l', 0.5), darkest])
+    // @ts-ignore
     .mode(mode)
     .colors(22)
-  return shades.filter((_, index) => index % 2 === 0)
+  return shades.filter((_, index: number) => index % 2 === 0)
 }
 
 export function coordsToHue({ x, y }: Point) {
