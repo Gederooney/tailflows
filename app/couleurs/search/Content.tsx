@@ -11,6 +11,7 @@ import {
   nearest,
   getPosition,
   setColors,
+  getTailwindColorConfig,
 } from '../colors.utils'
 import JustShadeBtn from '@/components/shades/JustShadeBtn'
 import { getWheelBg } from '../colors.utils'
@@ -18,6 +19,8 @@ import NotFound from '@/app/not-found'
 import Color from 'color'
 import { ActionButton } from '@/components/button'
 import { ColorsExemple } from '@/components/demos'
+import { copyToClipboard } from '@/lib/utils'
+import { Section } from '@/components/Newsletter'
 
 const Content = ({ searchParams }: { searchParams: { color: string; name: string } }) => {
   const { color, name } = searchParams
@@ -134,7 +137,14 @@ const Content = ({ searchParams }: { searchParams: { color: string; name: string
                             </svg>
                           </span>
                         }
-                        actionMethod={() => {}}
+                        actionMethod={() => {
+                          const shadesObj = getTailwindColorConfig(derivedData.shades.noMode)
+                          copyToClipboard(
+                            JSON.stringify({
+                              '--nom-ici': shadesObj,
+                            })
+                          )
+                        }}
                       >
                         <span className="inline-block w-6">
                           <svg
@@ -180,6 +190,7 @@ const Content = ({ searchParams }: { searchParams: { color: string; name: string
                       <ActionButton classname="" sucessChildren={<></>} actionMethod={() => {}}>
                         <span>css</span>
                       </ActionButton>
+
                       <ActionButton
                         classname=""
                         sucessChildren={
@@ -193,7 +204,14 @@ const Content = ({ searchParams }: { searchParams: { color: string; name: string
                             </svg>
                           </span>
                         }
-                        actionMethod={() => {}}
+                        actionMethod={() => {
+                          const shadesObj = getTailwindColorConfig(derivedData.shades.lch)
+                          copyToClipboard(
+                            JSON.stringify({
+                              '--nom-ici': shadesObj,
+                            })
+                          )
+                        }}
                       >
                         <span className="inline-block w-6">
                           <svg
@@ -252,7 +270,14 @@ const Content = ({ searchParams }: { searchParams: { color: string; name: string
                             </svg>
                           </span>
                         }
-                        actionMethod={() => {}}
+                        actionMethod={() => {
+                          const shadesObj = getTailwindColorConfig(derivedData.shades.lab)
+                          copyToClipboard(
+                            JSON.stringify({
+                              '--nom-ici': shadesObj,
+                            })
+                          )
+                        }}
                       >
                         <span className="inline-block w-6">
                           <svg
@@ -296,6 +321,7 @@ const Content = ({ searchParams }: { searchParams: { color: string; name: string
         </div>
       </div>
       <ColorsExemple />
+      <Section />
     </ColorContext.Provider>
   )
 }

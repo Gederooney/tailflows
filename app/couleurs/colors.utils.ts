@@ -27,6 +27,7 @@ export function makeShadesWithMode(hex: string, mode: ColorMode) {
   const darkest = chromaColor.set('hsl.l', 0.05)
 
   const shades = chroma
+    .scale([whitest, chromaColor.set('hsl.l', 0.5), darkest])
     // @ts-ignore
     .mode(mode)
     .colors(22)
@@ -266,4 +267,18 @@ export function setColors(colors: string[]) {
     }
     root.setProperty(`--color-${shade}`, color)
   })
+}
+
+export function getCssString(shades: string[]) {}
+
+export function getTailwindColorConfig(shades: string[]) {
+  const obj = shades.reduce((acc, curr, index) => {
+    if (index === 0) acc['50'] = curr
+    else if (index === shades.length - 1) acc[(index - 1) * 100 + 50] = curr
+    else acc[index * 100] = curr
+
+    return acc
+  }, {})
+
+  return obj
 }

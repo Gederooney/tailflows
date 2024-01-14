@@ -4,11 +4,18 @@ import WheelView from './Wheel'
 import WheelForm from './WheelForm'
 import ColorContext from './context'
 import { Color as IColor, WheelView as IWheelView } from './colors'
-import { makeShadeNoMode, makeShadesWithMode, nearest } from './colors.utils'
+import {
+  getTailwindColorConfig,
+  makeShadeNoMode,
+  makeShadesWithMode,
+  nearest,
+} from './colors.utils'
 import JustShadeBtn from '@/components/shades/JustShadeBtn'
 import { getWheelBg, setColors } from './colors.utils'
 import { ColorsExemple } from '@/components/demos'
 import { ActionButton } from '@/components/button'
+import { copyToClipboard } from '@/lib/utils'
+import { Section } from '@/components/Newsletter'
 
 const Page = () => {
   const [state, setState] = useState<IColor & IWheelView>({
@@ -120,7 +127,14 @@ const Page = () => {
                             </svg>
                           </span>
                         }
-                        actionMethod={() => {}}
+                        actionMethod={() => {
+                          const shadesObj = getTailwindColorConfig(derivedData.shades.noMode)
+                          copyToClipboard(
+                            JSON.stringify({
+                              '--nom-ici': shadesObj,
+                            })
+                          )
+                        }}
                       >
                         <span className="inline-block w-6">
                           <svg
@@ -166,6 +180,7 @@ const Page = () => {
                       <ActionButton classname="" sucessChildren={<></>} actionMethod={() => {}}>
                         <span>css</span>
                       </ActionButton>
+
                       <ActionButton
                         classname=""
                         sucessChildren={
@@ -179,7 +194,14 @@ const Page = () => {
                             </svg>
                           </span>
                         }
-                        actionMethod={() => {}}
+                        actionMethod={() => {
+                          const shadesObj = getTailwindColorConfig(derivedData.shades.lch)
+                          copyToClipboard(
+                            JSON.stringify({
+                              '--nom-ici': shadesObj,
+                            })
+                          )
+                        }}
                       >
                         <span className="inline-block w-6">
                           <svg
@@ -238,7 +260,14 @@ const Page = () => {
                             </svg>
                           </span>
                         }
-                        actionMethod={() => {}}
+                        actionMethod={() => {
+                          const shadesObj = getTailwindColorConfig(derivedData.shades.lab)
+                          copyToClipboard(
+                            JSON.stringify({
+                              '--nom-ici': shadesObj,
+                            })
+                          )
+                        }}
                       >
                         <span className="inline-block w-6">
                           <svg
@@ -282,6 +311,7 @@ const Page = () => {
         </div>
       </div>
       <ColorsExemple />
+      <Section />
     </ColorContext.Provider>
   )
 }
