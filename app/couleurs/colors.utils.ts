@@ -1,4 +1,4 @@
-import colors from './colors.json' assert { type: 'json' }
+import colors from '@/data/colors.json'
 import nearestColor from 'nearest-color'
 import chroma from 'chroma-js'
 import Color from 'color'
