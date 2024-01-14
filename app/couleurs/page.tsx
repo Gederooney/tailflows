@@ -1,13 +1,14 @@
 'use client'
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect, useRef } from 'react'
 import WheelView from './Wheel'
 import WheelForm from './WheelForm'
 import ColorContext from './context'
 import { Color as IColor, WheelView as IWheelView } from './colors'
 import { makeShadeNoMode, makeShadesWithMode, nearest } from './colors.utils'
-// import JustShadeBtn from '@/components/shades/JustShadeBtn'
 import JustShadeBtn from '@/components/shades/JustShadeBtn'
-import { getWheelBg } from './colors.utils'
+import { getWheelBg, setColors } from './colors.utils'
+import { ColorsExemple } from '@/components/demos'
+import { ActionButton } from '@/components/button'
 
 const Page = () => {
   const [state, setState] = useState<IColor & IWheelView>({
@@ -65,13 +66,17 @@ const Page = () => {
     const nearestColor = nearest(state.hex)
     const [h, s, l] = Object.values(state.mode.hsl)
     const shades = {
-      noMode: makeShadeNoMode([h, s * 100, l * 100], 30),
+      noMode: makeShadeNoMode([h, s * 100, l * 100], 11),
       lch: makeShadesWithMode(state.hex, 'lch'),
       lab: makeShadesWithMode(state.hex, 'hsv'),
     }
 
     return { nearestColor, shades }
   }, [state])
+
+  useEffect(() => {
+    setColors(derivedData.shades.noMode)
+  }, [derivedData])
 
   return (
     <ColorContext.Provider value={{ state, setState }}>
@@ -95,12 +100,176 @@ const Page = () => {
             <div className="">
               <div className="container">
                 <div className="w-full">
-                  <h1>Nuances sans mode</h1>
-                  <div className="flex flex-wrap flex-grow-0 flex-shrink-0 gap-y-2 lg:gap-y-0">
+                  <div className="flex flex-row justify-between">
+                    <h3>Nuances sans mode</h3>
+                    <div className="flex flex-row items-center gap-2">
+                      <span className="text-xs">copiez:</span>
+                      <ActionButton classname="" sucessChildren={<></>} actionMethod={() => {}}>
+                        <span>css</span>
+                      </ActionButton>
+                      <ActionButton
+                        classname=""
+                        sucessChildren={
+                          <span className="inline-block w-6 text-green-500">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="w-auto h-4 fill-current"
+                              viewBox="0 -960 960 960"
+                            >
+                              <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" />
+                            </svg>
+                          </span>
+                        }
+                        actionMethod={() => {}}
+                      >
+                        <span className="inline-block w-6">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 54 33"
+                            className="w-auto h-3"
+                          >
+                            <g clipPath="url(#prefix__clip0)">
+                              <path
+                                fill="#38bdf8"
+                                fillRule="evenodd"
+                                d="M27 0c-7.2 0-11.7 3.6-13.5 10.8 2.7-3.6 5.85-4.95 9.45-4.05 2.054.513 3.522 2.004 5.147 3.653C30.744 13.09 33.808 16.2 40.5 16.2c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C36.756 3.11 33.692 0 27 0zM13.5 16.2C6.3 16.2 1.8 19.8 0 27c2.7-3.6 5.85-4.95 9.45-4.05 2.054.514 3.522 2.004 5.147 3.653C17.244 29.29 20.308 32.4 27 32.4c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C23.256 19.31 20.192 16.2 13.5 16.2z"
+                                clipRule="evenodd"
+                              />
+                            </g>
+                            <defs>
+                              <clipPath id="prefix__clip0">
+                                <path fill="#fff" d="M0 0h54v32.4H0z" />
+                              </clipPath>
+                            </defs>
+                          </svg>
+                        </span>
+                      </ActionButton>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap justify-end flex-grow-0 flex-shrink-0 gap-y-2 lg:gap-y-0">
                     {derivedData.shades.noMode.map((shade, index) => (
                       <div
                         key={`noModeShade-${shade}-hsl-${index}`}
-                        className="w-1/10 shrink-0 grow-0 lg:p-1"
+                        className="w-[9%] shrink-0 grow-0 lg:p-1"
+                      >
+                        <JustShadeBtn colorHex={shade} />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="w-full">
+                  <div className="flex flex-row justify-between">
+                    <h3>Nuances en mode LCH</h3>
+                    <div className="flex flex-row items-center gap-2">
+                      <span className="text-xs">copiez:</span>
+                      <ActionButton classname="" sucessChildren={<></>} actionMethod={() => {}}>
+                        <span>css</span>
+                      </ActionButton>
+                      <ActionButton
+                        classname=""
+                        sucessChildren={
+                          <span className="inline-block w-6 text-green-500">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="w-auto h-4 fill-current"
+                              viewBox="0 -960 960 960"
+                            >
+                              <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" />
+                            </svg>
+                          </span>
+                        }
+                        actionMethod={() => {}}
+                      >
+                        <span className="inline-block w-6">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 54 33"
+                            className="w-auto h-3"
+                          >
+                            <g clipPath="url(#prefix__clip0)">
+                              <path
+                                fill="#38bdf8"
+                                fillRule="evenodd"
+                                d="M27 0c-7.2 0-11.7 3.6-13.5 10.8 2.7-3.6 5.85-4.95 9.45-4.05 2.054.513 3.522 2.004 5.147 3.653C30.744 13.09 33.808 16.2 40.5 16.2c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C36.756 3.11 33.692 0 27 0zM13.5 16.2C6.3 16.2 1.8 19.8 0 27c2.7-3.6 5.85-4.95 9.45-4.05 2.054.514 3.522 2.004 5.147 3.653C17.244 29.29 20.308 32.4 27 32.4c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C23.256 19.31 20.192 16.2 13.5 16.2z"
+                                clipRule="evenodd"
+                              />
+                            </g>
+                            <defs>
+                              <clipPath id="prefix__clip0">
+                                <path fill="#fff" d="M0 0h54v32.4H0z" />
+                              </clipPath>
+                            </defs>
+                          </svg>
+                        </span>
+                      </ActionButton>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap justify-end flex-grow-0 flex-shrink-0 gap-y-2 lg:gap-y-0">
+                    {derivedData.shades.lch.map((shade, index) => (
+                      <div
+                        key={`lchShade-${shade}-lch-${index}`}
+                        className="w-[9%] shrink-0 grow-0 lg:p-1"
+                      >
+                        <JustShadeBtn colorHex={shade} />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="w-full">
+                  <div className="flex flex-row justify-between">
+                    <h3>Nuances en mode LAB</h3>
+                    <div className="flex flex-row items-center gap-2">
+                      <span className="text-xs">copiez:</span>
+                      <ActionButton classname="" sucessChildren={<></>} actionMethod={() => {}}>
+                        <span>css</span>
+                      </ActionButton>
+                      <ActionButton
+                        classname=""
+                        sucessChildren={
+                          <span className="inline-block w-6 text-green-500">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="w-auto h-4 fill-current"
+                              viewBox="0 -960 960 960"
+                            >
+                              <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" />
+                            </svg>
+                          </span>
+                        }
+                        actionMethod={() => {}}
+                      >
+                        <span className="inline-block w-6">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 54 33"
+                            className="w-auto h-3"
+                          >
+                            <g clipPath="url(#prefix__clip0)">
+                              <path
+                                fill="#38bdf8"
+                                fillRule="evenodd"
+                                d="M27 0c-7.2 0-11.7 3.6-13.5 10.8 2.7-3.6 5.85-4.95 9.45-4.05 2.054.513 3.522 2.004 5.147 3.653C30.744 13.09 33.808 16.2 40.5 16.2c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C36.756 3.11 33.692 0 27 0zM13.5 16.2C6.3 16.2 1.8 19.8 0 27c2.7-3.6 5.85-4.95 9.45-4.05 2.054.514 3.522 2.004 5.147 3.653C17.244 29.29 20.308 32.4 27 32.4c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C23.256 19.31 20.192 16.2 13.5 16.2z"
+                                clipRule="evenodd"
+                              />
+                            </g>
+                            <defs>
+                              <clipPath id="prefix__clip0">
+                                <path fill="#fff" d="M0 0h54v32.4H0z" />
+                              </clipPath>
+                            </defs>
+                          </svg>
+                        </span>
+                      </ActionButton>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap justify-end flex-grow-0 flex-shrink-0 gap-y-2 lg:gap-y-0">
+                    {derivedData.shades.lab.map((shade, index) => (
+                      <div
+                        key={`lab-${shade}-lab-${index}`}
+                        className="w-[9%] shrink-0 grow-0 lg:p-1"
                       >
                         <JustShadeBtn colorHex={shade} />
                       </div>
@@ -111,39 +280,8 @@ const Page = () => {
             </div>
           </section>
         </div>
-        <section className="py-12">
-          <div className="container">
-            <div className="flex flex-col w-full gap-4 lg:flex-row">
-              <div className="md:w-1/2">
-                <h1>Nuances en mode LCH</h1>
-                <div className="flex flex-wrap flex-grow-0 flex-shrink-0 gap-y-2 lg:gap-y-0">
-                  {derivedData.shades.lch.map((shade, index) => (
-                    <div
-                      key={`noModeShade-${shade}-lch-${index}`}
-                      className="w-1/10 shrink-0 grow-0 lg:p-1"
-                    >
-                      <JustShadeBtn colorHex={shade} />
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="md:w-1/2">
-                <h1>Nuances en mode LAB</h1>
-                <div className="flex flex-wrap flex-grow-0 flex-shrink-0 gap-y-2 lg:gap-y-0">
-                  {derivedData.shades.lab.map((shade, index) => (
-                    <div
-                      key={`noModeShade-${shade}-lab-${index}`}
-                      className="w-1/10 shrink-0 grow-0 lg:p-1"
-                    >
-                      <JustShadeBtn colorHex={shade} />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
       </div>
+      <ColorsExemple />
     </ColorContext.Provider>
   )
 }

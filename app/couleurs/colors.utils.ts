@@ -10,7 +10,7 @@ export const nearest = nearestColor.from(
 )
 
 export function makeShadeNoMode(hslArray: number[], stepsCount: number): string[] {
-  const interval = 98 / stepsCount
+  const interval = 97 / stepsCount
   const shades: number[][] = []
 
   for (let i = stepsCount; i > 0; i--) {
@@ -23,11 +23,14 @@ export function makeShadeNoMode(hslArray: number[], stepsCount: number): string[
 
 export function makeShadesWithMode(hex: string, mode: ColorMode) {
   const chromaColor = chroma(hex)
-  const whitest = chromaColor.set('hsl.l', 0.98)
-  const blackest = chromaColor.set('hsl.l', 0.05)
-  // @ts-ignore
-  const shades = chroma.scale([whitest, chromaColor, blackest]).mode(mode).colors(30)
-  return shades
+  const whitest = chromaColor.set('hsl.l', 0.97)
+  const darkest = chromaColor.set('hsl.l', 0.05)
+
+  const shades = chroma
+    .scale([whitest, chromaColor.set('hsl.l', 0.5), darkest])
+    .mode(mode)
+    .colors(22)
+  return shades.filter((_, index) => index % 2 === 0)
 }
 
 export function coordsToHue({ x, y }: Point) {
@@ -248,4 +251,19 @@ export function hueSatToCoordinates(h: number, s: number): Point {
   const y = Math.round(Math.cos(angleRad) * s)
 
   return { x, y }
+}
+
+export function setColors(colors: string[]) {
+  const root = document.documentElement.style
+  colors.forEach((color, index) => {
+    let shade: number
+    if (index === 0) {
+      shade = 50
+    } else if (index === colors.length - 1) {
+      shade = 950
+    } else {
+      shade = index * 100
+    }
+    root.setProperty(`--color-${shade}`, color)
+  })
 }

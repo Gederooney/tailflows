@@ -3456,6 +3456,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/esprima@npm:^4.0.6":
+  version: 4.0.6
+  resolution: "@types/esprima@npm:4.0.6"
+  dependencies:
+    "@types/estree": "*"
+  checksum: 36c5ca24a6506eb5742e8c66c0372918a859535022a5605f1e898b66e4941b91384f43c6aeb5c8ca1ed984af469dfabd22e784e833175bb1ab25af40787466ba
+  languageName: node
+  linkType: hard
+
 "@types/estree-jsx@npm:^1.0.0":
   version: 1.0.3
   resolution: "@types/estree-jsx@npm:1.0.3"
@@ -7761,7 +7770,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jiti@npm:^1.19.1":
+"jiti@npm:^1.19.1, jiti@npm:^1.21.0":
   version: 1.21.0
   resolution: "jiti@npm:1.21.0"
   bin:
@@ -12189,6 +12198,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"sucrase@npm:^3.35.0":
+  version: 3.35.0
+  resolution: "sucrase@npm:3.35.0"
+  dependencies:
+    "@jridgewell/gen-mapping": ^0.3.2
+    commander: ^4.0.0
+    glob: ^10.3.10
+    lines-and-columns: ^1.1.6
+    mz: ^2.7.0
+    pirates: ^4.0.1
+    ts-interface-checker: ^0.1.9
+  bin:
+    sucrase: bin/sucrase
+    sucrase-node: bin/sucrase-node
+  checksum: 9fc5792a9ab8a14dcf9c47dcb704431d35c1cdff1d17d55d382a31c2e8e3063870ad32ce120a80915498486246d612e30cda44f1624d9d9a10423e1a43487ad1
+  languageName: node
+  linkType: hard
+
 "superagent@npm:3.8.1":
   version: 3.8.1
   resolution: "superagent@npm:3.8.1"
@@ -12292,6 +12319,7 @@ __metadata:
     "@tailwindcss/forms": ^0.5.4
     "@tailwindcss/typography": ^0.5.9
     "@types/chroma-js": ^2.4.3
+    "@types/esprima": ^4.0.6
     "@types/mdx": ^2.0.5
     "@types/prettier": ^3.0.0
     "@types/react": ^18.2.14
@@ -12309,11 +12337,13 @@ __metadata:
     eslint-config-next: 14.0.3
     eslint-config-prettier: ^8.8.0
     eslint-plugin-prettier: ^5.0.0
+    esprima: ^4.0.1
     github-slugger: ^1.4.0
     gray-matter: ^4.0.2
     husky: ^8.0.0
     image-size: 1.0.0
     install: ^0.13.0
+    jiti: ^1.21.0
     lint-staged: ^13.0.0
     nearest-color: ^0.4.4
     next: 14.0.3
@@ -12338,6 +12368,7 @@ __metadata:
     remark: ^14.0.2
     remark-gfm: ^3.0.1
     remark-math: ^5.1.1
+    sucrase: ^3.35.0
     tailwindcss: ^3.3.3
     typescript: ^5.1.3
     unist-util-visit: ^4.1.0

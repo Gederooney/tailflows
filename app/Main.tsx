@@ -1,4 +1,5 @@
 import Hero from '@/components/Hero'
+import { Section } from '@/components/Newsletter'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -84,8 +85,8 @@ export default function Home({ posts }) {
   return (
     <>
       <Hero />
-      <ColorGeneratorIntro />
-      <IconsIntro />
+      {/* <IconsIntro /> */}
+      <Section />
     </>
   )
 }
