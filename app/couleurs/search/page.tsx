@@ -15,10 +15,10 @@ export async function generateMetadata(
     metadataBase: new URL(siteMetadata.siteUrl),
     title: `${searchParams.color}-${searchParams.name} | ${siteMetadata.title}`,
 
-    description: `Générer des nuances de couleurs à partir d'une couleur de base pour vos projets web et mobiles. Copiez le code HEX, RGB ou HSL pour une intégration rapide dans vos projets React, Vue, Angular, Svelte, etc.`,
+    description: `Générateur de nuances tailwindcss pour ${searchParams.color}. Copiez le resultat et coller dans votre fichier tailwind.config pour avancer plus rapidement dans vos projets web`,
     openGraph: {
-      title: siteMetadata.title,
-      description: siteMetadata.description,
+      title: `${searchParams.color}-${searchParams.name} | ${siteMetadata.title}`,
+      description: `Générateur de nuances tailwindcss pour ${searchParams.color}. Copiez le resultat et coller dans votre fichier tailwind.config pour avancer plus rapidement dans vos projets web`,
       url: './',
       siteName: siteMetadata.title,
       images: [siteMetadata.socialBanner],

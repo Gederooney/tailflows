@@ -27,7 +27,7 @@ export async function generateMetadata(
     description: `Customisez l'icon ${icon?.name.replaceAll(
       '-',
       ' '
-    )} selon vos goûts et copiez le code svg ou jsx avec les classes tailwind pour utiliser dans vos projets rapidement. Choissisez une couleur de votre choix, definissez la largeur, la hauteur et la taille des contours.`,
+    )} selon vos goûts et copiez le code svg ou jsx avec les classes tailwindcss pour utiliser dans vos projets rapidement. Choissisez une couleur de votre choix, definissez la largeur, la hauteur et la taille des contours.`,
     keywords: [...icon.tags, 'icon', 'tailwindcss icons', 'utility class icons'],
     openGraph: {
       title: siteMetadata.title,

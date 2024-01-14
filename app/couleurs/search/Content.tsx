@@ -5,6 +5,7 @@ import WheelForm from '../WheelForm'
 import ColorContext from '../context'
 import { Color as IColor, WheelView as IWheelView } from '../colors'
 import {
+  getWheelBg,
   hueSatToCoordinates,
   makeShadeNoMode,
   makeShadesWithMode,
@@ -14,8 +15,7 @@ import {
   getTailwindColorConfig,
 } from '../colors.utils'
 import JustShadeBtn from '@/components/shades/JustShadeBtn'
-import { getWheelBg } from '../colors.utils'
-import NotFound from '@/app/not-found'
+import { notFound } from 'next/navigation'
 import Color from 'color'
 import { ActionButton } from '@/components/button'
 import { ColorsExemple } from '@/components/demos'
@@ -95,7 +95,7 @@ const Content = ({ searchParams }: { searchParams: { color: string; name: string
     setColors(derivedData.shades.noMode)
   }, [derivedData])
 
-  if (!color.length) return <NotFound />
+  if (!color.length) return notFound()
 
   return (
     <ColorContext.Provider value={{ state, setState }}>
