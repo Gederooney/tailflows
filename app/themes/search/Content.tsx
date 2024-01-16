@@ -97,7 +97,6 @@ function removeBodyOverflow() {
 }
 
 function addBodyOverflow() {
-  alert('called')
   document.body.style.overflow = ''
 }
 
