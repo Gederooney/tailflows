@@ -2,10 +2,10 @@ import React from 'react'
 
 const Section = () => {
   return (
-    <div className="pt-20 bg-white">
+    <div className="py-20 bg-white dark:bg-secondary-900">
       <div className="relative sm:py-16">
         <div aria-hidden="true" className="hidden sm:block">
-          <div className="absolute inset-y-0 left-0 w-1/2 bg-gray-50 rounded-r-3xl"></div>
+          <div className="absolute inset-y-0 left-0 w-1/2 bg-primary-50 dark:bg-secondary-400 rounded-r-3xl"></div>
 
           <svg
             className="absolute top-0 hidden -ml-3 left-1/2"

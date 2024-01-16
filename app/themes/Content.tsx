@@ -4,6 +4,7 @@ import Search from '@/components/Search/Index'
 import themes from '@/data/themes.json'
 import Image from 'next/image'
 import Link from 'next/link'
+import { Section as Newsletter } from '@/components/Newsletter'
 
 const Hero = () => (
   <section className="py-12 lg:py-16">
@@ -46,7 +47,13 @@ const Content = () => {
                     className="p-6 overflow-hidden basis-1/3"
                   >
                     <div className="w-full overflow-hidden rounded-md">
-                      <Image src={theme.images[0]} width={1600} height={1200} alt="" />
+                      <Image
+                        src={theme.images[0]}
+                        width={1600}
+                        height={1200}
+                        alt={theme.title}
+                        loading="lazy"
+                      />
                     </div>
                     <h1 className="my-4 font-medium line-clamp-1">{theme.title}</h1>
                     <div className="flex flex-grow-0 flex-shrink-0 gap-2 overflow-auto flex-nowrap">
@@ -65,6 +72,7 @@ const Content = () => {
           </div>
         </div>
       </section>
+      <Newsletter />
     </>
   )
 }
