@@ -44,7 +44,7 @@ const Content = () => {
                   <Link
                     href={`/themes/search?${params.toString()}`}
                     key={theme.title}
-                    className="p-6 overflow-hidden basis-1/3"
+                    className="p-6 overflow-hidden md:basis-1/3"
                   >
                     <div className="w-full overflow-hidden rounded-md">
                       <Image

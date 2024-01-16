@@ -318,12 +318,54 @@
     "popularity": 8,
     "images": ["/static/images/themes/ecommerce-template-tailwind-1.webp"],
     "tags": ["Template", "Ecommerce"],
-    "download_link": "https://github.com/Kamona-WD/kwd-dashboard/archive/main.zip",
+    "download_link": "https://github.com/fajar7xx/ecommerce-template-tailwind-1/archive/main.zip",
     "preview_link": "https://ecommerce-template-tailwind-1.tailflows.com/",
-    "repos": "https://github.com/Kamona-WD/kwd-dashboard",
-    "repos_api_url": "https://api.github.com/repos/Kamona-WD/kwd-dashboard",
+    "repos": "https://github.com/fajar7xx/ecommerce-template-tailwind-1",
+    "repos_api_url": "https://api.github.com/repos/fajar7xx/ecommerce-template-tailwind-1",
     "features": [],
     "id": "9bb747c1_65ap_4fb1_ac9b_b1705413289526",
+    "actions": []
+  },
+  {
+    "created_at": 1705416988661,
+    "title": "Stablo",
+    "frameworks": ["NextJs", "Sanity"],
+    "categories": ["Blog"],
+    "colors": ["#000000", "#ffffff"],
+    "author": "Web3Templates",
+    "description": [
+      "Stablo est un template de blog JAMStack créé avec Next.js, Tailwind CSS et Sanity CMS par Web3Templates. Il se décline en versions gratuites et professionnelles. Ce modèle intègre les technologies modernes du développement web pour offrir une expérience utilisateur fluide et une esthétique soignée. Il est conçu pour être facilement personnalisable, rendant la création et la gestion de contenu de blog efficaces et intuitives, tout en bénéficiant des avantages de performance et de SEO offerts par JAMStack"
+    ],
+    "popularity": 11,
+    "images": ["/static/images/themes/stablo.webp"],
+    "tags": ["Blog", "Portfolio"],
+    "download_link": "https://github.com/web3templates/stablo/archive/main.zip",
+    "preview_link": "https://stablo.web3templates.com/",
+    "repos": "https://github.com/web3templates/stablo",
+    "repos_api_url": "https://api.github.com/repos/web3templates/stablo",
+    "features": [],
+    "id": "9bb747c1_65ap_4fb1_ac9b_b1705416988661",
+    "actions": []
+  },
+  {
+    "created_at": 1705417902782,
+    "title": "Landing-Page",
+    "frameworks": ["Html"],
+    "categories": ["Landing"],
+    "colors": ["#D64066", "#D87E5A", "#ffffff"],
+    "author": "TailwindToolbox",
+    "description": [
+      "Le Modèle de démarrage Tailwind CSS - Landing Page est un modèle préconçu utilisant TailwindCSS, idéal pour mettre en place rapidement une page d'atterrissage attrayante et réactive. Ce modèle utilise l'approche utilitaire de TailwindCSS, ce qui permet une personnalisation facile et un développement rapide. Il convient à divers projets nécessitant une page d'atterrissage au look professionnel sans codage CSS approfondi. Avec sa structure HTML et TailwindCSS, il offre une base solide pour les développeurs à développer et à adapter à leurs besoins spécifiques."
+    ],
+    "popularity": 2,
+    "images": ["/static/images/themes/tailwindtoolbox-landingstarter.webp"],
+    "tags": ["Starter", "Landing", "Landing page", "template", "page d'atterrissage"],
+    "download_link": "https://github.com/tailwindtoolbox/Landing-Page/archive/main.zip",
+    "preview_link": "https://tailwindtoolbox.github.io/Landing-Page",
+    "repos": "https://github.com/tailwindtoolbox/Landing-Page",
+    "repos_api_url": "https://api.github.com/repos/tailwindtoolbox/Landing-Page",
+    "features": [],
+    "id": "9bb747c1_65ap_4fb1_ac9b_b1705417902782",
     "actions": []
   }
 ]

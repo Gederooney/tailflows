@@ -1,21 +1,21 @@
 {
-  "created_at": 1704748021209,
-  "title": "Next-blog",
-  "frameworks": ["Next.js", "TypeScript"],
-  "categories": ["Blog"],
-  "colors": ["#F1F5F9", "#E2E8F0", "#2463EB", "#000000"],
-  "author": "Webexpe13",
+  "created_at": 1705417902782,
+  "title": "Landing-Page",
+  "frameworks": ["Html"],
+  "categories": ["Landing"],
+  "colors": ["#D64066", "#D87E5A", "#ffffff"],
+  "author": "TailwindToolbox",
   "description": [
-    "Ce projet est un modèle de blog simple utilisant Next.js, TypeScript et Tailwind CSS."
+    "Le Modèle de démarrage Tailwind CSS - Landing Page est un modèle préconçu utilisant TailwindCSS, idéal pour mettre en place rapidement une page d'atterrissage attrayante et réactive. Ce modèle utilise l'approche utilitaire de TailwindCSS, ce qui permet une personnalisation facile et un développement rapide. Il convient à divers projets nécessitant une page d'atterrissage au look professionnel sans codage CSS approfondi. Avec sa structure HTML et TailwindCSS, il offre une base solide pour les développeurs à développer et à adapter à leurs besoins spécifiques."
   ],
-  "popularity": 4,
-  "images": ["/static/images/themes/next-blog.webp"],
-  "tags": ["Landing Page", "Blog"],
-  "download_link": "https://github.com/webexpe13/blog-template-using-nextjs-typescript-tailwindcss/archive/main.zip",
-  "preview_link": "https://nextjs-simple-blog-template.web.app/",
-  "repos": "https://github.com/webexpe13/blog-template-using-nextjs-typescript-tailwindcss",
-  "repos_api_url": "https://api.github.com/repos/webexpe13/blog-template-using-nextjs-typescript-tailwindcss",
-  "features": ["Responsive", "Blog"],
-  "id": "9bb747c1_65ap_4fb1_ac9b_b1704748021209",
+  "popularity": 2,
+  "images": ["/static/images/themes/tailwindtoolbox-landingstarter.webp"],
+  "tags": ["Starter", "Landing", "Landing page", "template", "page d'atterrissage"],
+  "download_link": "https://github.com/tailwindtoolbox/Landing-Page/archive/main.zip",
+  "preview_link": "https://tailwindtoolbox.github.io/Landing-Page",
+  "repos": "https://github.com/tailwindtoolbox/Landing-Page",
+  "repos_api_url": "https://api.github.com/repos/tailwindtoolbox/Landing-Page",
+  "features": [],
+  "id": "9bb747c1_65ap_4fb1_ac9b_b1705417902782",
   "actions": []
 }
