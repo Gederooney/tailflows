@@ -1,5 +1,26 @@
 [
   {
+    "created_at": 1705411003524,
+    "title": "kwd dashboard",
+    "frameworks": ["AlpineJS", "HTML"],
+    "categories": ["Dashboard"],
+    "colors": ["#0D9488", "#15B8A6", "#2DD4BF", "#ffffff"],
+    "author": "Kamona-WD",
+    "description": [
+      "Ce modèle de tableau de bord, conçu avec TailwindCSS et AlpineJS, se distingue par sa pleine réactivité et son adaptabilité à différents dispositifs. Il offre une variété de styles de pages et d'options de navigation, enrichissant l'expérience utilisateur. De plus, il intègre un thème sombre et clair, permettant une personnalisation visuelle selon vos préférences. Cet outil est idéal pour ceux qui cherchent une solution élégante et fonctionnelle pour leurs projets web, garantissant une interface utilisateur intuitive et une interaction fluide."
+    ],
+    "popularity": 2,
+    "images": ["/static/images/themes/kwd-dashboard.webp"],
+    "tags": ["Admin", "Dashboard", "Tableau de board"],
+    "download_link": "https://github.com/Kamona-WD/kwd-dashboard/archive/main.zip",
+    "preview_link": "https://kamona-wd.github.io/kwd-dashboard/index.html",
+    "repos": "https://github.com/Kamona-WD/kwd-dashboard",
+    "repos_api_url": "https://api.github.com/repos/Kamona-WD/kwd-dashboard",
+    "features": ["Plusieurs page", "Theme Sombre et claire", "Responsive", "Monochrome"],
+    "id": "9bb747c1_65ap_4fb1_ac9b_b1705411003524",
+    "actions": []
+  },
+  {
     "created_at": 1704145905897,
     "title": "Dashboard admin de flowbite",
     "frameworks": ["Nextjs", "React", "javascript", "HUGO", "Webpack"],
@@ -282,6 +303,27 @@
     "repos_api_url": "https://api.github.com/repos/webexpe13/blog-template-using-nextjs-typescript-tailwindcss",
     "features": ["Responsive", "Blog"],
     "id": "9bb747c1_65ap_4fb1_ac9b_b1704748021209",
+    "actions": []
+  },
+  {
+    "created_at": 1705413289526,
+    "title": "Ecommerce Template v1",
+    "frameworks": ["HTML", "TailwindCSS v3"],
+    "categories": ["Ecommerce"],
+    "colors": ["#1F2937", "#F53D57", "#ffffff"],
+    "author": "fajar7xx",
+    "description": [
+      "Ce template de commerce électronique utilisant TailwindCSS 3 (2022) est une solution contemporaine pour créer des boutiques en ligne. Ce modèle tire parti des dernières fonctionnalités de TailwindCSS pour offrir un design moderne et réactif. Il est conçu pour améliorer l'expérience utilisateur avec une interface intuitive et une navigation fluide, facilitant l'achat en ligne. Ce modèle est idéal pour les entreprises souhaitant se lancer dans l'e-commerce avec un site à l'apparence professionnelle et optimisé pour les moteurs de recherche, tout en étant facile à personnaliser"
+    ],
+    "popularity": 8,
+    "images": ["/static/images/themes/ecommerce-template-tailwind-1.webp"],
+    "tags": ["Template", "Ecommerce"],
+    "download_link": "https://github.com/Kamona-WD/kwd-dashboard/archive/main.zip",
+    "preview_link": "https://ecommerce-template-tailwind-1.tailflows.com/",
+    "repos": "https://github.com/Kamona-WD/kwd-dashboard",
+    "repos_api_url": "https://api.github.com/repos/Kamona-WD/kwd-dashboard",
+    "features": [],
+    "id": "9bb747c1_65ap_4fb1_ac9b_b1705413289526",
     "actions": []
   }
 ]
