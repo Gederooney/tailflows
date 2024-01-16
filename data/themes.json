@@ -318,12 +318,33 @@
     "popularity": 8,
     "images": ["/static/images/themes/ecommerce-template-tailwind-1.webp"],
     "tags": ["Template", "Ecommerce"],
-    "download_link": "https://github.com/Kamona-WD/kwd-dashboard/archive/main.zip",
+    "download_link": "https://github.com/fajar7xx/ecommerce-template-tailwind-1/archive/main.zip",
     "preview_link": "https://ecommerce-template-tailwind-1.tailflows.com/",
-    "repos": "https://github.com/Kamona-WD/kwd-dashboard",
-    "repos_api_url": "https://api.github.com/repos/Kamona-WD/kwd-dashboard",
+    "repos": "https://github.com/fajar7xx/ecommerce-template-tailwind-1",
+    "repos_api_url": "https://api.github.com/repos/fajar7xx/ecommerce-template-tailwind-1",
     "features": [],
     "id": "9bb747c1_65ap_4fb1_ac9b_b1705413289526",
+    "actions": []
+  },
+  {
+    "created_at": 1705416988661,
+    "title": "Stablo",
+    "frameworks": ["NextJs", "Sanity"],
+    "categories": ["Blog"],
+    "colors": ["#000000", "#ffffff"],
+    "author": "Web3Templates",
+    "description": [
+      "Stablo est un template de blog JAMStack créé avec Next.js, Tailwind CSS et Sanity CMS par Web3Templates. Il se décline en versions gratuites et professionnelles. Ce modèle intègre les technologies modernes du développement web pour offrir une expérience utilisateur fluide et une esthétique soignée. Il est conçu pour être facilement personnalisable, rendant la création et la gestion de contenu de blog efficaces et intuitives, tout en bénéficiant des avantages de performance et de SEO offerts par JAMStack"
+    ],
+    "popularity": 2,
+    "images": ["/static/images/themes/stablo.webp"],
+    "tags": ["Blog", "Portfolio"],
+    "download_link": "https://github.com/web3templates/stablo/archive/main.zip",
+    "preview_link": "https://stablo.web3templates.com/",
+    "repos": "https://github.com/web3templates/stablo",
+    "repos_api_url": "https://api.github.com/repos/web3templates/stablo",
+    "features": [],
+    "id": "9bb747c1_65ap_4fb1_ac9b_b1705416988661",
     "actions": []
   }
 ]
