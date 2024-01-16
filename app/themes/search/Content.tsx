@@ -37,7 +37,9 @@ const formatDateToFrench = (dateString: string) => {
 const Preview = ({ siteUrl, handleClose }: { siteUrl: string; handleClose: () => void }) => {
   useEffect(() => {
     window.addEventListener('popstate', addBodyOverflow)
-    return window.removeEventListener('popstate', addBodyOverflow)
+    return () => {
+      window.removeEventListener('popstate', addBodyOverflow)
+    }
   }, [])
 
   return (
@@ -95,6 +97,7 @@ function removeBodyOverflow() {
 }
 
 function addBodyOverflow() {
+  alert('called')
   document.body.style.overflow = ''
 }
 
@@ -202,7 +205,7 @@ const Content = (theme: Props) => {
                 </div>
                 <div className="flex gap-4 my-2">
                   <span className="font-medium">License:</span>
-                  <span>{theme.reposInfos?.license.key.toUpperCase()}</span>
+                  <span>{theme.reposInfos?.license?.key.toUpperCase()}</span>
                 </div>
                 <div className="flex items-center gap-4 my-2">
                   <span className="font-medium">Category:</span>
