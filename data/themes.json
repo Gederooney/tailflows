@@ -346,5 +346,26 @@
     "features": [],
     "id": "9bb747c1_65ap_4fb1_ac9b_b1705416988661",
     "actions": []
+  },
+  {
+    "created_at": 1705417902782,
+    "title": "Landing-Page",
+    "frameworks": ["Html"],
+    "categories": ["Landing"],
+    "colors": ["#D64066", "#D87E5A", "#ffffff"],
+    "author": "TailwindToolbox",
+    "description": [
+      "Le Modèle de démarrage Tailwind CSS - Landing Page est un modèle préconçu utilisant TailwindCSS, idéal pour mettre en place rapidement une page d'atterrissage attrayante et réactive. Ce modèle utilise l'approche utilitaire de TailwindCSS, ce qui permet une personnalisation facile et un développement rapide. Il convient à divers projets nécessitant une page d'atterrissage au look professionnel sans codage CSS approfondi. Avec sa structure HTML et TailwindCSS, il offre une base solide pour les développeurs à développer et à adapter à leurs besoins spécifiques."
+    ],
+    "popularity": 2,
+    "images": ["/static/images/themes/tailwindtoolbox-landingstarter.webp"],
+    "tags": ["Starter", "Landing", "Landing page", "template", "page d'atterrissage"],
+    "download_link": "https://github.com/tailwindtoolbox/Landing-Page/archive/main.zip",
+    "preview_link": "https://tailwindtoolbox.github.io/Landing-Page",
+    "repos": "https://github.com/tailwindtoolbox/Landing-Page",
+    "repos_api_url": "https://api.github.com/repos/tailwindtoolbox/Landing-Page",
+    "features": [],
+    "id": "9bb747c1_65ap_4fb1_ac9b_b1705417902782",
+    "actions": []
   }
 ]
