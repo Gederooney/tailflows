@@ -34,68 +34,74 @@ const formatDateToFrench = (dateString: string) => {
   return `${dayName} ${day} ${month} ${year}`
 }
 
-const Preview = ({ siteUrl, handleClose }: { siteUrl: string; handleClose: () => void }) => (
-  <section className="fixed inset-0 z-50 shadow bg-gray-50">
-    <header className="" style={{ height: '50px' }}>
-      <div className="h-full">
-        <div className="flex items-center justify-center h-full gap-2">
-          <button className="flex w-8 h-8 p-2 border rounded-md shadow">
-            <svg viewBox="0 0 576 512" className="w-full h-full fill-current">
-              <path d="M64 0C28.7 0 0 28.7 0 64V352c0 35.3 28.7 64 64 64H240l-10.7 32H160c-17.7 0-32 14.3-32 32s14.3 32 32 32H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H346.7L336 416H512c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H64zM512 64V352H64V64H512z" />
-            </svg>
-          </button>
-          <button className="flex w-8 h-8 p-2 border rounded-md shadow">
-            <svg viewBox="0 0 24 24" className="w-full h-full fill-current">
-              <path d="M18.5 0h-14C3.12 0 2 1.12 2 2.5v19C2 22.88 3.12 24 4.5 24h14c1.38 0 2.5-1.12 2.5-2.5v-19C21 1.12 19.88 0 18.5 0zm-7 23c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm7.5-4H4V3h15v16z" />
-            </svg>
-          </button>
-          <button className="flex w-8 h-8 p-2 border rounded-md shadow">
-            <svg viewBox="0 0 24 24" className="w-full h-full fill-current">
-              <path d="M0 0h24v24H0z" fill="none" />
-              <path d="M15.5 1h-8C6.12 1 5 2.12 5 3.5v17C5 21.88 6.12 23 7.5 23h8c1.38 0 2.5-1.12 2.5-2.5v-17C18 2.12 16.88 1 15.5 1zm-4 21c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4.5-4H7V4h9v14z" />
-            </svg>
-          </button>
-        </div>
-      </div>
-    </header>
-    <div className="relative w-full shadow" style={{ height: 'calc(100% - 50px)' }}>
-      <iframe
-        src={siteUrl}
-        title="title"
-        className="rounded-t-2xl"
-        width="100%"
-        height="100%"
-        style={{ height: '100%', width: '100%' }}
-      ></iframe>
-      <button
-        className="absolute top-0 right-0 w-8 h-8 p-2 -translate-x-1/2 -translate-y-1/2 border rounded-full bg-gray-50 border-secondary-950/20"
-        onClick={(e) => {
-          handleClose()
-          addBodyOverflow()
-        }}
-      >
-        <svg viewBox="0 0 24 24" className="w-full h-full fill-current">
-          <path d="M0 0h24v24H0z" fill="none" />
-          <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
-        </svg>
-      </button>
-    </div>
-  </section>
-)
+const Preview = ({ siteUrl, handleClose }: { siteUrl: string; handleClose: () => void }) => {
+  useEffect(() => {
+    window.addEventListener('popstate', addBodyOverflow)
+    return window.removeEventListener('popstate', addBodyOverflow)
+  }, [])
 
-const removeBodyOverflow = () => {
-  const body = document.querySelector('body')
-  if (body) body.style.overflow = 'hidden'
+  return (
+    <section className="fixed inset-0 z-50 shadow bg-gray-50">
+      <header className="" style={{ height: '50px' }}>
+        <div className="h-full">
+          <div className="flex items-center justify-center h-full gap-2">
+            <button className="flex w-8 h-8 p-2 border rounded-md shadow">
+              <svg viewBox="0 0 576 512" className="w-full h-full fill-current">
+                <path d="M64 0C28.7 0 0 28.7 0 64V352c0 35.3 28.7 64 64 64H240l-10.7 32H160c-17.7 0-32 14.3-32 32s14.3 32 32 32H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H346.7L336 416H512c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H64zM512 64V352H64V64H512z" />
+              </svg>
+            </button>
+            <button className="flex w-8 h-8 p-2 border rounded-md shadow">
+              <svg viewBox="0 0 24 24" className="w-full h-full fill-current">
+                <path d="M18.5 0h-14C3.12 0 2 1.12 2 2.5v19C2 22.88 3.12 24 4.5 24h14c1.38 0 2.5-1.12 2.5-2.5v-19C21 1.12 19.88 0 18.5 0zm-7 23c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm7.5-4H4V3h15v16z" />
+              </svg>
+            </button>
+            <button className="flex w-8 h-8 p-2 border rounded-md shadow">
+              <svg viewBox="0 0 24 24" className="w-full h-full fill-current">
+                <path d="M0 0h24v24H0z" fill="none" />
+                <path d="M15.5 1h-8C6.12 1 5 2.12 5 3.5v17C5 21.88 6.12 23 7.5 23h8c1.38 0 2.5-1.12 2.5-2.5v-17C18 2.12 16.88 1 15.5 1zm-4 21c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4.5-4H7V4h9v14z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </header>
+      <div className="relative w-full shadow" style={{ height: 'calc(100% - 50px)' }}>
+        <iframe
+          src={siteUrl}
+          title="title"
+          className="rounded-t-2xl"
+          width="100%"
+          height="100%"
+          style={{ height: '100%', width: '100%' }}
+        ></iframe>
+        <button
+          className="absolute top-0 right-0 w-8 h-8 p-2 -translate-x-1/2 -translate-y-1/2 border rounded-full bg-gray-50 border-secondary-950/20"
+          onClick={(e) => {
+            handleClose()
+            addBodyOverflow()
+          }}
+        >
+          <svg viewBox="0 0 24 24" className="w-full h-full fill-current">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+          </svg>
+        </button>
+      </div>
+    </section>
+  )
 }
 
-const addBodyOverflow = () => {
-  const body = document.querySelector('body')
-  if (body) body.style.overflow = 'auto'
+function removeBodyOverflow() {
+  document.body.style.overflow = 'hidden'
+}
+
+function addBodyOverflow() {
+  document.body.style.overflow = ''
 }
 
 type Props = Theme & {
   reposInfos: ReposInfos
 }
+
 const Content = (theme: Props) => {
   const [showPreview, setShowPreview] = useState(false)
 

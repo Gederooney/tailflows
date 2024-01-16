@@ -336,7 +336,7 @@
     "description": [
       "Stablo est un template de blog JAMStack créé avec Next.js, Tailwind CSS et Sanity CMS par Web3Templates. Il se décline en versions gratuites et professionnelles. Ce modèle intègre les technologies modernes du développement web pour offrir une expérience utilisateur fluide et une esthétique soignée. Il est conçu pour être facilement personnalisable, rendant la création et la gestion de contenu de blog efficaces et intuitives, tout en bénéficiant des avantages de performance et de SEO offerts par JAMStack"
     ],
-    "popularity": 2,
+    "popularity": 11,
     "images": ["/static/images/themes/stablo.webp"],
     "tags": ["Blog", "Portfolio"],
     "download_link": "https://github.com/web3templates/stablo/archive/main.zip",
