@@ -4,6 +4,7 @@ import { Icon } from '../page'
 import Prism from 'prismjs'
 import { format as prettier } from 'prettier/standalone'
 import pluginHtml from 'prettier/plugins/html'
+
 import {
   copyToClipboard,
   downloadSVGFile,
@@ -14,7 +15,7 @@ import {
 } from '@/lib/utils'
 import { ActionButton } from '@/components/button'
 
-const highlightSvg = (str: string) => {
+export const highlightCode = (str: string) => {
   const formattedSvg = Prism.highlight(str, Prism.languages.html, 'html')
   return formattedSvg
 }
@@ -26,7 +27,7 @@ const formatCode = (str: string) =>
     printWidth: 100,
   })
     .then((data) => {
-      const html = highlightSvg(data)
+      const html = highlightCode(data)
       return html
     })
     .catch((e) => {

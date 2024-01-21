@@ -8,6 +8,8 @@ import { Section as Newsletter } from '@/components/Newsletter'
 
 const Hero = () => (
   <section className="py-12 lg:py-16">
+
+    
     <div className="px-6">
       <h1 className="hidden max-w-xl mx-auto text-3xl font-extrabold text-center lg:max-w-4xl md:block lg:text-5xl">
         Nous avons une liste exhaustive des templates tailwindcss gratuits

@@ -286,6 +286,15 @@ input[type='number']::-webkit-outer-spin-button {
   grid-area: i;
 }
 
+.box-shadow-grid {
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-areas:
+    'a'
+    'b'
+    'c'
+    ;
+}
+
 @media (min-width: 768px) {
   .demos-grid {
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -295,6 +304,12 @@ input[type='number']::-webkit-outer-spin-button {
       'g g f f'
       'c h h h'
       'd i i i';
+  }
+  .box-shadow-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      'a b'
+      'c d';
   }
 }
 
@@ -306,5 +321,10 @@ input[type='number']::-webkit-outer-spin-button {
       'a a a a c d'
       'e e f f g g'
       'h h h i i i';
+  }
+
+  .box-shadow-grid {
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-areas: 'a a b b b b c c c';
   }
 }

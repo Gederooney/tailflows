@@ -2,10 +2,10 @@ import React from 'react'
 
 const Section = () => {
   return (
-    <div className="py-20 bg-white dark:bg-secondary-900">
+    <div className="py-20 bg-white dark:bg-secondary-900 max-w-7xl">
       <div className="relative sm:py-16">
         <div aria-hidden="true" className="hidden sm:block">
-          <div className="absolute inset-y-0 left-0 w-1/2 bg-primary-50 dark:bg-secondary-400 rounded-r-3xl"></div>
+          <div className="absolute inset-y-0 left-0 w-1/2 bg-gray-100 dark:bg-secondary-400 rounded-r-3xl"></div>
 
           <svg
             className="absolute top-0 hidden -ml-3 left-1/2"
@@ -55,7 +55,7 @@ const Section = () => {
                 data-newsletter-target="form"
                 className="sm:mx-auto sm:max-w-lg sm:flex"
                 action="#"
-                accept-charset="UTF-8"
+                acceptCharset="UTF-8"
                 method="post"
               >
                 <input
@@ -85,11 +85,11 @@ const Section = () => {
                       width="44"
                       height="44"
                       viewBox="0 0 24 24"
-                      stroke-width="1.5"
+                      strokeWidth="1.5"
                       stroke="currentColor"
                       fill="none"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     >
                       <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                       <line x1="10" y1="14" x2="21" y2="3"></line>
