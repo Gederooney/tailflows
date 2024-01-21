@@ -1,0 +1,907 @@
+[
+  {
+    "name": "Standard",
+    "shadow": "[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]",
+    "vanillaCSS": "0px 2px 3px -1px rgba(0,0,0,0.1), 0px 1px 0px 0px rgba(25,28,33,0.02), 0px 0px 0px 1px rgba(25,28,33,0.08)"
+  },
+  {
+    "name": "Aesthetic",
+    "shadow": "[0_3px_10px_rgba(0,0,0,0.2)]",
+    "vanillaCSS": "0 3px 10px rgba(0,0,0,0.2)"
+  },
+  {
+    "name": "Demure",
+    "shadow": "[0_35px_60px_-15px_rgba(0,0,0,0.3)]",
+    "vanillaCSS": "0px 35px 60px -15px rgba(0,0,0,0.3)"
+  },
+  {
+    "name": "Jubilation",
+    "shadow": "[rgba(0,_0,_0,_0.24)_0px_3px_8px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.24) 0px 3px 8px"
+  },
+  {
+    "name": "Derek",
+    "shadow": "[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)]",
+    "vanillaCSS": "0px 0px 0px 1px rgba(0, 0, 0, 0.06), 0px 1px 1px -0.5px rgba(0, 0, 0, 0.06), 0px 3px 3px -1.5px rgba(0, 0, 0, 0.06), 0px 6px 6px -3px rgba(0, 0, 0, 0.06), 0px 12px 12px -6px rgba(0, 0, 0, 0.06), 0px 24px 24px -12px rgba(0, 0, 0, 0.06)"
+  },
+  {
+    "name": "Sprightly",
+    "shadow": "[rgba(0,_0,_0,_0.25)_0px_25px_50px_-12px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.25) 0px 25px 50px -12px"
+  },
+  {
+    "name": "Vigorous",
+    "shadow": "[0_20px_50px_rgba(8,_112,_184,_0.7)]",
+    "vanillaCSS": "0 20px 50px rgba(8, 112, 184, 0.7)"
+  },
+  {
+    "name": "Euphonious",
+    "shadow": "[0px_10px_1px_rgba(221,_221,_221,_1),_0_10px_20px_rgba(204,_204,_204,_1)]",
+    "vanillaCSS": "0px 10px 1px rgba(221, 221, 221, 1), 0 10px 20px rgba(204, 204, 204, 1)"
+  },
+  {
+    "name": "Crescendo",
+    "shadow": "[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)]",
+    "vanillaCSS": "-10px -10px 30px 4px rgba(0,0,0,0.1), 10px 10px 30px 4px rgba(45,78,255,0.15)"
+  },
+  {
+    "name": "Mondegreen",
+    "shadow": "[5px_5px_rgba(0,_98,_90,_0.4),_10px_10px_rgba(0,_98,_90,_0.3),_15px_15px_rgba(0,_98,_90,_0.2),_20px_20px_rgba(0,_98,_90,_0.1),_25px_25px_rgba(0,_98,_90,_0.05)]",
+    "vanillaCSS": "5px 5px rgba(0, 98, 90, 0.4), 10px 10px rgba(0, 98, 90, 0.3), 15px 15px rgba(0, 98, 90, 0.2), 20px 20px rgba(0, 98, 90, 0.1), 25px 25px rgba(0, 98, 90, 0.05)"
+  },
+  {
+    "name": "Nimble",
+    "shadow": "[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]",
+    "vanillaCSS": "4.0px 8.0px 8.0px rgba(0,0,0,0.38)"
+  },
+  {
+    "name": "Next.js",
+    "shadow": "[0_8px_30px_rgba(0,0,0,0.12)]",
+    "vanillaCSS": "0 8px 30px rgba(0,0,0,0.12)"
+  },
+  {
+    "name": "Champagne",
+    "shadow": "[inset_-12px_-8px_40px_#46464620]",
+    "vanillaCSS": "inset -12px -8px 40px #46464620"
+  },
+  {
+    "name": "India",
+    "shadow": "[0_10px_20px_rgba(240,_46,_170,_0.7)]",
+    "vanillaCSS": "0 10px 20px rgba(240, 46, 170, 0.7)"
+  },
+  {
+    "name": "Warm",
+    "shadow": "[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]",
+    "vanillaCSS": "rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px"
+  },
+  {
+    "name": "Intense",
+    "shadow": "[rgba(0,_0,_0,_0.4)_0px_30px_90px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.4) 0px 30px 90px"
+  },
+  {
+    "name": "Subtle",
+    "shadow": "[rgba(0,_0,_0,_0.2)_0px_60px_40px_-7px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.2) 0px 60px 40px -7px"
+  },
+  {
+    "name": "Ragnarok",
+    "shadow": "[0_2.8px_2.2px_rgba(0,_0,_0,_0.034),_0_6.7px_5.3px_rgba(0,_0,_0,_0.048),_0_12.5px_10px_rgba(0,_0,_0,_0.06),_0_22.3px_17.9px_rgba(0,_0,_0,_0.072),_0_41.8px_33.4px_rgba(0,_0,_0,_0.086),_0_100px_80px_rgba(0,_0,_0,_0.12)]",
+    "vanillaCSS": "0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12)"
+  },
+  {
+    "name": "Sleek",
+    "shadow": "[rgba(13,_38,_76,_0.19)_0px_9px_20px]",
+    "vanillaCSS": "rgba(13, 38, 76, 0.19) 0px 9px 20px"
+  },
+  {
+    "name": "Gondor",
+    "shadow": "[rgba(7,_65,_210,_0.1)_0px_9px_30px]",
+    "vanillaCSS": "rgba(7, 65, 210, 0.1) 0px 9px 30px"
+  },
+  {
+    "name": "Studydesk",
+    "shadow": "[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)]",
+    "vanillaCSS": "0px 4px 16px rgba(17,17,26,0.1), 0px 8px 24px rgba(17,17,26,0.1), 0px 16px 56px rgba(17,17,26,0.1)"
+  },
+  {
+    "name": "PurpleStamp",
+    "shadow": "[5px_5px_0px_0px_rgba(109,40,217)]",
+    "vanillaCSS": "5px 5px 0px 0px rgba(109,40,217)"
+  },
+  {
+    "name": "Stiglitz",
+    "shadow": "[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px]",
+    "vanillaCSS": "rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px"
+  },
+  {
+    "name": "Brutal",
+    "vanillaCSS": "rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset",
+    "shadow": "[rgba(6,_24,_44,_0.4)_0px_0px_0px_2px,_rgba(6,_24,_44,_0.65)_0px_4px_6px_-1px,_rgba(255,_255,_255,_0.08)_0px_1px_0px_inset]"
+  },
+  {
+    "name": "Intense",
+    "vanillaCSS": "rgba(17, 17, 26, 0.1) 0px 0px 16px",
+    "shadow": "[rgba(17,_17,_26,_0.1)_0px_0px_16px]"
+  },
+  {
+    "name": "#0",
+    "shadow": "[rgba(149,_157,_165,_0.2)_0px_8px_24px]",
+    "vanillaCSS": "rgba(149, 157, 165, 0.2) 0px 8px 24px"
+  },
+  {
+    "name": "#1",
+    "shadow": "[rgba(100,_100,_111,_0.2)_0px_7px_29px_0px]",
+    "vanillaCSS": "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px"
+  },
+  {
+    "name": "#2",
+    "shadow": "[rgba(0,_0,_0,_0.15)_1.95px_1.95px_2.6px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px"
+  },
+  {
+    "name": "#3",
+    "shadow": "[rgba(0,_0,_0,_0.35)_0px_5px_15px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.35) 0px 5px 15px"
+  },
+  {
+    "name": "#4",
+    "shadow": "[rgba(0,_0,_0,_0.16)_0px_1px_4px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.16) 0px 1px 4px"
+  },
+  {
+    "name": "#5",
+    "shadow": "[rgba(0,_0,_0,_0.24)_0px_3px_8px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.24) 0px 3px 8px"
+  },
+  {
+    "name": "#6",
+    "shadow": "[rgba(99,_99,_99,_0.2)_0px_2px_8px_0px]",
+    "vanillaCSS": "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"
+  },
+  {
+    "name": "#7",
+    "shadow": "[rgba(0,_0,_0,_0.16)_0px_1px_4px,_rgba(51,_51,_51)_0px_0px_0px_3px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.16) 0px 1px 4px, rgba(51, 51, 51) 0px 0px 0px 3px"
+  },
+  {
+    "name": "#8",
+    "shadow": "[rgba(0,_0,_0,_0.02)_0px_1px_3px_0px,_rgba(27,_31,_35,_0.15)_0px_0px_0px_1px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px"
+  },
+  {
+    "name": "#9",
+    "shadow": "[rgba(0,_0,_0,_0.1)_0px_4px_12px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.1) 0px 4px 12px"
+  },
+  {
+    "name": "#10",
+    "shadow": "[rgba(0,_0,_0,_0.25)_0px_54px_55px,_rgba(0,_0,_0,_0.12)_0px_-12px_30px,_rgba(0,_0,_0,_0.12)_0px_4px_6px,_rgba(0,_0,_0,_0.17)_0px_12px_13px,_rgba(0,_0,_0,_0.09)_0px_-3px_5px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px"
+  },
+  {
+    "name": "#11",
+    "shadow": "[rgba(0,_0,_0,_0.05)_0px_6px_24px_0px,_rgba(0,_0,_0,_0.08)_0px_0px_0px_1px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px"
+  },
+  {
+    "name": "#12",
+    "shadow": "[rgba(0,_0,_0,_0.16)_0px_10px_36px_0px,_rgba(0,_0,_0,_0.06)_0px_0px_0px_1px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px"
+  },
+  {
+    "name": "#13",
+    "shadow": "[rgba(17,_12,_46,_0.15)_0px_48px_100px_0px]",
+    "vanillaCSS": "rgba(17, 12, 46, 0.15) 0px 48px 100px 0px"
+  },
+  {
+    "name": "#14",
+    "shadow": "[rgba(50,_50,_93,_0.25)_0px_50px_100px_-20px,_rgba(0,_0,_0,_0.3)_0px_30px_60px_-30px,_rgba(10,_37,_64,_0.35)_0px_-2px_6px_0px_inset]",
+    "vanillaCSS": "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset"
+  },
+  {
+    "name": "#15",
+    "shadow": "[rgba(255,_255,_255,_0.1)_0px_1px_1px_0px_inset,_rgba(50,_50,_93,_0.25)_0px_50px_100px_-20px,_rgba(0,_0,_0,_0.3)_0px_30px_60px_-30px]",
+    "vanillaCSS": "rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px"
+  },
+  {
+    "name": "#16",
+    "shadow": "[rgba(50,_50,_93,_0.25)_0px_50px_100px_-20px,_rgba(0,_0,_0,_0.3)_0px_30px_60px_-30px]",
+    "vanillaCSS": "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px"
+  },
+  {
+    "name": "#17",
+    "shadow": "[rgba(50,_50,_93,_0.25)_0px_50px_100px_-20px,_rgba(0,_0,_0,_0.3)_0px_30px_60px_-30px]",
+    "vanillaCSS": "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px"
+  },
+  {
+    "name": "#18",
+    "shadow": "[rgba(50,_50,_93,_0.25)_0px_13px_27px_-5px,_rgba(0,_0,_0,_0.3)_0px_8px_16px_-8px]",
+    "vanillaCSS": "rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px"
+  },
+  {
+    "name": "#19",
+    "shadow": "[rgba(50,_50,_93,_0.25)_0px_2px_5px_-1px,_rgba(0,_0,_0,_0.3)_0px_1px_3px_-1px]",
+    "vanillaCSS": "rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px"
+  },
+  {
+    "name": "#20",
+    "shadow": "[rgba(38,_57,_77)_0px_20px_30px_-10px]",
+    "vanillaCSS": "rgba(38, 57, 77) 0px 20px 30px -10px"
+  },
+  {
+    "name": "#21",
+    "shadow": "[rgba(6,_24,_44,_0.4)_0px_0px_0px_2px,_rgba(6,_24,_44,_0.65)_0px_4px_6px_-1px,_rgba(255,_255,_255,_0.08)_0px_1px_0px_inset]",
+    "vanillaCSS": "rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset"
+  },
+  {
+    "name": "#22",
+    "shadow": "[rgba(50,_50,_93,_0.25)_0px_6px_12px_-2px,_rgba(0,_0,_0,_0.3)_0px_3px_7px_-3px]",
+    "vanillaCSS": "rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px"
+  },
+  {
+    "name": "#23",
+    "shadow": "[rgba(50,_50,_93,_0.25)_0px_13px_27px_-5px,_rgba(0,_0,_0,_0.3)_0px_8px_16px_-8px]",
+    "vanillaCSS": "rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px"
+  },
+  {
+    "name": "#24",
+    "shadow": "[rgba(50,_50,_93,_0.25)_0px_30px_60px_-12px,_rgba(0,_0,_0,_0.3)_0px_18px_36px_-18px]",
+    "vanillaCSS": "rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px"
+  },
+  {
+    "name": "#25",
+    "shadow": "[rgba(50,_50,_93,_0.25)_0px_30px_60px_-12px_inset,_rgba(0,_0,_0,_0.3)_0px_18px_36px_-18px_inset]",
+    "vanillaCSS": "rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset"
+  },
+  {
+    "name": "#26",
+    "shadow": "[rgba(50,_50,_93,_0.25)_0px_50px_100px_-20px,_rgba(0,_0,_0,_0.3)_0px_30px_60px_-30px]",
+    "vanillaCSS": "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px"
+  },
+  {
+    "name": "#27",
+    "shadow": "[rgba(0,_0,_0,_0.12)_0px_1px_3px,_rgba(0,_0,_0,_0.24)_0px_1px_2px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px"
+  },
+  {
+    "name": "#28",
+    "shadow": "[rgba(0,_0,_0,_0.16)_0px_3px_6px,_rgba(0,_0,_0,_0.23)_0px_3px_6px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px"
+  },
+  {
+    "name": "#29",
+    "shadow": "[rgba(0,_0,_0,_0.19)_0px_10px_20px,_rgba(0,_0,_0,_0.23)_0px_6px_6px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px"
+  },
+  {
+    "name": "#30",
+    "shadow": "[rgba(0,_0,_0,_0.25)_0px_14px_28px,_rgba(0,_0,_0,_0.22)_0px_10px_10px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px"
+  },
+  {
+    "name": "#31",
+    "shadow": "[rgba(0,_0,_0,_0.3)_0px_19px_38px,_rgba(0,_0,_0,_0.22)_0px_15px_12px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px"
+  },
+  {
+    "name": "#32",
+    "shadow": "[rgba(60,_64,_67,_0.3)_0px_1px_2px_0px,_rgba(60,_64,_67,_0.15)_0px_2px_6px_2px]",
+    "vanillaCSS": "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px"
+  },
+  {
+    "name": "#33",
+    "shadow": "[rgba(60,_64,_67,_0.3)_0px_1px_2px_0px,_rgba(60,_64,_67,_0.15)_0px_1px_3px_1px]",
+    "vanillaCSS": "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px"
+  },
+  {
+    "name": "#34",
+    "shadow": "[rgba(0,_0,_0,_0.05)_0px_0px_0px_1px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.05) 0px 0px 0px 1px"
+  },
+  {
+    "name": "#35",
+    "shadow": "[rgba(0,_0,_0,_0.05)_0px_1px_2px_0px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.05) 0px 1px 2px 0px"
+  },
+  {
+    "name": "#36",
+    "shadow": "[rgba(0,_0,_0,_0.1)_0px_1px_3px_0px,_rgba(0,_0,_0,_0.06)_0px_1px_2px_0px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px"
+  },
+  {
+    "name": "#37",
+    "shadow": "[rgba(0,_0,_0,_0.1)_0px_4px_6px_-1px,_rgba(0,_0,_0,_0.06)_0px_2px_4px_-1px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px"
+  },
+  {
+    "name": "#38",
+    "shadow": "[rgba(0,_0,_0,_0.1)_0px_10px_15px_-3px,_rgba(0,_0,_0,_0.05)_0px_4px_6px_-2px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px"
+  },
+  {
+    "name": "#39",
+    "shadow": "[rgba(0,_0,_0,_0.1)_0px_20px_25px_-5px,_rgba(0,_0,_0,_0.04)_0px_10px_10px_-5px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px"
+  },
+  {
+    "name": "#40",
+    "shadow": "[rgba(0,_0,_0,_0.25)_0px_25px_50px_-12px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.25) 0px 25px 50px -12px"
+  },
+  {
+    "name": "#41",
+    "shadow": "[rgba(0,_0,_0,_0.06)_0px_2px_4px_0px_inset]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset"
+  },
+  {
+    "name": "#42",
+    "shadow": "[rgba(0,_0,_0,_0.1)_0px_0px_5px_0px,_rgba(0,_0,_0,_0.1)_0px_0px_1px_0px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px"
+  },
+  {
+    "name": "#43",
+    "shadow": "[rgba(0,_0,_0,_0.07)_0px_1px_2px,_rgba(0,_0,_0,_0.07)_0px_2px_4px,_rgba(0,_0,_0,_0.07)_0px_4px_8px,_rgba(0,_0,_0,_0.07)_0px_8px_16px,_rgba(0,_0,_0,_0.07)_0px_16px_32px,_rgba(0,_0,_0,_0.07)_0px_32px_64px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px"
+  },
+  {
+    "name": "#44",
+    "shadow": "[rgba(0,_0,_0,_0.09)_0px_2px_1px,_rgba(0,_0,_0,_0.09)_0px_4px_2px,_rgba(0,_0,_0,_0.09)_0px_8px_4px,_rgba(0,_0,_0,_0.09)_0px_16px_8px,_rgba(0,_0,_0,_0.09)_0px_32px_16px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px"
+  },
+  {
+    "name": "#45",
+    "shadow": "[rgba(0,_0,_0,_0.2)_0px_18px_50px_-10px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.2) 0px 18px 50px -10px"
+  },
+  {
+    "name": "#46",
+    "shadow": "[rgba(0,_0,_0,_0.1)_0px_10px_50px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.1) 0px 10px 50px"
+  },
+  {
+    "name": "#47",
+    "shadow": "[rgba(0,_0,_0,_0.04)_0px_3px_5px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.04) 0px 3px 5px"
+  },
+  {
+    "name": "#48",
+    "shadow": "[rgba(240,_46,_170,_0.4)_-5px_5px,_rgba(240,_46,_170,_0.3)_-10px_10px,_rgba(240,_46,_170,_0.2)_-15px_15px,_rgba(240,_46,_170,_0.1)_-20px_20px,_rgba(240,_46,_170,_0.05)_-25px_25px]",
+    "vanillaCSS": "rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px"
+  },
+  {
+    "name": "#49",
+    "shadow": "[rgba(240,_46,_170,_0.4)_0px_5px,_rgba(240,_46,_170,_0.3)_0px_10px,_rgba(240,_46,_170,_0.2)_0px_15px,_rgba(240,_46,_170,_0.1)_0px_20px,_rgba(240,_46,_170,_0.05)_0px_25px]",
+    "vanillaCSS": "rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px"
+  },
+  {
+    "name": "#50",
+    "shadow": "[rgba(240,_46,_170,_0.4)_5px_5px,_rgba(240,_46,_170,_0.3)_10px_10px,_rgba(240,_46,_170,_0.2)_15px_15px,_rgba(240,_46,_170,_0.1)_20px_20px,_rgba(240,_46,_170,_0.05)_25px_25px]",
+    "vanillaCSS": "rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px"
+  },
+  {
+    "name": "#51",
+    "shadow": "[rgba(0,_0,_0,_0.07)_0px_1px_1px,_rgba(0,_0,_0,_0.07)_0px_2px_2px,_rgba(0,_0,_0,_0.07)_0px_4px_4px,_rgba(0,_0,_0,_0.07)_0px_8px_8px,_rgba(0,_0,_0,_0.07)_0px_16px_16px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px"
+  },
+  {
+    "name": "#52",
+    "shadow": "[rgba(67,_71,_85,_0.27)_0px_0px_0.25em,_rgba(90,_125,_188,_0.05)_0px_0.25em_1em]",
+    "vanillaCSS": "rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em"
+  },
+  {
+    "name": "#53",
+    "shadow": "[rgba(0,_0,_0,_0.1)_0px_1px_2px_0px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.1) 0px 1px 2px 0px"
+  },
+  {
+    "name": "#54",
+    "shadow": "[rgba(27,_31,_35,_0.04)_0px_1px_0px,_rgba(255,_255,_255,_0.25)_0px_1px_0px_inset]",
+    "vanillaCSS": "rgba(27, 31, 35, 0.04) 0px 1px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px inset"
+  },
+  {
+    "name": "#55",
+    "shadow": "[rgba(3,_102,_214,_0.3)_0px_0px_0px_3px]",
+    "vanillaCSS": "rgba(3, 102, 214, 0.3) 0px 0px 0px 3px"
+  },
+  {
+    "name": "#56",
+    "shadow": "[rgba(14,_30,_37,_0.12)_0px_2px_4px_0px,_rgba(14,_30,_37,_0.32)_0px_2px_16px_0px]",
+    "vanillaCSS": "rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px"
+  },
+  {
+    "name": "#57",
+    "shadow": "[rgba(0,_0,_0,_0.2)_0px_12px_28px_0px,_rgba(0,_0,_0,_0.1)_0px_2px_4px_0px,_rgba(255,_255,_255,_0.05)_0px_0px_0px_1px_inset]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset"
+  },
+  {
+    "name": "#58",
+    "shadow": "[rgba(0,_0,_0,_0.15)_0px_5px_15px_0px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.15) 0px 5px 15px 0px"
+  },
+  {
+    "name": "#59",
+    "shadow": "[rgba(33,_35,_38,_0.1)_0px_10px_10px_-10px]",
+    "vanillaCSS": "rgba(33, 35, 38, 0.1) 0px 10px 10px -10px"
+  },
+  {
+    "name": "#60",
+    "shadow": "[blue_0px_0px_0px_2px_inset,_rgba(255,_255,_255)_10px_-10px_0px_-3px,_rgba(31,_193,_27)_10px_-10px,_rgba(255,_255,_255)_20px_-20px_0px_-3px,_rgba(255,_217,_19)_20px_-20px,_rgba(255,_255,_255)_30px_-30px_0px_-3px,_rgba(255,_156,_85)_30px_-30px,_rgba(255,_255,_255)_40px_-40px_0px_-3px,_rgba(255,_85,_85)_40px_-40px]",
+    "vanillaCSS": "blue 0px 0px 0px 2px inset, rgba(255, 255, 255) 10px -10px 0px -3px, rgba(31, 193, 27) 10px -10px, rgba(255, 255, 255) 20px -20px 0px -3px, rgba(255, 217, 19) 20px -20px, rgba(255, 255, 255) 30px -30px 0px -3px, rgba(255, 156, 85) 30px -30px, rgba(255, 255, 255) 40px -40px 0px -3px, rgba(255, 85, 85) 40px -40px"
+  },
+  {
+    "name": "#61",
+    "shadow": "[rgba(85,_91,_255)_0px_0px_0px_3px,_rgba(31,_193,_27)_0px_0px_0px_6px,_rgba(255,_217,_19)_0px_0px_0px_9px,_rgba(255,_156,_85)_0px_0px_0px_12px,_rgba(255,_85,_85)_0px_0px_0px_15px]",
+    "vanillaCSS": "rgba(85, 91, 255) 0px 0px 0px 3px, rgba(31, 193, 27) 0px 0px 0px 6px, rgba(255, 217, 19) 0px 0px 0px 9px, rgba(255, 156, 85) 0px 0px 0px 12px, rgba(255, 85, 85) 0px 0px 0px 15px"
+  },
+  {
+    "name": "#62",
+    "shadow": "[rgba(204,_219,_232)_3px_3px_6px_0px_inset,_rgba(255,_255,_255,_0.5)_-3px_-3px_6px_1px_inset]",
+    "vanillaCSS": "rgba(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset"
+  },
+  {
+    "name": "#63",
+    "shadow": "[rgba(136,_165,_191,_0.48)_6px_2px_16px_0px,_rgba(255,_255,_255,_0.8)_-6px_-2px_16px_0px]",
+    "vanillaCSS": "rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px"
+  },
+  {
+    "name": "#64",
+    "shadow": "[rgba(17,_17,_26,_0.1)_0px_1px_0px]",
+    "vanillaCSS": "rgba(17, 17, 26, 0.1) 0px 1px 0px"
+  },
+  {
+    "name": "#65",
+    "shadow": "[rgba(17,_17,_26,_0.05)_0px_1px_0px,_rgba(17,_17,_26,_0.1)_0px_0px_8px]",
+    "vanillaCSS": "rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px"
+  },
+  {
+    "name": "#66",
+    "shadow": "[rgba(17,_17,_26,_0.1)_0px_0px_16px]",
+    "vanillaCSS": "rgba(17, 17, 26, 0.1) 0px 0px 16px"
+  },
+  {
+    "name": "#67",
+    "shadow": "[rgba(17,_17,_26,_0.05)_0px_4px_16px,_rgba(17,_17,_26,_0.05)_0px_8px_32px]",
+    "vanillaCSS": "rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px"
+  },
+  {
+    "name": "#68",
+    "shadow": "[rgba(17,_17,_26,_0.1)_0px_4px_16px,_rgba(17,_17,_26,_0.05)_0px_8px_32px]",
+    "vanillaCSS": "rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px"
+  },
+  {
+    "name": "#69",
+    "shadow": "[rgba(17,_17,_26,_0.1)_0px_1px_0px,_rgba(17,_17,_26,_0.1)_0px_8px_24px,_rgba(17,_17,_26,_0.1)_0px_16px_48px]",
+    "vanillaCSS": "rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px"
+  },
+  {
+    "name": "#70",
+    "shadow": "[rgba(17,_17,_26,_0.1)_0px_4px_16px,_rgba(17,_17,_26,_0.1)_0px_8px_24px,_rgba(17,_17,_26,_0.1)_0px_16px_56px]",
+    "vanillaCSS": "rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px"
+  },
+  {
+    "name": "#71",
+    "shadow": "[rgba(17,_17,_26,_0.1)_0px_8px_24px,_rgba(17,_17,_26,_0.1)_0px_16px_56px,_rgba(17,_17,_26,_0.1)_0px_24px_80px]",
+    "vanillaCSS": "rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px"
+  },
+  {
+    "name": "#72",
+    "shadow": "[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]",
+    "vanillaCSS": "rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px"
+  },
+  {
+    "name": "#73",
+    "shadow": "[rgba(0,_0,_0,_0.15)_0px_15px_25px,_rgba(0,_0,_0,_0.05)_0px_5px_10px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px"
+  },
+  {
+    "name": "#74",
+    "shadow": "[rgba(0,_0,_0,_0.15)_2.4px_2.4px_3.2px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px"
+  },
+  {
+    "name": "#75",
+    "shadow": "[rgba(0,_0,_0,_0.15)_0px_3px_3px_0px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.15) 0px 3px 3px 0px"
+  },
+  {
+    "name": "#76",
+    "shadow": "[rgba(0,_0,_0,_0.08)_0px_4px_12px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.08) 0px 4px 12px"
+  },
+  {
+    "name": "#77",
+    "shadow": "[rgba(0,_0,_0,_0.15)_0px_2px_8px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.15) 0px 2px 8px"
+  },
+  {
+    "name": "#78",
+    "shadow": "[rgba(0,_0,_0,_0.18)_0px_2px_4px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.18) 0px 2px 4px"
+  },
+  {
+    "name": "#79",
+    "shadow": "[rgba(0,_0,_0,_0.1)_-4px_9px_25px_-6px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.1) -4px 9px 25px -6px"
+  },
+  {
+    "name": "#80",
+    "shadow": "[rgba(0,_0,_0,_0.2)_0px_60px_40px_-7px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.2) 0px 60px 40px -7px"
+  },
+  {
+    "name": "#81",
+    "shadow": "[rgba(0,_0,_0,_0.4)_0px_30px_90px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.4) 0px 30px 90px"
+  },
+  {
+    "name": "#82",
+    "shadow": "[rgba(0,_0,_0,_0.56)_0px_22px_70px_4px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.56) 0px 22px 70px 4px"
+  },
+  {
+    "name": "#83",
+    "shadow": "[rgba(0,_0,_0,_0.2)_0px_20px_30px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.2) 0px 20px 30px"
+  },
+  {
+    "name": "#84",
+    "shadow": "[rgba(255,_255,_255,_0.2)_0px_0px_0px_1px_inset,_rgba(0,_0,_0,_0.9)_0px_0px_0px_1px]",
+    "vanillaCSS": "rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px"
+  },
+  {
+    "name": "#85",
+    "shadow": "[rgba(0,_0,_0,_0.25)_0px_0.0625em_0.0625em,_rgba(0,_0,_0,_0.25)_0px_0.125em_0.5em,_rgba(255,_255,_255,_0.1)_0px_0px_0px_1px_inset]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset"
+  },
+  {
+    "name": "#86",
+    "shadow": "[rgba(0,_0,_0,_0.09)_0px_3px_12px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.09) 0px 3px 12px"
+  },
+  {
+    "name": "#87",
+    "shadow": "[rgba(0,_0,_0,_0.17)_0px_-23px_25px_0px_inset,_rgba(0,_0,_0,_0.15)_0px_-36px_30px_0px_inset,_rgba(0,_0,_0,_0.1)_0px_-79px_40px_0px_inset,_rgba(0,_0,_0,_0.06)_0px_2px_1px,_rgba(0,_0,_0,_0.09)_0px_4px_2px,_rgba(0,_0,_0,_0.09)_0px_8px_4px,_rgba(0,_0,_0,_0.09)_0px_16px_8px,_rgba(0,_0,_0,_0.09)_0px_32px_16px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px"
+  },
+  {
+    "name": "#88",
+    "shadow": "[rgba(0,_0,_0,_0.45)_0px_25px_20px_-20px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.45) 0px 25px 20px -20px"
+  },
+  {
+    "name": "#89",
+    "shadow": "[rgba(0,_0,_0,_0.4)_0px_2px_4px,_rgba(0,_0,_0,_0.3)_0px_7px_13px_-3px,_rgba(0,_0,_0,_0.2)_0px_-3px_0px_inset]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset"
+  },
+  {
+    "name": "#90",
+    "shadow": "[rgba(0,_0,_0,_0.05)_0px_0px_0px_1px,_rgba(209,_213,_219)_0px_0px_0px_1px_inset]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgba(209, 213, 219) 0px 0px 0px 1px inset"
+  },
+  {
+    "name": "#91",
+    "shadow": "[rgba(0,_0,_0,_0.35)_0px_-50px_36px_-28px_inset]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset"
+  },
+  {
+    "name": "#92",
+    "shadow": "[rgba(9,_30,_66,_0.25)_0px_1px_1px,_rgba(9,_30,_66,_0.13)_0px_0px_1px_1px]",
+    "vanillaCSS": "rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px"
+  },
+  {
+    "name": "#93",
+    "shadow": "[rgba(9,_30,_66,_0.25)_0px_4px_8px_-2px,_rgba(9,_30,_66,_0.08)_0px_0px_0px_1px]",
+    "vanillaCSS": "rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px"
+  },
+  {
+    "name": "bShadow",
+    "shadow": "[0_10px_40px_0_rgba(62,57,107,0.07),0_2px_9px_0_rgba(62,57,107,0.06)]",
+    "vanillaCSS": "0 10px 40px 0 rgba(62, 57, 107, 0.07), 0 2px 9px 0 rgba(62, 57, 107, 0.06)"
+  },
+  {
+    "name": "bShadow-light",
+    "shadow": "[0_2px_8px_0_rgba(50,50,50,0.08)]",
+    "vanillaCSS": "0 2px 8px 0 rgba(50, 50, 50, 0.08)"
+  },
+  {
+    "name": "bShadow-inset",
+    "shadow": "[inset_0_4px_7px_1px_#fff,inset_0_-5px_20px_rgba(173,186,204,0.25),0_2px_6px_rgba(0,21,64,0.14),0_10px_20px_rgba(0,21,64,0.05)]",
+    "vanillaCSS": "inset 0 4px 7px 1px #fff, inset 0 -5px 20px rgba(173, 186, 204, 0.25), 0 2px 6px rgba(0, 21, 64, 0.14), 0 10px 20px rgba(0, 21, 64, 0.05)"
+  },
+  {
+    "name": "bShadow-1",
+    "shadow": "[rgba(150,150,150,0.1)_0_0_20px_0]",
+    "vanillaCSS": "rgba(150, 150, 150, 0.1) 0 0 20px 0"
+  },
+  {
+    "name": "bShadow-2",
+    "shadow": "[rgba(0,0,0,0.1)_0_20px_60px_-10px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.1) 0 20px 60px -10px"
+  },
+  {
+    "name": "bShadow-3",
+    "shadow": "[rgba(0,0,0,0.09)_0_6px_9px_0]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.09) 0 6px 9px 0"
+  },
+  {
+    "name": "bShadow-4",
+    "shadow": "[rgba(0,0,0,0.1)_0_5px_20px_0]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.1) 0 5px 20px 0"
+  },
+  {
+    "name": "bShadow-5",
+    "shadow": "[rgba(0,0,0,0.12)_0_3px_13px_1px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.12) 0 3px 13px 1px"
+  },
+  {
+    "name": "bShadow-6",
+    "shadow": "[rgba(0,0,0,0.1)_0_15px_35px_0,rgba(0,0,0,0.07)_0_3px_10px_0]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.1) 0 15px 35px 0, rgba(0, 0, 0, 0.07) 0 3px 10px 0"
+  },
+  {
+    "name": "bShadow-7",
+    "shadow": "[rgba(57,70,78,0.15)_0_0_1px_0,rgba(57,70,78,0.25)_0_20px_55px_-8px]",
+    "vanillaCSS": "rgba(57, 70, 78, 0.15) 0 0 1px 0, rgba(57, 70, 78, 0.25) 0 20px 55px -8px"
+  },
+  {
+    "name": "bShadow-8",
+    "shadow": "[rgba(0,0,0,0.25)_0_15px_45px_-9px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.25) 0 15px 45px -9px"
+  },
+  {
+    "name": "bShadow-9",
+    "shadow": "[rgba(0,0,0,0.06)_0_1px_1px_1px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.06) 0 1px 1px 1px"
+  },
+  {
+    "name": "bShadow-10",
+    "shadow": "[rgba(16,36,94,0.4)_0_2px_6px_0]",
+    "vanillaCSS": "rgba(16, 36, 94, 0.4) 0 2px 6px 0"
+  },
+  {
+    "name": "bShadow-11",
+    "shadow": "[rgba(62,57,107,0.3)_0_6px_16px_0]",
+    "vanillaCSS": "rgba(62, 57, 107, 0.3) 0 6px 16px 0"
+  },
+  {
+    "name": "bShadow-12",
+    "shadow": "[rgba(62,57,107,0.36)_0_16px_38px_-12px,rgba(62,57,107,0.12)_0_4px_25px_0,rgba(62,57,107,0.2)_0_8px_10px_-5px]",
+    "vanillaCSS": "rgba(62, 57, 107, 0.36) 0 16px 38px -12px, rgba(62, 57, 107, 0.12) 0 4px 25px 0, rgba(62, 57, 107, 0.2) 0 8px 10px -5px"
+  },
+  {
+    "name": "bShadow-13",
+    "shadow": "[rgba(0,0,0,0.2)_0_-15px_5px_-12px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.2) 0 -15px 5px -12px"
+  },
+  {
+    "name": "bShadow-14",
+    "shadow": "[rgba(0,0,0,0.09)_0_-6px_9px_0]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.09) 0 -6px 9px 0"
+  },
+  {
+    "name": "bShadow-15",
+    "shadow": "[rgba(0,0,0,0.1)_0_-20px_60px_-10px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.1) 0 -20px 60px -10px"
+  },
+  {
+    "name": "bShadow-16",
+    "shadow": "[rgba(16,36,94,0.25)_0_-50px_100px_-30px]",
+    "vanillaCSS": "rgba(16, 36, 94, 0.25) 0 -50px 100px -30px"
+  },
+  {
+    "name": "bShadow-17",
+    "shadow": "[rgba(112,128,175,0.2)_0_-16px_24px_0]",
+    "vanillaCSS": "rgba(112, 128, 175, 0.2) 0 -16px 24px 0"
+  },
+  {
+    "name": "bShadow-18",
+    "shadow": "[rgba(72,76,89,0.28)_0_-16px_32px_0,transparent_0_0_0_0]",
+    "vanillaCSS": "rgba(72, 76, 89, 0.28) 0 -16px 32px 0, transparent 0 0 0 0"
+  },
+  {
+    "name": "bShadow-19",
+    "shadow": "[rgba(72,76,89,0.28)_0_-16px_32px_0,transparent_0_0_0_0]",
+    "vanillaCSS": "rgba(72, 76, 89, 0.28) 0 -16px 32px 0, transparent 0 0 0 0"
+  },
+  {
+    "name": "bShadow-20",
+    "shadow": "[rgba(16,36,94,0.2)_0_-30px_40px_0]",
+    "vanillaCSS": "rgba(16, 36, 94, 0.2) 0 -30px 40px 0"
+  },
+  {
+    "name": "bShadow-21",
+    "shadow": "[rgba(0,0,0,0.05)_5px_5px_0_0]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.05) 5px 5px 0 0"
+  },
+  {
+    "name": "bShadow-22",
+    "shadow": "[rgba(0,0,0,0.05)_-5px_5px_0_0]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.05) -5px 5px 0 0"
+  },
+  {
+    "name": "bShadow-23",
+    "shadow": "[rgba(0,0,0,0.05)_5px_-5px_0_0]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.05) 5px -5px 0 0"
+  },
+  {
+    "name": "bShadow-24",
+    "shadow": "[rgba(0,0,0,0.05)_-5px_-5px_0_0]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.05) -5px -5px 0 0"
+  },
+  {
+    "name": "bShadow-25",
+    "shadow": "[rgba(72,76,89,0.2)_2px_2px_4px_0]",
+    "vanillaCSS": "rgba(72, 76, 89, 0.2) 2px 2px 4px 0"
+  },
+  {
+    "name": "bShadow-26",
+    "shadow": "[rgba(72,76,89,0.2)_-2px_2px_4px_0]",
+    "vanillaCSS": "rgba(72, 76, 89, 0.2) -2px 2px 4px 0"
+  },
+  {
+    "name": "bShadow-27",
+    "shadow": "[rgba(72,76,89,0.2)_2px_-2px_4px_0]",
+    "vanillaCSS": "rgba(72, 76, 89, 0.2) 2px -2px 4px 0"
+  },
+  {
+    "name": "bShadow-28",
+    "shadow": "[rgba(72,76,89,0.2)_-2px_-2px_4px_0]",
+    "vanillaCSS": "rgba(72, 76, 89, 0.2) -2px -2px 4px 0"
+  },
+  {
+    "name": "bShadow-29",
+    "shadow": "[rgba(50,50,50,0.14)_2px_4px_6px_1px]",
+    "vanillaCSS": "rgba(50, 50, 50, 0.14) 2px 4px 6px 1px"
+  },
+  {
+    "name": "bShadow-30",
+    "shadow": "[rgba(50,50,50,0.14)_-2px_4px_6px_1px]",
+    "vanillaCSS": "rgba(50, 50, 50, 0.14) -2px 4px 6px 1px"
+  },
+  {
+    "name": "bShadow-31",
+    "shadow": "[rgba(50,50,50,0.14)_2px_-4px_6px_1px]",
+    "vanillaCSS": "rgba(50, 50, 50, 0.14) 2px -4px 6px 1px"
+  },
+  {
+    "name": "bShadow-32",
+    "shadow": "[rgba(50,50,50,0.14)_-2px_-4px_6px_1px]",
+    "vanillaCSS": "rgba(50, 50, 50, 0.14) -2px -4px 6px 1px"
+  },
+  {
+    "name": "bShadow-33",
+    "shadow": "[rgba(0,0,0,0.2)_15px_15px_5px_-5px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.2) 15px 15px 5px -5px"
+  },
+  {
+    "name": "bShadow-34",
+    "shadow": "[rgba(0,0,0,0.2)_-15px_15px_5px_-5px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.2) -15px 15px 5px -5px"
+  },
+  {
+    "name": "bShadow-35",
+    "shadow": "[rgba(0,0,0,0.2)_15px_-15px_5px_-5px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.2) 15px -15px 5px -5px"
+  },
+  {
+    "name": "bShadow-36",
+    "shadow": "[rgba(0,0,0,0.2)_-15px_-15px_5px_-5px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.2) -15px -15px 5px -5px"
+  },
+  {
+    "name": "bShadow-37",
+    "shadow": "[rgba(62,57,107,0.28)_10px_10px_32px_0,transparent_0_0_0_0]",
+    "vanillaCSS": "rgba(62, 57, 107, 0.28) 10px 10px 32px 0, transparent 0 0 0 0"
+  },
+  {
+    "name": "bShadow-38",
+    "shadow": "[rgba(62,57,107,0.28)_-10px_10px_32px_0,transparent_0_0_0_0]",
+    "vanillaCSS": "rgba(62, 57, 107, 0.28) -10px 10px 32px 0, transparent 0 0 0 0"
+  },
+  {
+    "name": "bShadow-39",
+    "shadow": "[rgba(62,57,107,0.28)_10px_-10px_32px_0,transparent_0_0_0_0]",
+    "vanillaCSS": "rgba(62, 57, 107, 0.28) 10px -10px 32px 0, transparent 0 0 0 0"
+  },
+  {
+    "name": "bShadow-40",
+    "shadow": "[rgba(62,57,107,0.28)_-10px_-10px_32px_0,transparent_0_0_0_0]",
+    "vanillaCSS": "rgba(62, 57, 107, 0.28) -10px -10px 32px 0, transparent 0 0 0 0"
+  },
+  {
+    "name": "bShadow-41",
+    "shadow": "[rgba(26,26,67,0.05)_1px_1px_5px_0,rgba(50,50,93,0.5)_39px_62.5px_125px_-25px,rgba(0,0,0,0.3)_23.4px_37.5px_75px_-37.5px]",
+    "vanillaCSS": "rgba(26, 26, 67, 0.05) 1px 1px 5px 0, rgba(50, 50, 93, 0.5) 39px 62.5px 125px -25px, rgba(0, 0, 0, 0.3) 23.4px 37.5px 75px -37.5px"
+  },
+  {
+    "name": "bShadow-42",
+    "shadow": "[rgba(26,26,67,0.05)_1px_1px_5px_0,rgba(50,50,93,0.5)_-39px_62.5px_125px_-25px,rgba(0,0,0,0.3)_23.4px_37.5px_75px_-37.5px]",
+    "vanillaCSS": "rgba(26, 26, 67, 0.05) 1px 1px 5px 0, rgba(50, 50, 93, 0.5) -39px 62.5px 125px -25px, rgba(0, 0, 0, 0.3) 23.4px 37.5px 75px -37.5px"
+  },
+  {
+    "name": "bShadow-43",
+    "shadow": "[rgba(0,0,0,0.2)_0_15px_5px_-12px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.2) 0 15px 5px -12px"
+  },
+  {
+    "name": "bShadow-44",
+    "shadow": "[rgba(16,36,94,0.25)_0_50px_100px_-30px]",
+    "vanillaCSS": "rgba(16, 36, 94, 0.25) 0 50px 100px -30px"
+  },
+  {
+    "name": "bShadow-45",
+    "shadow": "[rgba(0,0,0,0.09)_0_8px_16px_0]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.09) 0 8px 16px 0"
+  },
+  {
+    "name": "bShadow-46",
+    "shadow": "[rgba(0,0,0,0.09)_0_6px_9px_0]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.09) 0 6px 9px 0"
+  },
+  {
+    "name": "bShadow-47",
+    "shadow": "[rgba(112,128,175,0.2)_0_16px_24px_0]",
+    "vanillaCSS": "rgba(112, 128, 175, 0.2) 0 16px 24px 0"
+  },
+  {
+    "name": "bShadow-48",
+    "shadow": "[rgba(72,76,89,0.28)_0_16px_32px_0,transparent_0_0_0_0]",
+    "vanillaCSS": "rgba(72, 76, 89, 0.28) 0 16px 32px 0, transparent 0 0 0 0"
+  },
+  {
+    "name": "bShadow-49",
+    "shadow": "[rgba(16,36,94,0.2)_0_30px_40px_0]",
+    "vanillaCSS": "rgba(16, 36, 94, 0.2) 0 30px 40px 0"
+  },
+  {
+    "name": "bShadow-50",
+    "shadow": "[rgba(0,0,0,0.12)_0_0_70px_6px]",
+    "vanillaCSS": "rgba(0, 0, 0, 0.12) 0 0 70px 6px"
+  },
+  {
+    "name": "bShadow-51",
+    "shadow": "[5px_31px_85px_23px_rgba(0,0,0,0.07)]",
+    "vanillaCSS": "5px 31px 85px 23px rgba(0, 0, 0, 0.07)"
+  },
+  {
+    "name": "bShadow-52",
+    "shadow": "[30px_70px_70px_40px_rgba(0,0,0,0.05)]",
+    "vanillaCSS": "30px 70px 70px 40px rgba(0, 0, 0, 0.05)"
+  },
+  {
+    "name": "bShadow-53",
+    "shadow": "[0_30px_48px_22px_rgba(0,0,0,0.07)]",
+    "vanillaCSS": "0 30px 48px 22px rgba(0, 0, 0, 0.07)"
+  },
+  {
+    "name": "bShadow-54",
+    "shadow": "[-41px_51px_68px_5px_rgba(0,0,0,0.06)]",
+    "vanillaCSS": "-41px 51px 68px 5px rgba(0, 0, 0, 0.06)"
+  },
+  {
+    "name": "bShadow-55",
+    "shadow": "[41px_51px_68px_5px_rgba(0,0,0,0.06)]",
+    "vanillaCSS": "41px 51px 68px 5px rgba(0, 0, 0, 0.06)"
+  },
+  {
+    "name": "bShadow-56",
+    "shadow": "[-100px_100px_85px_23px_rgba(0,0,0,0.07)]",
+    "vanillaCSS": "-100px 100px 85px 23px rgba(0, 0, 0, 0.07)"
+  },
+  {
+    "name": "bShadow-57",
+    "shadow": "[100px_100px_85px_23px_rgba(0,0,0,0.07)]",
+    "vanillaCSS": "100px 100px 85px 23px rgba(0, 0, 0, 0.07)"
+  },
+  {
+    "name": "bShadow-58",
+    "shadow": "[5px_0_12px_-10px_rgba(0,0,0,0.25),-5px_0_12px_-10px_rgba(0,0,0,0.25)]",
+    "vanillaCSS": "5px 0 12px -10px rgba(0, 0, 0, 0.25), -5px 0 12px -10px rgba(0, 0, 0, 0.25)"
+  },
+  {
+    "name": "bShadow-59",
+    "shadow": "[6px_0_12px_-8px_rgba(50,50,50,0.45),-6px_0_12px_-8px_rgba(50,50,50,0.45)]",
+    "vanillaCSS": "6px 0 12px -8px rgba(50, 50, 50, 0.45), -6px 0 12px -8px rgba(50, 50, 50, 0.45)"
+  }
+]

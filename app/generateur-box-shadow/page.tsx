@@ -1,12 +1,12 @@
 import React from 'react'
-import Content from './Content'
+import siteMetadata from '@/data/siteMetadata'
 import { ResolvingMetadata, Metadata } from 'next'
+import Content from './Content'
 
 type Props = {
   params: { search: string }
   searchParams: { [key: string]: string | string[] | undefined }
 }
-import siteMetadata from '@/data/siteMetadata'
 
 export async function generateMetadata(
   { params, searchParams }: Props,
@@ -14,24 +14,21 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   return {
     metadataBase: new URL(siteMetadata.siteUrl),
-    title: `Templates gartuits tailwindcss | ${siteMetadata.title}`,
+    title: `180 et plus tailwindcss & css box shadows | ${siteMetadata.title}`,
 
-    description:
-      'Plus de 100 themes tailwindcss gratuits. Télechargez gratuitement les templates pour créer vos blog, vos sites ecommerce, portofolio et plus encore',
+    description: `Plus de 180 exemples de box shadows avec les configs tailwindcss pour vos projets. Copiez, coller et développer plus rapidement.`,
     keywords: [
-      'portfolio template tailwindcss',
-      'admin dashboard tailwindcss',
-      'blog template tailwindcss',
-      'free templates',
-      'template tailwindcss',
-      'template gratuit',
+      'box shadows',
       'tailwindcss',
-      'template tailwindcss gradtuit',
+      'tailwindcss shadow',
+      'css shadow',
+      'ombre de portée css',
+      'box-shadow',
+      'css box-shadow',
     ],
     openGraph: {
       title: siteMetadata.title,
-      description:
-        'Plus de 100 themes tailwindcss gratuits. Télechargez gratuitement les templates pour créer vos blog, vos sites ecommerce, portofolio et plus encore',
+      description: `Plus de 180 exemples de box shadows avec les configs tailwindcss pour vos projets. Copiez, coller et développer plus rapidement.`,
       url: './',
       siteName: siteMetadata.title,
       images: [siteMetadata.socialBanner],

@@ -1,2 +1,5 @@
 export { default as Range } from './Range'
 export { default as StandAloneTextArea } from './StandAlone'
+export { default as Number } from './Number'
+export { default as Toggle } from './Toggle'
+export { default as TextInput } from './Text'

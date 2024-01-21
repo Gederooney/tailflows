@@ -9,8 +9,8 @@ const headerNavLinks = [
     title: 'Icons',
   },
   {
-    href: '/composants-ui',
-    title: 'UI/UX',
+    href: '/generateur-box-shadow',
+    title: 'Box shadows',
   },
   {
     href: '/templates-en-tailwindcss',

@@ -1,7 +1,7 @@
 const SearchButton = () => {
   return (
     <>
-      <button className="flex items-center justify-center w-6 h-6 overflow-hidden text-xs border rounded-md shadow-none cursor-pointer md:h-8 md:w-60 dar md:justify-between md:px-2 drop-shadow-none dark:border-gray-50/50">
+      <button className="flex items-center justify-center w-6 h-6 overflow-hidden text-xs border rounded-md shadow-none cursor-pointer md:h-8 md:w-60 dar md:justify-between md:px-2 drop-shadow-none dark:border-gray-50/10">
         <span className="inline-flex items-center gap-2 text-xs">
           <svg
             xmlns="http://www.w3.org/2000/svg"
