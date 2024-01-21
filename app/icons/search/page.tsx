@@ -4,7 +4,7 @@ import legacyIcons from '@/data/legacy_icons.json'
 import siteMetadata from '@/data/siteMetadata'
 import { ResolvingMetadata, Metadata } from 'next'
 import Content from './Content'
-import { Icon } from '../page'
+import { Icon } from '../Content'
 import { notFound } from 'next/navigation'
 
 type Props = {
