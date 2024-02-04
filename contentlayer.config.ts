@@ -128,7 +128,7 @@ export const Authors = defineDocumentType(() => ({
   computedFields,
 }))
 
-export const Ui= defineDocumentType(() => ({
+export const Ui = defineDocumentType(() => ({
   name: 'Ui',
   filePathPattern: 'ui/**/*.mdx',
   contentType: 'mdx',
@@ -144,6 +144,11 @@ export const Ui= defineDocumentType(() => ({
     layout: { type: 'string' },
     bibliography: { type: 'string' },
     canonicalUrl: { type: 'string' },
+    requires_js: { type: 'boolean' },
+    previous: { type: 'string' },
+    previous_link: { type: 'string' },
+    next: { type: 'string' },
+    next_link: { type: 'string' },
   },
   computedFields: {
     ...computedFields,

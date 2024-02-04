@@ -1,6 +1,7 @@
 import React from 'react'
 import { allCoreContent, sortPosts } from 'pliny/utils/contentlayer'
 import { allBlogs } from 'contentlayer/generated'
+import { UiCodeBlock } from '@/components/demos'
 
 const POSTS_PER_PAGE = 5
 
@@ -23,5 +24,9 @@ export default function Page({ params }: { params: { page: string } }) {
     totalPages: Math.ceil(posts.length / POSTS_PER_PAGE),
   }
 
-  return <></>
+  return (
+    <div className="py-2 mx-auto max-w-7xl">
+      <UiCodeBlock />
+    </div>
+  )
 }
