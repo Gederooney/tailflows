@@ -1,6 +1,9 @@
 import React from 'react'
 import { allCoreContent, sortPosts } from 'pliny/utils/contentlayer'
 import { allUis } from 'contentlayer/generated'
+import { MDXLayoutRenderer } from 'pliny/mdx-components'
+import { components } from '@/components/MDXComponents'
+import UisDemosLayout from '@/layouts/UisDemosLayout'
 
 const POSTS_PER_PAGE = 5
 
@@ -11,17 +14,18 @@ export const generateStaticParams = async () => {
   return paths
 }
 
-export default function Page({ params }: { params: { page: string } }) {
-  const posts = allCoreContent(sortPosts(allUis))
-  const pageNumber = parseInt(params.page as string)
-  const initialDisplayPosts = posts.slice(
-    POSTS_PER_PAGE * (pageNumber - 1),
-    POSTS_PER_PAGE * pageNumber
-  )
-  const pagination = {
-    currentPage: pageNumber,
-    totalPages: Math.ceil(posts.length / POSTS_PER_PAGE),
+export default function Page({ params }: { params: { slug: string } }) {
+  const ui = allUis.find((ui) => ui.slug === params.slug.toLowerCase())
+
+  if (!ui) {
+    return null
   }
 
-  return <>Heros</>
+  return (
+    <>
+      <UisDemosLayout content={ui}>
+        <MDXLayoutRenderer code={ui.body.code} components={components} toc={ui.toc} />
+      </UisDemosLayout>
+    </>
+  )
 }

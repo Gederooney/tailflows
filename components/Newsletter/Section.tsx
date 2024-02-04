@@ -2,104 +2,60 @@ import React from 'react'
 
 const Section = () => {
   return (
-    <div className="py-20 bg-white dark:bg-secondary-900 max-w-7xl">
-      <div className="relative sm:py-16">
-        <div aria-hidden="true" className="hidden sm:block">
-          <div className="absolute inset-y-0 left-0 w-1/2 bg-gray-100 dark:bg-secondary-400 rounded-r-3xl"></div>
+    <div className="max-w-6xl px-4 pb-10 mx-auto my-4 sm:px-6 lg:px-8 md:pb-2">
+      <div className="relative p-5 bg-gray-100 rounded-xl sm:py-16 before:absolute before:top-0 before:start-0 before:bg-heroPatternLight before:bg-top before:bg-cover before:h-full before:z-0 dark:bg-secondary-800 dark:before:bg-heroPatternDark before:w-full ">
+        <div className="relative z-10 max-w-xl mx-auto text-center">
+          <div className="mb-5">
+            <h2 className="text-2xl font-bold md:text-3xl dark:text-white">Rejoins nous</h2>
+            <p className="mt-3 text-gray-500 dark:text-gray-400">
+              Ne manque aucune de nos actualités
+            </p>
+          </div>
 
-          <svg
-            className="absolute top-0 hidden -ml-3 left-1/2"
-            width="404"
-            height="392"
-            fill="none"
-            viewBox="0 0 404 392"
-          >
-            <defs>
-              <pattern
-                id="8228f071-bcee-4ec8-905a-2a059a2cc4fb"
-                x="0"
-                y="0"
-                width="20"
-                height="20"
-                patternUnits="userSpaceOnUse"
-              >
-                <rect
-                  x="0"
-                  y="0"
-                  width="4"
-                  height="4"
-                  className="text-gray-200"
-                  fill="currentColor"
-                ></rect>
-              </pattern>
-            </defs>
-            <rect width="404" height="392" fill="url(#8228f071-bcee-4ec8-905a-2a059a2cc4fb)"></rect>
-          </svg>
-        </div>
-        <div className="relative max-w-md px-4 mx-auto sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
-          <div className="relative px-6 py-10 overflow-hidden shadow-xl rounded-3xl bg-secondary-600 sm:px-12 sm:py-20">
-            <div className="relative">
-              <div className="mb-12 sm:text-center">
-                <h2 className="text-4xl font-bold text-white tracking-tight sm:text-4.5xl font-display">
-                  Recevez une notification lorsque nous <br />
-                  postons de nouvelles fonctionalités
-                </h2>
-                {/* <p className="max-w-2xl mx-auto mt-6 text-lg text-gray-400">
-                  Twice a month I share the best Tailwind templates, UI kits and components in{' '}
-                  <strong>my newsletter</strong>. <strong>525</strong> Tailwind hackers find it
-                  useful. I'd love you to join.
-                </p> */}
-              </div>
-              <form
-                data-controller="newsletter"
-                data-newsletter-target="form"
-                className="sm:mx-auto sm:max-w-lg sm:flex"
-                action="#"
-                acceptCharset="UTF-8"
-                method="post"
-              >
-                <input
-                  type="hidden"
-                  name="authenticity_token"
-                  value="mehG3JeITfmd-jvgTa_FLaTsQtmrIz9hy9aEA5cvpi4z-S9ig7ioCP07U6hOaWUUmCUl64Y8r9ft25GpxSruVA"
-                  autoComplete="off"
-                />
-                <div className="relative w-full max-w-xl mx-auto bg-white rounded-full h-14 lg:max-w-none">
+          <div id="mc_embed_signup">
+            <form
+              action="https://praline.us10.list-manage.com/subscribe/post?u=eddd28397383718c2f15e15c2&amp;id=b97f8fe839"
+              method="post"
+              id="mc-embedded-subscribe-form"
+              name="mc-embedded-subscribe-form"
+              className="validate"
+              target="_blank"
+              noValidate={true}
+            >
+              <div id="mc_embed_signup_scroll">
+                <div className="grid gap-3 sm:flex">
                   <input
-                    className="w-full py-0 pl-5 pr-16 bg-transparent border-2 border-gray-100 rounded-full shadow-md outline-none h-14 sm:pl-6 sm:pr-32 hover:outline-none focus:ring-secondary-200 focus:border-secondary-200"
-                    data-newsletter-target="email"
-                    required
-                    placeholder="nom@mail.com"
-                    autoComplete="off"
                     type="email"
-                    name="member[email]"
-                    id="member[email]"
+                    // value=""
+                    name="EMAIL"
+                    id="mce-EMAIL"
+                    className="block w-full text-sm border-gray-200 rounded-lg focus:border-primary-500 focus:ring-primary-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-transparent dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600 dark:placeholder:text-gray-400"
+                    placeholder="mail@nom.com"
                   />
-                  <button
+                  <input
                     type="submit"
-                    className="absolute inline-flex items-center h-12 p-4 text-sm text-white transition duration-150 duration-300 ease-in-out rounded-r-full rounded-bl-full outline-none right-1 top-1 bg-secondary-600 sm:py-2 sm:px-6 sm:rounded-full sm:text-base sm:font-medium hover:bg-secondary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary-500"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="-ml-0.5 sm:-ml-1 sm:mr-2 h-5 w-5"
-                      width="44"
-                      height="44"
-                      viewBox="0 0 24 24"
-                      strokeWidth="1.5"
-                      stroke="currentColor"
-                      fill="none"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                      <line x1="10" y1="14" x2="21" y2="3"></line>
-                      <path d="M21 3l-6.5 18a0.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a0.55 .55 0 0 1 0 -1l18 -6.5"></path>
-                    </svg>
-                    <span className="hidden sm:inline-block">Joindre</span>
-                  </button>
+                    name="subscribe"
+                    id="mc-embedded-subscribe"
+                    value="Envoyer"
+                    className="inline-flex items-center justify-center px-4 py-3 text-sm font-semibold text-white border border-transparent rounded-lg bg-primary-600 gap-x-2 hover:bg-primary-700 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:ring-2 focus:ring-primary-500"
+                  />
                 </div>
-              </form>
-            </div>
+
+                <div id="mce-responses" className="mt-3 text-gray-500 dark:text-gray-400">
+                  <div className="hidden response" id="mce-error-response"></div>
+                  <div className="hidden response" id="mce-success-response"></div>
+                </div>
+
+                <div className="absolute left-[-5000px]" aria-hidden="true">
+                  <input
+                    type="text"
+                    name="b_eddd28397383718c2f15e15c2_b97f8fe839"
+                    tabIndex={-1}
+                    // value=""
+                  />
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>
