@@ -16,6 +16,7 @@ import { ColorsExemple } from '@/components/demos'
 import { ActionButton } from '@/components/button'
 import { copyToClipboard } from '@/lib/utils'
 import { Section } from '@/components/Newsletter'
+import Guide from './Guide'
 
 const Page = () => {
   const [state, setState] = useState<IColor & IWheelView>({
@@ -311,6 +312,7 @@ const Page = () => {
         </div>
       </div>
       <ColorsExemple />
+      <Guide />
       <Section />
     </ColorContext.Provider>
   )

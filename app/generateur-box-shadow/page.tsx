@@ -5,18 +5,28 @@ import Content from './Content'
 
 type Props = {
   params: { search: string }
-  searchParams: { [key: string]: string | string[] | undefined }
+  searchParams: { [key: string]: string | undefined }
 }
 
 export async function generateMetadata(
   { params, searchParams }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
+  const { name, color } = searchParams
+  const ulrParams = new URLSearchParams()
+
+  if (!name || !color) {
+    return {}
+  }
+  ulrParams.append('color', color.toLowerCase())
+  ulrParams.append('name', name.replaceAll(' ', '-'))
+  const canonicalUrl = `${siteMetadata.siteUrl}/couleurs/search?${ulrParams.toString()}`
   return {
     metadataBase: new URL(siteMetadata.siteUrl),
-    title: `180 et plus tailwindcss & css box shadows | ${siteMetadata.title}`,
+    title: `shadowsflow - ${siteMetadata.title}`,
 
-    description: `Plus de 180 exemples de box shadows avec les configs tailwindcss pour vos projets. Copiez, coller et développer plus rapidement.`,
+    description:
+      "ShadowsFlow est l'outil incontournable sur Tailflows pour générer des box-shadows personnalisées adaptées à Tailwind CSS, au CSS standard, et aux styles en ligne HTML.",
     keywords: [
       'box shadows',
       'tailwindcss',
@@ -27,16 +37,17 @@ export async function generateMetadata(
       'css box-shadow',
     ],
     openGraph: {
-      title: siteMetadata.title,
-      description: `Plus de 180 exemples de box shadows avec les configs tailwindcss pour vos projets. Copiez, coller et développer plus rapidement.`,
+      title: `shadowsflow - ${siteMetadata.title}`,
+      description:
+        "ShadowsFlow est l'outil incontournable sur Tailflows pour générer des box-shadows personnalisées adaptées à Tailwind CSS, au CSS standard, et aux styles en ligne HTML.",
       url: './',
-      siteName: siteMetadata.title,
+      siteName: `shadowsflow - ${siteMetadata.title}`,
       images: [siteMetadata.socialBanner],
       locale: 'fr_FR',
       type: 'website',
     },
     alternates: {
-      canonical: './',
+      canonical: canonicalUrl,
       types: {
         'application/rss+xml': `${siteMetadata.siteUrl}/feed.xml`,
       },
@@ -53,7 +64,7 @@ export async function generateMetadata(
       },
     },
     twitter: {
-      title: siteMetadata.title,
+      title: `shadowsflow - ${siteMetadata.title}`,
       card: 'summary_large_image',
       images: [siteMetadata.socialBanner],
     },
