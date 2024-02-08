@@ -19,7 +19,7 @@ export async function generateMetadata(
   }
   ulrParams.append('color', color.toLowerCase())
   ulrParams.append('name', name.replaceAll(' ', '-'))
-  const canonicalUrl = `${siteMetadata.siteUrl}/couleurs/search?${ulrParams.toString()}`
+  const canonicalUrl = `${siteMetadata.siteUrl}couleurs/search?${ulrParams.toString()}`
   return {
     metadataBase: new URL(siteMetadata.siteUrl),
     title: `${searchParams.color}-${searchParams.name} | ${siteMetadata.title}`,
@@ -37,7 +37,7 @@ export async function generateMetadata(
     alternates: {
       canonical: canonicalUrl,
       types: {
-        'application/rss+xml': `${siteMetadata.siteUrl}/feed.xml`,
+        'application/rss+xml': `${siteMetadata.siteUrl}feed.xml`,
       },
     },
     robots: {

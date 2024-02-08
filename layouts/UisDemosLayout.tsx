@@ -13,9 +13,10 @@ interface LayoutProps {
 const UisDemosLayout = ({ content, next, prev, children }: LayoutProps) => {
   return (
     <div className="">
-      <section>
-        <div className="relative overflow-hidden before:absolute before:top-0 before:start-1/2 before:bg-[url('https://preline.co/assets/svg/examples/polygon-bg-element.svg')] before:bg-no-repeat before:bg-top before:bg-cover before:w-full before:h-full before:-z-[1] before:transform before:-translate-x-1/2 dark:before:bg-[url('https://preline.co/assets/svg/examples/polygon-bg-element-dark.svg')]">
-          <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-10">
+      <section className="relative">
+        <div className="absolute inset-0 bg-heroPatternLight dark:bg-heroPatternDark"></div>
+        <div className="relative overflow-hidden bg-gradient-to-b from-transparent to-white to-[90%] dark:to-secondary-900">
+          <div className="max-w-4xl px-4 pt-24 pb-10 mx-auto sm:px-6 lg:px-8">
             <div className="flex justify-center">
               <a
                 className="inline-flex items-center p-1 text-sm text-gray-800 transition bg-white border border-gray-200 rounded-full gap-x-2 ps-3 hover:border-gray-300 dark:bg-gray-800 dark:border-gray-700 dark:hover:border-gray-600 dark:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"

@@ -10,15 +10,17 @@ const Hero = () => (
   <section className="py-12 lg:py-16">
     <div className="px-6">
       <h1 className="hidden max-w-xl mx-auto text-3xl font-extrabold text-center lg:max-w-4xl md:block lg:text-5xl">
-        Nous avons une liste exhaustive des templates tailwindcss gratuits
+        Top Templates Gratuits Tailwind CSS 2023 : Découvrez les Meilleurs pour Next.js, React, et
+        Plus
       </h1>
-      <h1 className="block max-w-lg mx-auto text-2xl font-extrabold text-center md:hidden">
-        Nous avons une liste <br /> exhaustive des templates tailwindcss gratuit
+      <h1 className="block max-w-lg mx-auto text-xl font-extrabold text-center md:hidden">
+        Top Templates Gratuits Tailwind CSS 2023 : Découvrez les Meilleurs pour Next.js, React, et
+        Plus
       </h1>
       <p className="max-w-lg mx-auto mt-2 text-sm text-center lg:max-w-2xl lg:text-base">
-        Vous aimez tailwindcss? Nous aussi. Nous ambitionnons de rendre votre porcessus de travail
-        plus facile et rapide avec cette liste de template gratuits prèts à l'utilisationdans vos
-        projets prsonnel.
+        Explorez la collection ultime de templates Tailwind CSS gratuits, conçus pour accélérer le
+        développement de vos projets web sur Next.js, React, Astro, et plus. Commencez avec des
+        designs éprouvés et prêts à l'emploi.
       </p>
     </div>
   </section>

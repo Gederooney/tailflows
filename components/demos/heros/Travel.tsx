@@ -1,6 +1,5 @@
-'use client'
-import React, { useState } from 'react'
-import { ActionButton } from '../button'
+import React from 'react'
+import { ActionButton } from '@/components/button'
 
 const heroTravel = `<!DOCTYPE html>
 <html lang="en">
@@ -306,8 +305,7 @@ const heroTravel = `<!DOCTYPE html>
 </html>
 `
 
-const UiCodeBlock = () => {
-  const [activeTab, setActiveTab] = useState<'preview' | 'code'>('preview')
+const Travel = () => {
   return (
     <section className="px-4">
       <div className="w-full overflow-hidden border shadow rounded-xl border-gray-950/10 dark:border-gray-50/10">
@@ -451,4 +449,4 @@ const UiCodeBlock = () => {
   )
 }
 
-export default UiCodeBlock
+export default Travel

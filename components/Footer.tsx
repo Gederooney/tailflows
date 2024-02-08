@@ -16,15 +16,30 @@ export default function Footer() {
                 </span>
               </a>
             </div>
-            <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+            <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-4">
               <div>
                 <h2 className="mb-6 text-sm font-semibold uppercase text-gray-50">Liens Rapide</h2>
                 <ul className="font-medium text-gray-500 dark:text-gray-400">
                   <li className="mb-2">
                     <a href="/couleurs" className="hover:underline">
-                      Couleurs
+                      Paletteflows
                     </a>
                   </li>
+                  <li className="mb-2">
+                    <a href="/generateur-de-box-shadow" className="hover:underline">
+                      Shadowsflow
+                    </a>
+                  </li>
+                  <li className="mb-2">
+                    <a href="/blog" className="hover:underline">
+                      Blog
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h2 className="mb-6 text-sm font-semibold uppercase text-gray-50">Liens Rapide</h2>
+                <ul className="font-medium text-gray-500 dark:text-gray-400">
                   <li className="mb-2">
                     <a href="/icons" className="hover:underline">
                       Icons
@@ -32,7 +47,7 @@ export default function Footer() {
                   </li>
                   <li className="mb-2">
                     <a href="/themes" className="hover:underline">
-                      Themes
+                      Templates
                     </a>
                   </li>
                   <li>
@@ -77,21 +92,18 @@ export default function Footer() {
           <hr className="my-6 border-gray-200/10 sm:mx-auto dark:border-gray-700 lg:my-8" />
           <div className="sm:flex sm:items-center sm:justify-between">
             <div className="">
-              <div className="flex mb-1 space-x-2 text-xs text-gray-500 dark:text-gray-400">
-                <div>{`© ${new Date().getFullYear()}`}</div>
-                <div>{` • `}</div>
-                <Link href="/">{siteMetadata.title}</Link>
-                <div>{` • `}</div>
+              <p className="flex mb-1 space-x-2 text-xs text-gray-500 dark:text-gray-400">
                 <span>
-                  built with tailwindcss by{' '}
+                  {`© ${new Date().getFullYear()}`} {` • `}{' '}
+                  <Link href="/">{siteMetadata.title}</Link> {` • `}built with tailwindcss by{' '}
                   <a href="https://github.com/gederooney" title="github page de gederooney">
                     rony gédéon
                   </a>
                 </span>
-              </div>
-              <div className="mb-8 text-xs text-gray-500 dark:text-gray-400">
+              </p>
+              <p className="mb-8 text-xs text-gray-500 dark:text-gray-400">
                 <span>Le plus grand écosystème pour les développeurs tailwindcss. </span>
-              </div>
+              </p>
             </div>
             <div className="flex mt-4 sm:justify-center sm:mt-0">
               <a href="/" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
