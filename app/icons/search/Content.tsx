@@ -1,8 +1,8 @@
 'use client'
 import React, { useState, useEffect } from 'react'
 import { Icon } from '../Content'
-import Prism from 'prismjs'
 import { format as prettier } from 'prettier/standalone'
+import Prism from 'prismjs'
 import pluginHtml from 'prettier/plugins/html'
 
 import {
@@ -20,7 +20,7 @@ export const highlightCode = (str: string) => {
   return formattedSvg
 }
 
-const formatCode = (str: string) =>
+export const formatCode = (str: string) =>
   prettier(str, {
     parser: 'html',
     plugins: [pluginHtml],
