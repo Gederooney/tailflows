@@ -1,21 +1,18 @@
 import React from 'react'
-
 import siteMetadata from '@/data/siteMetadata'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteMetadata.siteUrl),
-  title: `shadowsflow - ${siteMetadata.title}`,
-  description:
-    "ShadowsFlow est l'outil incontournable sur Tailflows pour générer des box-shadows personnalisées adaptées à Tailwind CSS, au CSS standard, et aux styles en ligne HTML.",
+  title: `Exemples - ${siteMetadata.title}`,
+  description: '',
   openGraph: {
-    title: `shadowsflow - ${siteMetadata.title}`,
-    description:
-      "ShadowsFlow est l'outil incontournable sur Tailflows pour générer des box-shadows personnalisées adaptées à Tailwind CSS, au CSS standard, et aux styles en ligne HTML.",
+    title: `Exemples - ${siteMetadata.title}`,
+    description: siteMetadata.description,
     url: './',
-    siteName: `shadowsflow - ${siteMetadata.title}`,
+    siteName: `Exemples - ${siteMetadata.title}`,
     images: [siteMetadata.socialBanner],
-    locale: 'fr_FR',
+    locale: 'en_US',
     type: 'website',
   },
   alternates: {
@@ -36,7 +33,7 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: `shadowsflow - ${siteMetadata.title}`,
+    title: `Exemples - ${siteMetadata.title}`,
     card: 'summary_large_image',
     images: [siteMetadata.socialBanner],
   },

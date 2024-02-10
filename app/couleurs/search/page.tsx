@@ -4,13 +4,22 @@ import { ResolvingMetadata, Metadata } from 'next'
 
 type Props = {
   params: { search: string }
-  searchParams: { [key: string]: string | string[] | undefined }
+  searchParams: { [key: string]: string | undefined }
 }
 
 export async function generateMetadata(
   { params, searchParams }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
+  const { name, color } = searchParams
+  const ulrParams = new URLSearchParams()
+
+  if (!name || !color) {
+    return {}
+  }
+  ulrParams.append('color', color.toLowerCase())
+  ulrParams.append('name', name.replaceAll(' ', '-'))
+  const canonicalUrl = `${siteMetadata.siteUrl}couleurs/search?${ulrParams.toString()}`
   return {
     metadataBase: new URL(siteMetadata.siteUrl),
     title: `${searchParams.color}-${searchParams.name} | ${siteMetadata.title}`,
@@ -26,9 +35,9 @@ export async function generateMetadata(
       type: 'website',
     },
     alternates: {
-      canonical: './',
+      canonical: canonicalUrl,
       types: {
-        'application/rss+xml': `${siteMetadata.siteUrl}/feed.xml`,
+        'application/rss+xml': `${siteMetadata.siteUrl}feed.xml`,
       },
     },
     robots: {

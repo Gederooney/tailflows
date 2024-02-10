@@ -2,23 +2,23 @@ const headerNavLinks = [
   { href: '/', title: 'Accueil' },
   {
     href: '/couleurs',
-    title: 'Génerateur de couleurs',
+    title: 'Paletteflows',
   },
   {
     href: '/icons',
     title: 'Icons',
   },
   {
-    href: '/generateur-box-shadow',
-    title: 'Box shadows',
+    href: '/exemples',
+    title: 'Exemples',
   },
   {
-    href: '/templates-en-tailwindcss',
-    tilte: 'Templates',
+    href: '/generateur-box-shadow',
+    title: 'Shadowsflow',
   },
   {
     href: '/themes',
-    title: 'Themes',
+    title: 'Templates',
   },
   {
     href: '/blog',

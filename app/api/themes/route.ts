@@ -43,10 +43,12 @@ async function getReposInfosFromGithub(reposUrl: string) {
       },
     })
 
-    const contributors = (await contributorsResponse.json()).map((c) => ({
-      login: c.login,
-      avatar: c.avatar_url,
-    }))
+    const contributors = (await contributorsResponse.json()).map(
+      (c: { [key: string]: string }) => ({
+        login: c.login,
+        avatar: c.avatar_url,
+      })
+    )
 
     return {
       name,

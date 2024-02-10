@@ -1,7 +1,19 @@
 import React from 'react'
+import { allCoreContent, sortPosts } from 'pliny/utils/contentlayer'
+import { MDXLayoutRenderer } from 'pliny/mdx-components'
+import { components } from '@/components/MDXComponents'
 import { Section } from '@/components/Newsletter'
 
-const Page = () => {
+const POSTS_PER_PAGE = 5
+
+export const generateStaticParams = async () => {
+  // const totalPages = Math.ceil(allUis.length / POSTS_PER_PAGE)
+  // const paths = Array.from({ length: totalPages }, (_, i) => ({ page: (i + 1).toString() }))
+
+  return []
+}
+
+export default function Page({ params }: { params: { slug: string } }) {
   return (
     <>
       <div className="min-h-full py-16">
@@ -17,5 +29,3 @@ const Page = () => {
     </>
   )
 }
-
-export default Page

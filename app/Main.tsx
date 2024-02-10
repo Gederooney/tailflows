@@ -138,7 +138,7 @@ const ThemeIntro = () => {
   return (
     <section className="py-12 bg-gray-100 dark:bg-secondary-50/5">
       <div className="mx-auto max-w-7xl">
-        <div className="max-w-4xl mx-auto mb-10 text-center lg:mb-14">
+        <div className="max-w-5xl mx-auto mb-10 text-center lg:mb-14">
           <h2 className="block max-w-2xl mx-auto text-4xl font-bold text-gray-800 md:text-5xl lg:text-6xl dark:text-gray-200">
             Templates tailwindcss{' '}
             <span className="text-primary-600 dark:text-primary-500">Gratuits</span>
@@ -148,11 +148,14 @@ const ThemeIntro = () => {
             choisis pour enrichir votre blog, portfolio, site web de développeur, ou dashboard
             d'administration. Nous avons parcouru le web pour vous offrir les meilleures pages
             d'atterrissage et designs prêts à l'emploi, facilitant ainsi le lancement rapide de vos
-            projets. Explorez davantage en cliquant{' '}
-            <Link href="/themes" className="text-primary-700">
-              ici
-            </Link>{' '}
-            et accélérez votre développement dès aujourd'hui.
+            projets.{' '}
+            <span className="sr-only">
+              Explorez davantage en cliquant{' '}
+              <Link href="/themes" className="text-primary-700">
+                ici
+              </Link>{' '}
+              et accélérez votre développement dès aujourd'hui.
+            </span>
           </p>
         </div>
         <div className="grid w-full gap-4 themes-demos-grid">

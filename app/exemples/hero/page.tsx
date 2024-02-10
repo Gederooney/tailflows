@@ -1,7 +1,7 @@
 import React from 'react'
 import siteMetadata from '@/data/siteMetadata'
+import Main from './Main'
 import { ResolvingMetadata, Metadata } from 'next'
-import Content from './Content'
 
 type Props = {
   params: { search: string }
@@ -14,25 +14,29 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   return {
     metadataBase: new URL(siteMetadata.siteUrl),
-    title: `shadowsflow - ${siteMetadata.title}`,
+    title: `Templates de Hero Sections Tailwind CSS Gratuits - ${siteMetadata.title}`,
 
     description:
-      "ShadowsFlow est l'outil incontournable sur Tailflows pour générer des box-shadows personnalisées adaptées à Tailwind CSS, au CSS standard, et aux styles en ligne HTML.",
+      'Plongez dans notre vaste collection de templates de hero sections Tailwind CSS, entièrement gratuits et prêts à être intégrés dans vos projets web.',
     keywords: [
-      'box shadows',
-      'tailwindcss',
-      'tailwindcss shadow',
-      'css shadow',
-      'ombre de portée css',
-      'box-shadow',
-      'css box-shadow',
+      'templates section héro Tailwind CSS gratuits',
+      'exemple de section héro Tailwind CSS',
+      'créer une hero section avec Tailwind CSS',
+      'section héro responsive Tailwind CSS',
+      'meilleures hero sections Tailwind CSS',
+      'section héro Tailwind CSS pour landing page',
+      'design de hero section avec Tailwind CSS',
+      'construire une hero section Tailwind CSS',
+      'inspiration hero section Tailwind CSS',
+      'configurer une hero section en Tailwind CSS',
     ],
     openGraph: {
-      title: `shadowsflow - ${siteMetadata.title}`,
+      title: `Templates de Hero Sections Tailwind CSS Gratuits - ${siteMetadata.title}`,
+
       description:
-        "ShadowsFlow est l'outil incontournable sur Tailflows pour générer des box-shadows personnalisées adaptées à Tailwind CSS, au CSS standard, et aux styles en ligne HTML.",
+        'Plongez dans notre vaste collection de templates de hero sections Tailwind CSS, entièrement gratuits et prêts à être intégrés dans vos projets web.',
       url: './',
-      siteName: `shadowsflow - ${siteMetadata.title}`,
+      siteName: `Hero sections - ${siteMetadata.title}`,
       images: [siteMetadata.socialBanner],
       locale: 'fr_FR',
       type: 'website',
@@ -63,7 +67,7 @@ export async function generateMetadata(
 }
 
 const Page = () => {
-  return <Content />
+  return <Main />
 }
 
 export default Page
