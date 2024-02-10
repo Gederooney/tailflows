@@ -44,20 +44,12 @@ const Hero = () => {
   )
 }
 
-export default function Page() {
-  return (
-    <div className="py-6 mx-auto max-w-7xl">
-      <Hero />
-      <section className="px-4 py-4">
-        <div className=""></div>
-        <div className="grid grid-cols-2 gap-4 text-start md:grid-cols-3 lg:grid-cols-4 xl:gap-6">
-          <Link
-            href="/exemples/hero"
-            className="relative rounded-xl before:absolute before:inset-0 before:z-10 before:border before:border-gray-200 before:rounded-xl before:transition before:hover:border-2 before:hover:border-blue-600 before:hover:shadow-lg dark:bg-[#151c2f] dark:before:border-gray-700 dark:before:hover:border-blue-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600 overflow-hidden"
-          >
-            <div className="relative pt-[50%]">
-              <img
-                src={svgToDataURL(`<svg width="350" height="250" viewBox="0 0 350 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+const data = [
+  {
+    title: 'Hero sections',
+    description: '3 templates',
+    href: '/exemples/hero',
+    image: `<svg width="350" height="250" viewBox="0 0 350 250" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_77_2)">
 <mask id="mask0_77_2" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="350" height="250">
 <path d="M350 0H0V250H350V0Z" fill="white"/>
@@ -153,25 +145,13 @@ export default function Page() {
 <rect width="350" height="250" fill="white"/>
 </clipPath>
 </defs>
-</svg>
-`)}
-                alt=""
-                className="absolute top-0 object-cover w-full h-full start-0 rounded-t-xl"
-              />
-            </div>
-            <div className="p-4 bg-gray-100 dark:bg-secondary-900">
-              <h3 className="text-sm font-medium text-gray-900 dark:text-gray-50">Hero sections</h3>
-              <p className="mt-0.5 text-sm text-gray-400 dark:text-gray-500">3 exemples</p>
-            </div>
-          </Link>
-
-          <Link
-            href="/exemples/tailwindcss-404-templates-exemples"
-            className="relative rounded-xl before:absolute before:inset-0 before:z-10 before:border before:border-gray-200 before:rounded-xl before:transition before:hover:border-2 before:hover:border-blue-600 before:hover:shadow-lg dark:bg-[#151c2f] dark:before:border-gray-700 dark:before:hover:border-blue-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600 overflow-hidden"
-          >
-            <div className="relative pt-[50%]">
-              <img
-                src={svgToDataURL(`<svg width="350" height="250" viewBox="0 0 350 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+</svg>`,
+  },
+  {
+    title: "Page d'erreurs 404",
+    description: '4 templates',
+    href: '/exemples/tailwindcss-404-templates-exemples',
+    image: `<svg width="350" height="250" viewBox="0 0 350 250" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_100_36)">
 <mask id="mask0_100_36" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="350" height="250">
 <path d="M350 0H0V250H350V0Z" fill="white"/>
@@ -220,19 +200,150 @@ export default function Page() {
 <rect width="350" height="250" fill="white"/>
 </clipPath>
 </defs>
+</svg>`,
+  },
+  {
+    title: "Formulaires d'authentification",
+    href: '/exemples/tailwindcss-templates-formulaires-authentification',
+    description: '5 templates',
+    image: `<svg width="350" height="250" viewBox="0 0 350 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_102_2)">
+<mask id="mask0_102_2" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="350" height="250">
+<path d="M350 0H0V250H350V0Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_102_2)">
+<path d="M350 0H0V250H350V0Z" fill="#F9FAFB"/>
+<g filter="url(#filter0_d_102_2)">
+<path d="M55 65C55 62.2386 57.2386 60 60 60H290C292.761 60 295 62.2386 295 65V250H55V65Z" fill="white"/>
+<path d="M55 65C55 62.2386 57.2386 60 60 60H290C292.761 60 295 62.2386 295 65V75H55V65Z" fill="white"/>
+<path d="M62.5 70C63.8807 70 65 68.8807 65 67.5C65 66.1193 63.8807 65 62.5 65C61.1193 65 60 66.1193 60 67.5C60 68.8807 61.1193 70 62.5 70Z" fill="#D1D5DB"/>
+<path d="M72.5 70C73.8807 70 75 68.8807 75 67.5C75 66.1193 73.8807 65 72.5 65C71.1193 65 70 66.1193 70 67.5C70 68.8807 71.1193 70 72.5 70Z" fill="#D1D5DB"/>
+<path d="M82.5 70C83.8807 70 85 68.8807 85 67.5C85 66.1193 83.8807 65 82.5 65C81.1193 65 80 66.1193 80 67.5C80 68.8807 81.1193 70 82.5 70Z" fill="#D1D5DB"/>
+<mask id="mask1_102_2" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="55" y="60" width="240" height="15">
+<path d="M55 65C55 62.2386 57.2386 60 60 60H290C292.761 60 295 62.2386 295 65V75H55V65Z" fill="white"/>
+</mask>
+<g mask="url(#mask1_102_2)">
+<path d="M295 76H55V74H295V76Z" fill="#E5E7EB"/>
+</g>
+<path d="M176.5 120H141.5C140.119 120 139 121.119 139 122.5C139 123.881 140.119 125 141.5 125H176.5C177.881 125 179 123.881 179 122.5C179 121.119 177.881 120 176.5 120Z" fill="#D1D5DB"/>
+<path d="M207.5 120H186.5C185.119 120 184 121.119 184 122.5C184 123.881 185.119 125 186.5 125H207.5C208.881 125 210 123.881 210 122.5C210 121.119 208.881 120 207.5 120Z" fill="#D1D5DB"/>
+<g filter="url(#filter1_d_102_2)">
+<path d="M150.179 142.545H115.821C114.362 142.545 113.179 143.197 113.179 144C113.179 144.803 114.362 145.455 115.821 145.455H150.179C151.638 145.455 152.821 144.803 152.821 144C152.821 143.197 151.638 142.545 150.179 142.545Z" fill="#E5E7EB"/>
+<path d="M166.036 136H99.9643C97.7749 136 96 136.977 96 138.182V149.818C96 151.023 97.7749 152 99.9643 152H166.036C168.225 152 170 151.023 170 149.818V138.182C170 136.977 168.225 136 166.036 136Z" stroke="#E5E7EB"/>
+<path d="M166.036 163H99.9643C97.7749 163 96 163.977 96 165.182V176.818C96 178.023 97.7749 179 99.9643 179H166.036C168.225 179 170 178.023 170 176.818V165.182C170 163.977 168.225 163 166.036 163Z" stroke="#E5E7EB"/>
+</g>
+<g filter="url(#filter2_d_102_2)">
+<path d="M234.179 142.545H199.821C198.362 142.545 197.179 143.197 197.179 144C197.179 144.803 198.362 145.455 199.821 145.455H234.179C235.638 145.455 236.821 144.803 236.821 144C236.821 143.197 235.638 142.545 234.179 142.545Z" fill="#E5E7EB"/>
+<path d="M250.036 136H183.964C181.775 136 180 136.977 180 138.182V149.818C180 151.023 181.775 152 183.964 152H250.036C252.225 152 254 151.023 254 149.818V138.182C254 136.977 252.225 136 250.036 136Z" stroke="#E5E7EB"/>
+</g>
+<g filter="url(#filter3_d_102_2)">
+<path d="M192.179 196.545H157.821C156.362 196.545 155.179 197.197 155.179 198C155.179 198.803 156.362 199.455 157.821 199.455H192.179C193.638 199.455 194.821 198.803 194.821 198C194.821 197.197 193.638 196.545 192.179 196.545Z" fill="#E300BF"/>
+<path d="M208.036 190H141.964C139.775 190 138 190.977 138 192.182V203.818C138 205.023 139.775 206 141.964 206H208.036C210.225 206 212 205.023 212 203.818V192.182C212 190.977 210.225 190 208.036 190Z" stroke="#EE5FD7"/>
+</g>
+<g filter="url(#filter4_d_102_2)">
+<path d="M234.179 169.545H199.821C198.362 169.545 197.179 170.197 197.179 171C197.179 171.803 198.362 172.455 199.821 172.455H234.179C235.638 172.455 236.821 171.803 236.821 171C236.821 170.197 235.638 169.545 234.179 169.545Z" fill="#E5E7EB"/>
+<path d="M250.036 163H183.964C181.775 163 180 163.977 180 165.182V176.818C180 178.023 181.775 179 183.964 179H250.036C252.225 179 254 178.023 254 176.818V165.182C254 163.977 252.225 163 250.036 163Z" stroke="#E5E7EB"/>
+</g>
+<path d="M295 250.5H295.5V250V65C295.5 61.9624 293.038 59.5 290 59.5H60C56.9624 59.5 54.5 61.9624 54.5 65V250V250.5H55H295Z" stroke="#E5E7EB"/>
+</g>
+<path d="M350 175H0V250H350V175Z" fill="url(#paint0_linear_102_2)"/>
+</g>
+<path d="M151.13 108.109C150.56 108.109 150.069 107.988 149.659 107.746C149.251 107.503 148.937 107.164 148.717 106.732C148.5 106.3 148.391 105.803 148.391 105.24C148.391 104.67 148.501 104.17 148.721 103.74C148.943 103.308 149.258 102.971 149.666 102.73C150.074 102.486 150.56 102.364 151.122 102.364C151.608 102.364 152.033 102.452 152.397 102.628C152.762 102.805 153.05 103.052 153.263 103.371C153.475 103.69 153.593 104.064 153.614 104.494H152.158C152.117 104.216 152.009 103.993 151.832 103.824C151.658 103.652 151.43 103.566 151.148 103.566C150.909 103.566 150.7 103.632 150.521 103.762C150.345 103.89 150.207 104.077 150.108 104.324C150.009 104.57 149.96 104.868 149.96 105.218C149.96 105.573 150.008 105.875 150.104 106.124C150.203 106.372 150.342 106.562 150.521 106.692C150.7 106.823 150.909 106.888 151.148 106.888C151.324 106.888 151.482 106.852 151.622 106.779C151.765 106.707 151.882 106.602 151.974 106.464C152.068 106.324 152.129 106.156 152.158 105.961H153.614C153.59 106.386 153.474 106.76 153.267 107.084C153.061 107.405 152.778 107.656 152.415 107.837C152.053 108.018 151.625 108.109 151.13 108.109ZM157.116 108.109C156.553 108.109 156.067 107.989 155.656 107.75C155.248 107.509 154.933 107.173 154.711 106.743C154.489 106.311 154.378 105.81 154.378 105.24C154.378 104.665 154.489 104.163 154.711 103.733C154.933 103.301 155.248 102.965 155.656 102.726C156.067 102.485 156.553 102.364 157.116 102.364C157.679 102.364 158.164 102.485 158.572 102.726C158.983 102.965 159.299 103.301 159.521 103.733C159.743 104.163 159.854 104.665 159.854 105.24C159.854 105.81 159.743 106.311 159.521 106.743C159.299 107.173 158.983 107.509 158.572 107.75C158.164 107.989 157.679 108.109 157.116 108.109ZM157.123 106.913C157.379 106.913 157.593 106.841 157.764 106.696C157.936 106.549 158.065 106.348 158.152 106.095C158.241 105.841 158.286 105.553 158.286 105.229C158.286 104.905 158.241 104.617 158.152 104.363C158.065 104.11 157.936 103.909 157.764 103.762C157.593 103.615 157.379 103.541 157.123 103.541C156.865 103.541 156.648 103.615 156.471 103.762C156.297 103.909 156.166 104.11 156.077 104.363C155.99 104.617 155.946 104.905 155.946 105.229C155.946 105.553 155.99 105.841 156.077 106.095C156.166 106.348 156.297 106.549 156.471 106.696C156.648 106.841 156.865 106.913 157.123 106.913ZM162.401 104.784V108H160.858V102.436H162.328V103.418H162.394C162.517 103.094 162.723 102.838 163.013 102.65C163.303 102.459 163.654 102.364 164.067 102.364C164.453 102.364 164.79 102.448 165.078 102.617C165.365 102.787 165.588 103.028 165.748 103.342C165.907 103.653 165.987 104.025 165.987 104.458V108H164.444V104.733C164.446 104.392 164.359 104.127 164.183 103.936C164.007 103.743 163.764 103.646 163.455 103.646C163.247 103.646 163.064 103.691 162.904 103.78C162.747 103.87 162.624 104 162.535 104.171C162.448 104.34 162.403 104.544 162.401 104.784ZM168.746 104.784V108H167.203V102.436H168.673V103.418H168.739C168.862 103.094 169.068 102.838 169.358 102.65C169.648 102.459 169.999 102.364 170.412 102.364C170.798 102.364 171.135 102.448 171.423 102.617C171.71 102.787 171.933 103.028 172.093 103.342C172.252 103.653 172.332 104.025 172.332 104.458V108H170.789V104.733C170.791 104.392 170.704 104.127 170.528 103.936C170.352 103.743 170.109 103.646 169.8 103.646C169.592 103.646 169.409 103.691 169.249 103.78C169.092 103.87 168.969 104 168.88 104.171C168.793 104.34 168.748 104.544 168.746 104.784ZM176.084 108.109C175.511 108.109 175.019 107.993 174.606 107.761C174.195 107.527 173.879 107.196 173.657 106.768C173.434 106.339 173.323 105.83 173.323 105.244C173.323 104.671 173.434 104.169 173.657 103.737C173.879 103.304 174.192 102.968 174.595 102.726C175 102.485 175.476 102.364 176.022 102.364C176.389 102.364 176.731 102.423 177.047 102.541C177.366 102.657 177.643 102.832 177.88 103.067C178.119 103.301 178.305 103.595 178.438 103.95C178.571 104.303 178.637 104.716 178.637 105.189V105.613H173.939V104.657H177.185C177.185 104.435 177.136 104.238 177.04 104.066C176.943 103.895 176.809 103.761 176.638 103.664C176.469 103.565 176.272 103.516 176.047 103.516C175.813 103.516 175.605 103.57 175.424 103.679C175.246 103.785 175.106 103.929 175.004 104.11C174.903 104.288 174.851 104.488 174.848 104.707V105.617C174.848 105.892 174.899 106.13 175 106.33C175.104 106.531 175.25 106.685 175.439 106.794C175.627 106.902 175.85 106.957 176.109 106.957C176.28 106.957 176.437 106.933 176.58 106.884C176.722 106.836 176.844 106.764 176.946 106.667C177.047 106.57 177.124 106.452 177.177 106.312L178.605 106.406C178.532 106.749 178.384 107.049 178.159 107.305C177.937 107.558 177.649 107.756 177.297 107.899C176.947 108.039 176.542 108.109 176.084 108.109ZM180.834 102.436L181.855 104.381L182.902 102.436H184.485L182.873 105.218L184.529 108H182.953L181.855 106.077L180.776 108H179.182L180.834 105.218L179.24 102.436H180.834ZM185.402 108V102.436H186.945V108H185.402ZM186.177 101.719C185.947 101.719 185.75 101.643 185.586 101.491C185.424 101.336 185.344 101.152 185.344 100.937C185.344 100.724 185.424 100.542 185.586 100.39C185.75 100.235 185.947 100.158 186.177 100.158C186.406 100.158 186.602 100.235 186.763 100.39C186.928 100.542 187.01 100.724 187.01 100.937C187.01 101.152 186.928 101.336 186.763 101.491C186.602 101.643 186.406 101.719 186.177 101.719ZM190.694 108.109C190.132 108.109 189.645 107.989 189.235 107.75C188.827 107.509 188.511 107.173 188.289 106.743C188.067 106.311 187.956 105.81 187.956 105.24C187.956 104.665 188.067 104.163 188.289 103.733C188.511 103.301 188.827 102.965 189.235 102.726C189.645 102.485 190.132 102.364 190.694 102.364C191.257 102.364 191.742 102.485 192.15 102.726C192.561 102.965 192.877 103.301 193.1 103.733C193.322 104.163 193.433 104.665 193.433 105.24C193.433 105.81 193.322 106.311 193.1 106.743C192.877 107.173 192.561 107.509 192.15 107.75C191.742 107.989 191.257 108.109 190.694 108.109ZM190.702 106.913C190.958 106.913 191.171 106.841 191.343 106.696C191.514 106.549 191.643 106.348 191.73 106.095C191.82 105.841 191.864 105.553 191.864 105.229C191.864 104.905 191.82 104.617 191.73 104.363C191.643 104.11 191.514 103.909 191.343 103.762C191.171 103.615 190.958 103.541 190.702 103.541C190.443 103.541 190.226 103.615 190.05 103.762C189.876 103.909 189.744 104.11 189.655 104.363C189.568 104.617 189.524 104.905 189.524 105.229C189.524 105.553 189.568 105.841 189.655 106.095C189.744 106.348 189.876 106.549 190.05 106.696C190.226 106.841 190.443 106.913 190.702 106.913ZM195.979 104.784V108H194.436V102.436H195.907V103.418H195.972C196.095 103.094 196.301 102.838 196.591 102.65C196.881 102.459 197.232 102.364 197.645 102.364C198.032 102.364 198.369 102.448 198.656 102.617C198.943 102.787 199.167 103.028 199.326 103.342C199.485 103.653 199.565 104.025 199.565 104.458V108H198.022V104.733C198.024 104.392 197.938 104.127 197.761 103.936C197.585 103.743 197.342 103.646 197.033 103.646C196.825 103.646 196.642 103.691 196.483 103.78C196.326 103.87 196.202 104 196.113 104.171C196.026 104.34 195.982 104.544 195.979 104.784Z" fill="#E300BF"/>
+</g>
+<defs>
+<filter id="filter0_d_102_2" x="49" y="57" width="252" height="202" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="3"/>
+<feGaussianBlur stdDeviation="2.5"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.54902 0 0 0 0 0.596078 0 0 0 0 0.643137 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_102_2"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_102_2" result="shape"/>
+</filter>
+<filter id="filter1_d_102_2" x="92.5" y="134.5" width="81" height="50" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="2"/>
+<feGaussianBlur stdDeviation="1.5"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.85098 0 0 0 0 0.866667 0 0 0 0 0.917647 0 0 0 0.2 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_102_2"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_102_2" result="shape"/>
+</filter>
+<filter id="filter2_d_102_2" x="176.5" y="134.5" width="81" height="23" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="2"/>
+<feGaussianBlur stdDeviation="1.5"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.85098 0 0 0 0 0.866667 0 0 0 0 0.917647 0 0 0 0.2 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_102_2"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_102_2" result="shape"/>
+</filter>
+<filter id="filter3_d_102_2" x="134.5" y="188.5" width="81" height="23" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="2"/>
+<feGaussianBlur stdDeviation="1.5"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.85098 0 0 0 0 0.866667 0 0 0 0 0.917647 0 0 0 0.2 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_102_2"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_102_2" result="shape"/>
+</filter>
+<filter id="filter4_d_102_2" x="176.5" y="161.5" width="81" height="23" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="2"/>
+<feGaussianBlur stdDeviation="1.5"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.85098 0 0 0 0 0.866667 0 0 0 0 0.917647 0 0 0 0.2 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_102_2"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_102_2" result="shape"/>
+</filter>
+<linearGradient id="paint0_linear_102_2" x1="175" y1="175" x2="175" y2="250" gradientUnits="userSpaceOnUse">
+<stop stop-color="#F3F4F6" stop-opacity="0"/>
+<stop offset="0.685417" stop-color="#F3F4F6"/>
+</linearGradient>
+<clipPath id="clip0_102_2">
+<rect width="350" height="250" fill="white"/>
+</clipPath>
+</defs>
 </svg>
-`)}
-                alt=""
-                className="absolute top-0 object-cover w-full h-full start-0 rounded-t-xl"
-              />
-            </div>
-            <div className="p-4 bg-gray-100 dark:bg-secondary-900">
-              <h3 className="text-sm font-medium text-gray-900 dark:text-gray-50">
-                Pages d'erreurs 404
-              </h3>
-              <p className="mt-0.5 text-sm text-gray-400 dark:text-gray-500">4 templates</p>
-            </div>
-          </Link>
+`,
+  },
+]
+
+export default function Page() {
+  return (
+    <div className="py-6 mx-auto max-w-7xl">
+      <Hero />
+      <section className="px-4 py-4">
+        <div className=""></div>
+        <div className="grid grid-cols-2 gap-4 text-start md:grid-cols-3 lg:grid-cols-4 xl:gap-6">
+          {data.map((block, index) => (
+            <Link
+              key={block.href}
+              href={block.href}
+              className="relative rounded-xl before:absolute before:inset-0 before:z-10 before:border before:border-gray-200 before:rounded-xl before:transition before:hover:border-2 before:hover:border-blue-600 before:hover:shadow-lg dark:bg-[#151c2f] dark:before:border-gray-700 dark:before:hover:border-blue-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600 overflow-hidden"
+            >
+              <div className="relative pt-[50%]">
+                <img
+                  src={svgToDataURL(block.image)}
+                  alt=""
+                  className="absolute top-0 object-cover w-full h-full start-0 rounded-t-xl"
+                />
+              </div>
+              <div className="p-4 bg-gray-100 dark:bg-secondary-900">
+                <h3 className="text-sm font-medium text-gray-900 dark:text-gray-50">
+                  {block.title}
+                </h3>
+                <p className="mt-0.5 text-sm text-gray-400 dark:text-gray-500">
+                  {block.description}
+                </p>
+              </div>
+            </Link>
+          ))}
         </div>
       </section>
       <NewsLetter />

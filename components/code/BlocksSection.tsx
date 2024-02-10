@@ -9,6 +9,7 @@ interface Props {
   id: string
   htmlBody: string
   height?: number
+  script?: string
 }
 
 const html = `<html lang="fr">
@@ -38,10 +39,13 @@ const html = `<html lang="fr">
   </head>
   <body class="h-screen bg-white">
     <!--content-->
+    <script type="text/javascript">
+    <!--script-->
+    </script>
   </body>
 </html>`
 
-const BlocksSection = ({ name, id, htmlBody }: Props) => {
+const BlocksSection = ({ name, id, htmlBody, script }: Props) => {
   const [height, setHeight] = useState(800)
   const [code, setCode] = useState('')
   const [currentTab, setCurrentTab] = useState<'code' | 'preview'>('preview')
@@ -220,7 +224,9 @@ const BlocksSection = ({ name, id, htmlBody }: Props) => {
                   title="test"
                   loading="lazy"
                   className="w-full h-full m-0 bg-secondary-700"
-                  srcDoc={html.replace('<!--content-->', htmlBody)}
+                  srcDoc={html
+                    .replace('<!--content-->', htmlBody)
+                    .replace('<!--script-->', script ?? '')}
                 ></iframe>
               ) : (
                 <div className="h-full p-4 overflow-scroll hide-scrollbar bg-secondary-700">
