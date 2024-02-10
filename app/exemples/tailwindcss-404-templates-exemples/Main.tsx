@@ -303,7 +303,7 @@ const Main = () => {
         <div className="absolute inset-0 bg-heroPatternLight dark:bg-heroPatternDark"></div>
         <div className="relative overflow-hidden bg-gradient-to-b from-transparent to-white to-[90%] py-12 space-y-8 dark:to-secondary-900">
           <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-10">
-            <div className="max-w-4xl mx-auto mt-5 text-center">
+            <div className="mx-auto mt-5 text-center max-w-7xl">
               <h2 className="block text-3xl font-bold text-gray-800 md:text-5xl lg:text-6xl dark:text-gray-200">
                 Templates 404 Tailwind CSS : Page d'Erreur Personnalisée
               </h2>
