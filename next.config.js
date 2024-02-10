@@ -7,13 +7,13 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 // You might need to insert additional domains in script-src if you are using external services
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-eval' 'unsafe-inline' giscus.app https://cdn.tailwindcss.com;
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' giscus.app https://cdn.tailwindcss.com www.googletagmanager.com https://www.gstatic.com/recaptcha/releases/MydHw_zggsxIJuhSbyOmPv5R/recaptcha__fr.js https://www.google.com/recaptcha/api.js https://www.gstatic.com/recaptcha/releases/vm_YDiq1BiI3a8zfbIPZjtF2/recaptcha__fr.js https://va.vercel-scripts.com/v1/script.debug.js https://cdn.tailwindcss.com/ https://www.gstatic.com/recaptcha/releases/-QbJqHfGOUB8nuVRLvzFLVed/recaptcha__fr.js;
   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
   img-src * blob: data:;
   media-src *.s3.amazonaws.com;
   connect-src *;
   font-src 'self';
-  frame-src *;
+  frame-src * 'slef' https://www.google.com/;
 `
 
 const securityHeaders = [
