@@ -4,15 +4,15 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteMetadata.siteUrl),
-  title: `Paletteflows - ${siteMetadata.title}`,
+  title: `Générateur de Couleurs et Nuances pour Design Web Avancé`,
   description:
-    'Paletteflows est un outil intuitif qui vous permet de générer et d’intégrer des palettes de couleurs personnalisées dans Tailwind CSS ou CSS standard en quelques clics.',
+    'Transformez votre design web avec PaletteFlows, le générateur de palette de couleurs idéal pour Tailwind CSS et tous vos projets de développement web.',
   openGraph: {
-    title: `Paletteflows - ${siteMetadata.title}`,
+    title: `Générateur de Couleurs et Nuances pour Design Web Avancé`,
     description:
-      'Paletteflows est un outil intuitif qui vous permet de générer et d’intégrer des palettes de couleurs personnalisées dans Tailwind CSS ou CSS standard en quelques clics.',
+      'Transformez votre design web avec PaletteFlows, le générateur de palette de couleurs idéal pour Tailwind CSS et tous vos projets de développement web.',
     url: './',
-    siteName: `Paletteflows - ${siteMetadata.title}`,
+    siteName: `Tailflows`,
     images: [siteMetadata.socialBanner],
     locale: 'fr_FR',
     type: 'website',
@@ -24,18 +24,18 @@ export const metadata: Metadata = {
     },
   },
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
     googleBot: {
-      index: false,
-      follow: false,
+      index: true,
+      follow: true,
       'max-video-preview': -1,
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
   },
   twitter: {
-    title: `Paletteflows - ${siteMetadata.title}`,
+    title: `Générateur de Couleurs et Nuances pour Design Web Avancé`,
     card: 'summary_large_image',
     images: [siteMetadata.socialBanner],
   },

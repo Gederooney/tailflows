@@ -21,7 +21,7 @@ export default function Footer() {
                 <h2 className="mb-6 text-sm font-semibold uppercase text-gray-50">Liens Rapide</h2>
                 <ul className="font-medium text-gray-500 dark:text-gray-400">
                   <li className="mb-2">
-                    <a href="/couleurs" className="hover:underline">
+                    <a href="/generateur-nuances-couleurs-tailwind-css" className="hover:underline">
                       Paletteflows
                     </a>
                   </li>

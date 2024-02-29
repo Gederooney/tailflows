@@ -89,5 +89,37 @@ module.exports = () => {
 
       return config
     },
+
+    async redirects() {
+      return [
+        {
+          source: '/couleurs',
+          destination: '/generateur-nuances-couleurs-tailwind-css',
+          permanent: true,
+        },
+        {
+          source: '/couleurs/search',
+          destination: '/generateur-nuances-couleurs-tailwind-css',
+          permanent: true,
+        },
+        {
+          source: '/couleurs/search',
+          has: [
+            {
+              type: 'query',
+              key: 'color',
+              value: '(?<color>.*)',
+            },
+            {
+              type: 'query',
+              key: 'name',
+              value: '(?<name>.*)',
+            },
+          ],
+          destination: '/generateur-nuances-couleurs-tailwind-css', // Utilise la capture nommée dans `value`
+          permanent: true,
+        },
+      ]
+    },
   })
 }

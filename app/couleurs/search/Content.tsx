@@ -13,7 +13,7 @@ import {
   getPosition,
   setColors,
   getTailwindColorConfig,
-} from '../colors.utils'
+} from '../../../lib/colors.utils'
 import JustShadeBtn from '@/components/shades/JustShadeBtn'
 import { notFound } from 'next/navigation'
 import Color from 'color'

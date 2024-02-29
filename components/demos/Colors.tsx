@@ -1,4 +1,4 @@
-import { nearest } from '@/app/couleurs/colors.utils'
+import { nearest } from '@/lib/colors.utils'
 import ColorContext from '@/app/couleurs/context'
 import React, { useContext } from 'react'
 

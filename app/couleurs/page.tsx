@@ -9,9 +9,9 @@ import {
   makeShadeNoMode,
   makeShadesWithMode,
   nearest,
-} from './colors.utils'
+} from '../../lib/colors.utils'
 import JustShadeBtn from '@/components/shades/JustShadeBtn'
-import { getWheelBg, setColors } from './colors.utils'
+import { getWheelBg, setColors } from '../../lib/colors.utils'
 import { ColorsExemple } from '@/components/demos'
 import { ActionButton } from '@/components/button'
 import { copyToClipboard } from '@/lib/utils'

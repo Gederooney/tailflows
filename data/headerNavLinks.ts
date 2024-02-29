@@ -1,7 +1,7 @@
 const headerNavLinks = [
   { href: '/', title: 'Accueil' },
   {
-    href: '/couleurs',
+    href: '/generateur-nuances-couleurs-tailwind-css',
     title: 'Paletteflows',
   },
   {

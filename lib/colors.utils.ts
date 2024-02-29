@@ -2,8 +2,9 @@ import colors from '@/data/colors.json'
 import nearestColor from 'nearest-color'
 import chroma from 'chroma-js'
 import Color from 'color'
-import { ColorMode } from './colors'
-import { Point, Position } from './colors'
+import { ColorMode } from '../app/couleurs/colors'
+import { Point, Position } from '../app/couleurs/colors'
+import { TCoordinates } from '@/components/colors'
 
 export const nearest = nearestColor.from(
   colors.reduce((o, { name_fr, hex }) => Object.assign(o, { [name_fr]: hex }), {})
@@ -269,7 +270,21 @@ export function setColors(colors: string[]) {
   })
 }
 
-export function getCssString(shades: string[]) {}
+export function getCssString(shades: string[]) {
+  let str = ''
+  for (const index in shades) {
+    if (index === '0') {
+      str += `--color-50: ${shades[+index]};`
+    } else if (index === `${shades.length - 1}`) {
+      str += `--color-${+index * 100 - 50}: ${shades[+index]};`
+    } else {
+      str += `--color-${+index * 100}: ${shades[+index]};`
+    }
+  }
+  return `
+  :root{${str}}
+  `
+}
 
 export function getTailwindColorConfig(shades: string[]) {
   const obj = shades.reduce((acc, curr, index) => {
@@ -281,4 +296,43 @@ export function getTailwindColorConfig(shades: string[]) {
   }, {})
 
   return obj
+}
+
+export const getIntersectionPoint = (coordinates: TCoordinates) => {
+  // distance to center
+  const d = Math.sqrt(coordinates.x * coordinates.x + coordinates.y * coordinates.y)
+
+  const x = coordinates.x / d
+  const y = coordinates.y / d
+
+  return { x, y }
+}
+
+export const pointIsInCercle = (coordinates: TCoordinates) => {
+  const d = Math.sqrt(coordinates.x * coordinates.x + coordinates.y * coordinates.y)
+
+  return d <= 1
+}
+
+export const getRelativeMousePositionToWheel = (
+  clientX: number,
+  clientY: number,
+  sizes: DOMRect | undefined
+) => {
+  if (sizes) {
+    const x = clientX - sizes.left
+    const y = clientY - sizes.top
+
+    return { x, y }
+  }
+  return { x: 0, y: 0 }
+}
+
+export const getLeftAndTop = (mousePosition: TCoordinates, sizes: DOMRect | undefined) => {
+  if (sizes) {
+    const left = (mousePosition.x * 100) / sizes.width
+    const top = (mousePosition.y * 100) / sizes.height
+    return { left, top }
+  }
+  return { left: 0, top: 0 }
 }

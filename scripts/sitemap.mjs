@@ -11,12 +11,11 @@ const generateColorSitemap = () => {
   const urlSet = colors.reduce((acc, color) => {
     const params = new URLSearchParams()
     params.append('color', color.hex.toLowerCase())
-    params.append('name', color.name.replaceAll(' ', '-'))
     return (
       acc +
       `
 <url>
-  <loc>${siteUrl}/couleurs/search?${params.toString()}</loc>
+  <loc>${siteUrl}/generateur-nuances-couleurs-tailwind-css?${params.toString()}</loc>
   <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
   <priority>0.7</priority>
 </url>
