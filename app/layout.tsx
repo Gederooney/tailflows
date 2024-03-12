@@ -111,9 +111,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ThemeProviders>
           <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
           <Header />
-          <main className="mb-auto">{children}</main>
-          <CookieBanner />
+          <main className="relative h-full mb-auto">{children}</main>
           <Footer />
+          <CookieBanner />
         </ThemeProviders>
       </body>
     </html>

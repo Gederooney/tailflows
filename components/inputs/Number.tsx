@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 interface NumberProps {
   label?: string
@@ -12,13 +12,20 @@ interface NumberProps {
 }
 
 const Number = ({ label, onChange, min, max, step, defaultValue, style }: NumberProps) => {
-  const [value, setValue] = useState(0)
+  const [value, setValue] = useState(defaultValue ?? 0)
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { value, name } = e.target
+    const { value } = e.target
     if (isNaN(+value) || (max && +value > max) || (min && +value < min)) return
     setValue(+value)
     onChange(+value)
   }
+
+  useEffect(() => {
+    if (defaultValue && defaultValue !== value) {
+      setValue(Math.round(defaultValue))
+    }
+  }, [defaultValue])
+
   return (
     <div className="">
       <div className="">

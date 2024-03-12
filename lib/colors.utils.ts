@@ -2,9 +2,7 @@ import colors from '@/data/colors.json'
 import nearestColor from 'nearest-color'
 import chroma from 'chroma-js'
 import Color from 'color'
-import { ColorMode } from '../app/couleurs/colors'
-import { Point, Position } from '../app/couleurs/colors'
-import { TCoordinates } from '@/components/colors'
+import { TCoordinates, TPosition } from '@/components/colors'
 
 export const nearest = nearestColor.from(
   colors.reduce((o, { name_fr, hex }) => Object.assign(o, { [name_fr]: hex }), {})
@@ -22,7 +20,7 @@ export function makeShadeNoMode(hslArray: number[], stepsCount: number): string[
   return shades.map((hsl) => Color.hsl(hsl).hex())
 }
 
-export function makeShadesWithMode(hex: string, mode: ColorMode) {
+export function makeShadesWithMode(hex: string, mode: string) {
   const chromaColor = chroma(hex)
   const whitest = chromaColor.set('hsl.l', 0.97)
   const darkest = chromaColor.set('hsl.l', 0.05)
@@ -35,7 +33,7 @@ export function makeShadesWithMode(hex: string, mode: ColorMode) {
   return shades.filter((_, index: number) => index % 2 === 0)
 }
 
-export function coordsToHue({ x, y }: Point) {
+export function coordsToHue({ x, y }: TCoordinates) {
   const angleRad = Math.atan2(y, x)
   let angleDeg = (angleRad * 180) / Math.PI
 
@@ -48,7 +46,7 @@ export function coordsToHue({ x, y }: Point) {
   return angleDeg
 }
 
-export function coordsTobrightness({ x, y }: Point, radius: number) {
+export function coordsTobrightness({ x, y }: TCoordinates, radius: number) {
   const l = (radius - y) / (radius * 2)
 
   return l
@@ -72,11 +70,11 @@ export function hslString(color: number[]) {
 
 /**
  * @name getPosition
- * @param p Point
+ * @param p TCoordinates
  * @param radius
- * @returns position Point
+ * @returns position TCoordinates
  */
-export function getPosition(p: Point, radius: number): Position {
+export function getPosition(p: TCoordinates, radius: number): TPosition {
   const w = radius * 2
   return {
     left: (p.x * 100) / w,
@@ -86,11 +84,11 @@ export function getPosition(p: Point, radius: number): Position {
 
 /**
  * @name getCoordinates
- * @param p Point
+ * @param p TCoordinates
  * @param radius number
- * @returns q Point
+ * @returns q TCoordinates
  */
-export function getCoordinates(p: Point, radius: number) {
+export function getCoordinates(p: TCoordinates, radius: number) {
   return {
     x: p.x - radius,
     y: radius - p.y,
@@ -99,12 +97,12 @@ export function getCoordinates(p: Point, radius: number) {
 
 /**
  * @name getSaturation
- * @param p Point
+ * @param p TCoordinates
  * @param radius number
  * @desc return the sturation of the color at position p in the cercle of radius
  * @returns number
  */
-export function getSaturation(p: Point, radius: number) {
+export function getSaturation(p: TCoordinates, radius: number) {
   const sat = Math.sqrt(p.x * p.x + p.y * p.y) / radius
 
   return sat
@@ -119,7 +117,7 @@ export function getSaturation(p: Point, radius: number) {
  * is the center of the circle
  * @return true if the P is in C or flase if not
  */
-export function pIsInCercle(p: Point, r: number) {
+export function pIsInCercle(p: TCoordinates, r: number) {
   // distance to center
   const d = Math.sqrt(p.x * p.x + p.y * p.y)
 
@@ -127,7 +125,7 @@ export function pIsInCercle(p: Point, r: number) {
 }
 
 /**
- * @name findIntersectionPoint
+ * @name findIntersectionTCoordinates
  * @param P {x:number, y: number}
  * @param r radius of the circle
  * @desc find a point Q(x, y)
@@ -135,7 +133,7 @@ export function pIsInCercle(p: Point, r: number) {
  * and the line formed by p and the center of the circle
  * @return Q(x, y)
  */
-export function findIntersectionPoint(p: Point, r: number) {
+export function findIntersectionTCoordinates(p: TCoordinates, r: number) {
   // distance to center
   const d = Math.sqrt(p.x * p.x + p.y * p.y)
   const x = (p.x * r) / d
@@ -144,17 +142,17 @@ export function findIntersectionPoint(p: Point, r: number) {
   return { x, y }
 }
 
-export function getHuePositionAndCoordinates(point: Point, radius: number) {
-  let position: Position, coords: Point
+export function getHuePositionAndCoordinates(point: TCoordinates, radius: number) {
+  let position: TPosition, coords: TCoordinates
 
   position = getPosition(point, radius)
 
   coords = getCoordinates(point, radius)
 
-  const thePointIsInTheCircle = pIsInCercle(coords, radius)
-  if (!thePointIsInTheCircle) {
-    // intersectionPointcoords
-    coords = findIntersectionPoint(coords, radius)
+  const theTCoordinatesIsInTheCircle = pIsInCercle(coords, radius)
+  if (!theTCoordinatesIsInTheCircle) {
+    // intersectionTCoordinatescoords
+    coords = findIntersectionTCoordinates(coords, radius)
 
     // intersectionPosition
     position = getPosition({ x: coords.x + radius, y: radius - coords.y }, radius)
@@ -169,7 +167,7 @@ export function hslToPickerCoordinates(angle: number, distanceFromCenter: number
   let y = Math.cos(angleRadius) * distanceFromCenter
 
   if (!pIsInCercle({ x, y }, radius)) {
-    const coords = findIntersectionPoint({ x, y }, radius)
+    const coords = findIntersectionTCoordinates({ x, y }, radius)
     x = coords.x
     y = coords.y
   }
@@ -244,7 +242,7 @@ export function getWheelBg() {
   hsla(0, 0%, 50%, 1)`
 }
 
-export function hueSatToCoordinates(h: number, s: number): Point {
+export function hueSatToCoordinates(h: number, s: number): TCoordinates {
   // h = (h + 90) % 360
 
   const angleRad = h * (Math.PI / 180)
@@ -298,7 +296,7 @@ export function getTailwindColorConfig(shades: string[]) {
   return obj
 }
 
-export const getIntersectionPoint = (coordinates: TCoordinates) => {
+export const getIntersectionTCoordinates = (coordinates: TCoordinates) => {
   // distance to center
   const d = Math.sqrt(coordinates.x * coordinates.x + coordinates.y * coordinates.y)
 
@@ -314,7 +312,7 @@ export const pointIsInCercle = (coordinates: TCoordinates) => {
   return d <= 1
 }
 
-export const getRelativeMousePositionToWheel = (
+export const getRelativeMousePosition = (
   clientX: number,
   clientY: number,
   sizes: DOMRect | undefined
@@ -335,4 +333,9 @@ export const getLeftAndTop = (mousePosition: TCoordinates, sizes: DOMRect | unde
     return { left, top }
   }
   return { left: 0, top: 0 }
+}
+
+export const coordinatesToPosition = (coordinates: TCoordinates) => {
+  const { x, y } = coordinates
+  return { left: 50 * x + 50, top: -50 * (y - 1) }
 }

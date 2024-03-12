@@ -30,7 +30,7 @@ function ActionButton({
       className={`${classname} ${clicked ? 'disabled' : null}`}
       onClick={(e) => {
         actionMethod()
-        setClicked((prev) => true)
+        setClicked(() => true)
       }}
     >
       {clicked ? sucessChildren : children}

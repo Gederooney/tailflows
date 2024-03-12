@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+}
+
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -218,11 +226,6 @@ main {
     rgb(255, 0, 255) 83%,
     rgb(255, 0, 0) 100%
   );
-}
-
-input[type='range'][orient='vertical'] {
-  writing-mode: bt-lr;
-  appearance: slider-vertical;
 }
 
 /* For modern browsers supporting webkit */
