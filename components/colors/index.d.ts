@@ -34,3 +34,14 @@ export interface IInitialWheelState {
     colors: string[]
   }
 }
+
+export interface IWheelProps {
+  state: IInitialWheelState
+  withShadow?: boolean
+  getCurrentColor?: (color: string) => void
+  // setState: Dispatch<SetStateAction<IInitialWheelState>>
+  getData: (data: {
+    colorHex: string
+    combinaisons: { type: TCombinaisonsType; palette: string[] }
+  }) => void
+}

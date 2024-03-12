@@ -457,7 +457,7 @@ const Content = () => {
               </div>
               <div className="flex overflow-scroll flew-row hide-scrollbar lg:flex-col">
                 {shadows.map((s, index) => (
-                  <div className="p-2" key={s.id}>
+                  <div className="p-2" key={s.id + index}>
                     <Controls
                       onChange={handleChange}
                       onDelete={() => {
@@ -633,10 +633,10 @@ const Content = () => {
             className="flex flex-wrap items-center justify-center w-full gap-32 mb-16"
             id="examples"
           >
-            {exemples.map((shadow) => {
+            {exemples.map((shadow, index) => {
               return (
                 <div
-                  key={shadow.shadow}
+                  key={shadow.shadow + index}
                   className="relative flex flex-col items-center justify-center w-40 h-40 border rounded-md cursor-pointer border-gray-950/10 dark:border-gray-50/10 group"
                   style={{
                     boxShadow: shadow.vanillaCSS,
