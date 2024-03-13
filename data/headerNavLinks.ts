@@ -33,6 +33,10 @@ export const mobileNav = [
     title: 'Exemples',
   },
   {
+    href: '/generateur-gradient-tailwindcss',
+    title: 'Shadowsflow',
+  },
+  {
     href: '/generateur-box-shadow',
     title: 'Shadowsflow',
   },
