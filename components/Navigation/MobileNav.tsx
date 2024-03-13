@@ -1,8 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import Link from './Link'
-import headerNavLinks from '@/data/headerNavLinks'
+import Link from '../Link'
+import { mobileNav } from '@/data/headerNavLinks'
 
 const MobileNav = () => {
   const [navShow, setNavShow] = useState(false)
@@ -24,7 +24,7 @@ const MobileNav = () => {
       <button
         aria-label="Toggle Menu"
         onClick={onToggleNav}
-        className="md:hidden text-gray-900 dark:text-gray-100"
+        className="text-gray-900 lg:hidden dark:text-gray-100"
       >
         <svg
           clipRule="evenodd"
@@ -33,7 +33,7 @@ const MobileNav = () => {
           strokeMiterlimit="2"
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6 text-current fill-current"
+          className="w-6 h-6 text-current fill-current"
         >
           <path
             d="m11 16.745c0-.414.336-.75.75-.75h9.5c.414 0 .75.336.75.75s-.336.75-.75.75h-9.5c-.414 0-.75-.336-.75-.75zm-9-5c0-.414.336-.75.75-.75h18.5c.414 0 .75.336.75.75s-.336.75-.75.75h-18.5c-.414 0-.75-.336-.75-.75zm4-5c0-.414.336-.75.75-.75h14.5c.414 0 .75.336.75.75s-.336.75-.75.75h-14.5c-.414 0-.75-.336-.75-.75z"
@@ -49,9 +49,9 @@ const MobileNav = () => {
           navShow ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
-        <div className="flex justify-end relative">
+        <div className="relative flex justify-end">
           <button
-            className="mr-8 mt-11 h-8 w-8 text-gray-900 dark:text-gray-100"
+            className="w-8 h-8 mr-8 text-gray-900 mt-11 dark:text-gray-100"
             aria-label="Toggle Menu"
             onClick={onToggleNav}
           >
@@ -59,7 +59,7 @@ const MobileNav = () => {
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
               fill="currentColor"
-              className="text-current h-6 w-6"
+              className="w-6 h-6 text-current"
             >
               <path
                 fillRule="evenodd"
@@ -69,8 +69,8 @@ const MobileNav = () => {
             </svg>
           </button>
         </div>
-        <nav className="fixed mt-8 h-full">
-          {headerNavLinks.map((link) => (
+        <nav className="fixed h-full mt-8">
+          {mobileNav.map((link) => (
             <div key={link.title + 'mobile'} className="px-12 py-4">
               <Link
                 href={link.href}

@@ -4,7 +4,7 @@ import 'css/prism.css'
 
 import { Space_Grotesk, Poppins } from 'next/font/google'
 import { Analytics, AnalyticsConfig } from 'pliny/analytics'
-import Header from '@/components/Header'
+import Header from '@/components/Navigation/Header'
 import SectionContainer from '@/components/SectionContainer'
 import Footer from '@/components/Footer'
 import siteMetadata from '@/data/siteMetadata'

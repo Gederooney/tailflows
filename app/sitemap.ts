@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next'
 import { allBlogs } from 'contentlayer/generated'
 import siteMetadata from '@/data/siteMetadata'
+import { mobileNav } from '@/data/headerNavLinks'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = siteMetadata.siteUrl
@@ -12,8 +13,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: post.lastmod || post.date,
     }))
 
-  const routes = ['', 'blog', 'couleurs', 'composants-ui', 'icons'].map((route) => ({
-    url: `${siteUrl}/${route}`,
+  const routes = mobileNav.map((route) => ({
+    url: `${siteUrl}/${route.href.replaceAll('/', '')}`,
     lastModified: new Date().toISOString().split('T')[0],
   }))
 
