@@ -45,13 +45,13 @@ const MobileNav = () => {
         style={{
           zIndex: 2000,
         }}
-        className={`fixed left-0 top-0 h-full w-full transform bg-white opacity-95 duration-300 ease-in-out dark:bg-gray-950 dark:opacity-[0.98] ${
+        className={`fixed left-0 top-0 h-full w-full transform bg-gray-50/20 opacity-95 duration-300 ease-in-out dark:bg-secondary-800/20 backdrop-blur-lg dark:opacity-[0.98] ${
           navShow ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
         <div className="relative flex justify-end">
           <button
-            className="w-8 h-8 mr-8 text-gray-900 mt-11 dark:text-gray-100"
+            className="w-8 h-8 mr-8 text-secondary-800 mt-11 dark:text-gray-100"
             aria-label="Toggle Menu"
             onClick={onToggleNav}
           >
@@ -74,7 +74,7 @@ const MobileNav = () => {
             <div key={link.title + 'mobile'} className="px-12 py-4">
               <Link
                 href={link.href}
-                className="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100"
+                className="text-2xl font-bold tracking-widest text-secondary-800 dark:text-gray-300"
                 onClick={onToggleNav}
               >
                 {link.title}

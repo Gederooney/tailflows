@@ -22,7 +22,7 @@ export const mobileNav = [
   { href: '/', title: 'Accueil' },
   {
     href: '/generateur-nuances-couleurs-tailwind-css',
-    title: 'Paletteflows',
+    title: 'Créateur de nuances',
   },
   {
     href: '/icons',
@@ -34,11 +34,11 @@ export const mobileNav = [
   },
   {
     href: '/generateur-gradient-tailwindcss',
-    title: 'Shadowsflow',
+    title: "Créateur d'ombres de portée",
   },
   {
     href: '/generateur-box-shadow',
-    title: 'Shadowsflow',
+    title: 'Générateur de gradient',
   },
   {
     href: '/themes',
