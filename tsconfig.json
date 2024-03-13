@@ -24,6 +24,7 @@
       "@/app/*": ["app/*"],
       "@/utils/*": ["utils/*"],
       "@/lib/*": ["lib/*"],
+      "@/models/*": ["models/*"],
       "contentlayer/generated": ["./.contentlayer/generated"]
     },
     "plugins": [
