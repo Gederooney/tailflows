@@ -356,3 +356,33 @@ input[type='number']::-webkit-outer-spin-button {
       'd e f';
   }
 }
+
+.tooltipanchor {
+  clip-path: polygon(0 0, 100% 0, 100% 100%);
+}
+
+.scaleIn {
+  animation: scaleIn;
+}
+
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    transform: rotateX(-10deg) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateX(0) scale(1);
+  }
+}
+
+@keyframes scaleOut {
+  0% {
+    opacity: 1;
+    transform: rotateX(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: rotateX(-10deg) scale(0.8);
+  }
+}
