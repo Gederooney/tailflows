@@ -1,10 +1,9 @@
 import React from 'react'
-import Content from './Content'
+import Content from '../[slug]/Content'
 import siteMetadata from '@/data/siteMetadata'
 import { ResolvingMetadata, Metadata } from 'next'
-import themes from '@/data/themes.json' assert { type: 'json' }
 import { notFound } from 'next/navigation'
-import { Theme, ReposInfos } from 'types'
+import { getTheme } from '../utils'
 
 type Props = {
   params: { search: string }
@@ -15,12 +14,11 @@ export async function generateMetadata(
   { params, searchParams }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const theme = await getTheme(searchParams.id as string)
-  // const theme = themes.find((theme) => theme.id === searchParams.id)
+  const theme = await getTheme({ id: searchParams.id as string })
   if (!theme) return {} as Metadata
   return {
     metadataBase: new URL(siteMetadata.siteUrl),
-    title: `${searchParams.name} | ${siteMetadata.title}`,
+    title: `${theme.metaTitle}`,
 
     description: `${theme.description[0]}`,
     keywords: [
@@ -65,26 +63,8 @@ export async function generateMetadata(
   }
 }
 
-async function getTheme(themeId: string) {
-  try {
-    const { BASE_URL } = process.env
-
-    const res = await fetch(`${BASE_URL}/api/themes?id=${themeId}`, {
-      method: 'GET',
-    })
-    if (!res.ok) return null
-
-    const { data } = await res.json()
-
-    return data as Theme & { reposInfos: ReposInfos }
-  } catch (error) {
-    console.log(error.message)
-    return null
-  }
-}
-
 const Page = async ({ searchParams }: { searchParams: { name: string; id: string } }) => {
-  const theme = await getTheme(searchParams.id)
+  const theme = await getTheme({ id: searchParams.id })
   if (!theme) return notFound()
   return <Content {...theme} />
 }

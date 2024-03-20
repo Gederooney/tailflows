@@ -66,12 +66,7 @@ module.exports = () => {
       dirs: ['app', 'components', 'layouts', 'scripts'],
     },
     images: {
-      remotePatterns: [
-        {
-          protocol: 'https',
-          hostname: 'picsum.photos',
-        },
-      ],
+      remotePatterns: [],
     },
     async headers() {
       return [
@@ -116,7 +111,17 @@ module.exports = () => {
               value: '(?<name>.*)',
             },
           ],
-          destination: '/generateur-nuances-couleurs-tailwind-css', // Utilise la capture nommée dans `value`
+          destination: '/generateur-nuances-couleurs-tailwind-css',
+          permanent: true,
+        },
+        {
+          source: '/themes',
+          destination: '/templates',
+          permanent: true,
+        },
+        {
+          source: '/themes/search',
+          destination: '/templates',
           permanent: true,
         },
       ]

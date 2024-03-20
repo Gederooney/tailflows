@@ -159,10 +159,10 @@ const Page = () => {
           className="inline-flex items-center justify-between px-1 py-1 pr-4 text-sm text-gray-700 bg-gray-100 rounded-full mb-7 dark:bg-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700"
         >
           <span className="text-xs bg-primary-600 rounded-full text-white px-4 py-1.5 mr-3">
-            themes
+            templates
           </span>{' '}
           <span className="text-sm font-medium">
-            liste de thèmes tailwindcss gratuits et open sources{' '}
+            liste de templates tailwindcss gratuits et open sources{' '}
           </span>
           <svg
             className="w-5 h-5 ml-2"

@@ -91,12 +91,15 @@ const handler = async (req: NextRequest, res: NextResponse) => {
     const queryParams = parsedUrl.searchParams
 
     const id = queryParams.get('id')
+    const slug = queryParams.get('slug')
 
-    if (!id) {
+    if (!id && !slug) {
       return NextResponse.json({ error: true, message: `ThemeId is required` }, { status: 400 })
     }
 
-    const theme = themes.find((theme) => theme.id === id)
+    const theme = themes.find(
+      (theme) => theme.id === id || theme.slug === slug || theme.id === slug
+    )
 
     if (!theme) return NextResponse.json({ error: true, message: 'theme not found' })
 

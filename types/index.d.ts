@@ -5,7 +5,7 @@ export type Theme = {
   categories: string[]
   author: string
   description: string
-  popularity: string
+  popularity: number
   images: string[]
   tags: string[]
   download_link: string
@@ -16,6 +16,8 @@ export type Theme = {
   id: string
   colors: string[]
   features: string[]
+  metaTitle: string
+  slug: string
 }
 
 export type ReposInfos = {

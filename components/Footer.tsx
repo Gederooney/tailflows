@@ -46,7 +46,7 @@ export default function Footer() {
                     </a>
                   </li>
                   <li className="mb-2">
-                    <a href="/themes" className="hover:underline">
+                    <a href="/templates" className="hover:underline">
                       Templates
                     </a>
                   </li>

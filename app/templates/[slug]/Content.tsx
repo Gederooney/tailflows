@@ -6,6 +6,8 @@ import React, { useEffect, useState } from 'react'
 import { Theme, ReposInfos } from 'types'
 import chroma from 'chroma-js'
 import Link from 'next/link'
+import { ActionButton } from '@/components/button'
+import { copyToClipboard } from '@/lib/utils'
 
 const formatDateToFrench = (dateString: string) => {
   const months = [
@@ -235,28 +237,74 @@ const Content = (theme: Props) => {
                 <div className="flex items-center w-full gap-4 my-2 ">
                   <span className="font-medium">Couleurs:</span>
                   <div className="flex-1 overflow-auto hide-scrollbar">
-                    <Link
-                      href="/#"
-                      onClick={(e) => e.preventDefault()}
-                      className="flex flex-grow-0 flex-shrink-0 w-full gap-2 py-2"
-                    >
+                    <div className="flex flex-grow-0 flex-shrink-0 w-full gap-2 py-2">
                       {theme.colors.map((key: string) => {
                         const color = chroma(key)
                         return (
                           <div
                             key={`${theme.id + key}`}
-                            className={`px-2 py-1 rounded-md text-xs font-thin shadow ${
+                            className={`h-10 w-20 flex items-center justify-center px-2 py-1 rounded-md text-xs font-thin shadow gap-1 shrink-0 grow-0 ${
                               color.luminance() > 0.5 ? 'text-secondary-950' : 'text-primary-50'
                             }`}
                             style={{
                               backgroundColor: key,
                             }}
                           >
-                            <span className="text-xs font-light">{key}</span>
+                            <ActionButton
+                              classname=""
+                              actionMethod={() => copyToClipboard(key)}
+                              sucessChildren={
+                                <span className="inline-block w-4 h-4">
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="w-full h-full fill-current "
+                                    viewBox="0 -960 960 960"
+                                  >
+                                    <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" />
+                                  </svg>
+                                </span>
+                              }
+                            >
+                              <span className="inline-block w-4 h-4">
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  className="w-full h-full fill-current "
+                                  viewBox="0 0 24 24"
+                                >
+                                  <g
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                  >
+                                    <path d="M7 9.667A2.667 2.667 0 0 1 9.667 7h8.666A2.667 2.667 0 0 1 21 9.667v8.666A2.667 2.667 0 0 1 18.333 21H9.667A2.667 2.667 0 0 1 7 18.333z" />
+                                    <path d="M4.012 16.737A2.005 2.005 0 0 1 3 15V5c0-1.1.9-2 2-2h10c.75 0 1.158.385 1.5 1" />
+                                  </g>
+                                </svg>
+                              </span>
+                            </ActionButton>
+                            <Link
+                              href={`/generateur-nuances-couleurs-tailwind-css?color=%23${key.slice(
+                                1
+                              )}`}
+                            >
+                              <span className="inline-block w-4 h-4">
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  className="w-full h-full fill-current "
+                                  viewBox="0 -960 960 960"
+                                >
+                                  <path d="M440-120v-240h80v80h320v80H520v80h-80Zm-320-80v-80h240v80H120Zm160-160v-80H120v-80h160v-80h80v240h-80Zm160-80v-80h400v80H440Zm160-160v-240h80v80h160v80H680v80h-80Zm-480-80v-80h400v80H120Z" />
+                                </svg>
+                              </span>
+                            </Link>
+                            <button></button>
+                            {/* <span className="text-xs font-light">{key}</span> */}
                           </div>
                         )
                       })}
-                    </Link>
+                    </div>
                   </div>
                 </div>
               </div>

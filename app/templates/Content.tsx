@@ -2,9 +2,9 @@
 import React from 'react'
 import Search from '@/components/Search/Index'
 import themes from '@/data/themes.json'
-import Image from 'next/image'
-import Link from 'next/link'
 import { Section as Newsletter } from '@/components/Newsletter'
+import ThemeCard from '@/components/ThemeGridCard'
+import { ReposInfos, Theme } from 'types'
 
 const Hero = () => (
   <section className="py-12 lg:py-16">
@@ -35,42 +35,11 @@ const Content = () => {
       <section>
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-row flex-wrap flex-grow-0 flex-shrink-0 w-full">
-            {themes
+            {(themes as unknown as (Theme & ReposInfos)[])
               .sort((a, b) => b.popularity - a.popularity)
-              .map((theme) => {
-                const params = new URLSearchParams()
-                params.append('name', theme.title.replaceAll('_', '-').replaceAll(' ', '-'))
-                params.append('id', theme.id)
-
-                return (
-                  <Link
-                    href={`/themes/search?${params.toString()}`}
-                    key={theme.title}
-                    className="p-6 overflow-hidden md:basis-1/3"
-                  >
-                    <div className="w-full overflow-hidden rounded-md">
-                      <Image
-                        src={theme.images[0]}
-                        width={1600}
-                        height={1200}
-                        alt={theme.title}
-                        loading="lazy"
-                      />
-                    </div>
-                    <h1 className="my-4 font-medium line-clamp-1">{theme.title}</h1>
-                    <div className="flex flex-grow-0 flex-shrink-0 gap-2 overflow-auto flex-nowrap">
-                      {theme.frameworks.map((key) => (
-                        <div
-                          key={`${theme.id + key}`}
-                          className="px-2 py-1 bg-gray-100 rounded-md dark:bg-secondary-600"
-                        >
-                          <span className="text-xs font-light">{key}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </Link>
-                )
-              })}
+              .map((theme) => (
+                <ThemeCard key={theme.slug} {...theme} />
+              ))}
           </div>
         </div>
       </section>

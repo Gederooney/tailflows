@@ -9,7 +9,7 @@ const headerNavLinks = [
     title: 'Exemples',
   },
   {
-    href: '/themes',
+    href: '/templates',
     title: 'Templates',
   },
   {
@@ -41,7 +41,7 @@ export const mobileNav = [
     title: 'Générateur de gradient',
   },
   {
-    href: '/themes',
+    href: '/templates',
     title: 'Templates',
   },
   {
