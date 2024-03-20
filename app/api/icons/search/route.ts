@@ -1,8 +1,11 @@
 import { Icon } from 'types'
+import { fileURLToPath } from 'url'
 import { NextRequest, NextResponse } from 'next/server'
 import fs from 'fs'
-import { join } from 'path'
-import { __dirname } from 'global'
+import { join, dirname } from 'path'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
 const handler = async (req: NextRequest, res: NextResponse) => {
   try {
@@ -31,8 +34,8 @@ const handler = async (req: NextRequest, res: NextResponse) => {
       .toLocaleLowerCase()
       .split(' ')
       .filter((word) => word !== '')
-
-    const icons = JSON.parse(fs.readFileSync(join(__dirname, 'data/icons.json'), 'utf-8'))
+    const iconsPath = join(__dirname, '../../../../', 'data/icons.json')
+    const icons = JSON.parse(fs.readFileSync(iconsPath, 'utf-8'))
 
     if (searchWords.length === 0)
       return NextResponse.json({

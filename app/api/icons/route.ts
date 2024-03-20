@@ -1,8 +1,12 @@
 import { Icon } from 'types'
 import { NextRequest, NextResponse } from 'next/server'
 import fs from 'fs'
-import { join } from 'path'
-import { __dirname } from 'global'
+import { join, dirname } from 'path'
+import { fileURLToPath } from 'url'
+
+// Recréer __filename et __dirname
+export const __filename = fileURLToPath(import.meta.url)
+export const __dirname = dirname(__filename)
 
 const handler = async (req: NextRequest, res: NextResponse) => {
   try {
@@ -17,7 +21,8 @@ const handler = async (req: NextRequest, res: NextResponse) => {
         }
       )
 
-    const icons = JSON.parse(fs.readFileSync(join(__dirname, 'data/icons.json'), 'utf-8'))
+    const iconsPath = join(__dirname, '../../../', 'data/icons.json')
+    const icons = JSON.parse(fs.readFileSync(iconsPath, 'utf-8'))
 
     const sorted = (icons as Icon[]).sort((a, b) => b.popularity - a.popularity)
 
