@@ -45,7 +45,7 @@ const generate = () => {
       acc +
       `
 <url>
-  <loc>${siteUrl}/templates/${theme.slug}}</loc>
+  <loc>${siteUrl}/templates/${theme.slug}</loc>
   <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
   <priority>0.7</priority>
 </url>

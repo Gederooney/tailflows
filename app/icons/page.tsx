@@ -1,6 +1,7 @@
 import React from 'react'
 import Content from './Content'
 import { ResolvingMetadata, Metadata } from 'next'
+import { Icon } from 'types'
 
 type Props = {
   params: { search: string }
@@ -65,8 +66,26 @@ export async function generateMetadata(
   }
 }
 
-const Page = () => {
-  return <Content />
+const getIcons = async () => {
+  try {
+    const { BASE_URL } = process.env
+    const url = `${BASE_URL}/api/icons`
+
+    const res = await fetch(url, {
+      method: 'GET',
+    })
+    if (!res.ok) return [] as Icon[]
+    const { data } = await res.json()
+    return data as Icon[]
+  } catch (error) {
+    console.log(error.message)
+    return [] as Icon[]
+  }
+}
+
+const Page = async () => {
+  const icons = await getIcons()
+  return <Content initialSet={icons} />
 }
 
 export default Page

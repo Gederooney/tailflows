@@ -55,3 +55,17 @@ export type DonutChartProps = {
   value: number
   key: string
 }[]
+
+export type Icon = {
+  name: string
+  tags: string[]
+  version: number
+  popularity: number
+  codepoint: number
+  unsupported_families: string[]
+  categories: string[]
+  sizes_px?: number[]
+  svg: string
+  id: string
+  viewBox: string
+}

@@ -1,6 +1,6 @@
 'use client'
 import React, { useState, useEffect } from 'react'
-import { Icon } from '../Content'
+import { Icon } from 'types'
 import { format as prettier } from 'prettier/standalone'
 import Prism from 'prismjs'
 import pluginHtml from 'prettier/plugins/html'

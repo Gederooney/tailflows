@@ -4,7 +4,7 @@ import legacyIcons from '@/data/legacy_icons.json'
 import siteMetadata from '@/data/siteMetadata'
 import { ResolvingMetadata, Metadata } from 'next'
 import Content from './Content'
-import { Icon } from '../Content'
+import { Icon } from 'types'
 import { notFound } from 'next/navigation'
 
 type Props = {
@@ -66,7 +66,7 @@ export async function generateMetadata(
   }
 }
 
-const Page = ({ searchParams }: { searchParams: { name: string; id: string } }) => {
+const Page = async ({ searchParams }: { searchParams: { name: string; id: string } }) => {
   const icon =
     (icons as Icon[]).find((icon) => icon.id === searchParams.id) ??
     (legacyIcons as Icon[]).find((icon) => icon.id === searchParams.id)
