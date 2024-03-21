@@ -1,15 +1,10 @@
-import { Icon } from 'types'
-import { fileURLToPath } from 'url'
+// Assurez-vous d'importer PrismaClient
+import { prisma } from '@/lib/prisma'
 import { NextRequest, NextResponse } from 'next/server'
-import fs from 'fs'
-import { join, dirname } from 'path'
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = dirname(__filename)
-
-const handler = async (req: NextRequest, res: NextResponse) => {
+const handler = async (req: NextRequest) => {
   try {
-    if (req.method !== 'GET' || !req.url)
+    if (req.method !== 'GET' || !req.url) {
       return NextResponse.json(
         {
           error: true,
@@ -17,41 +12,75 @@ const handler = async (req: NextRequest, res: NextResponse) => {
         },
         {
           status: 405,
+          headers: {
+            'Content-Type': 'application/json',
+          },
         }
       )
+    }
 
     const parsedUrl = new URL(req.url)
-    const queryParams = parsedUrl.searchParams
-
-    const searchTerm = queryParams.get('term')
+    const searchTerm = parsedUrl.searchParams.get('term')
 
     if (!searchTerm) {
-      return NextResponse.json({ error: true, message: `searchTerm is required` }, { status: 400 })
+      return NextResponse.json(
+        { error: true, message: `searchTerm is required` },
+        {
+          status: 400,
+          headers: { 'Content-Type': 'application/json' },
+        }
+      )
     }
 
     const searchWords = searchTerm
       .trim()
-      .toLocaleLowerCase()
+      .toLowerCase()
       .split(' ')
       .filter((word) => word !== '')
-    const iconsPath = join(__dirname, '../../../../', 'data/icons.json')
-    const icons = JSON.parse(fs.readFileSync(iconsPath, 'utf-8'))
 
-    if (searchWords.length === 0)
-      return NextResponse.json({
-        icons: (icons as Icon[]).sort((a, b) => b.popularity - a.popularity).slice(0, 200),
+    if (searchWords.length === 0) {
+      const icons = await prisma.icon.findMany({
+        take: 200,
+        orderBy: {
+          popularity: 'desc',
+        },
       })
+      return NextResponse.json(
+        { icons },
+        {
+          headers: { 'Content-Type': 'application/json' },
+        }
+      )
+    }
 
-    const filteredIcons = (icons as Icon[]).filter((icon) =>
-      searchWords.every((word) => icon.tags.some((tag) => tag.includes(word)))
-    )
-
-    return NextResponse.json({
-      icons: filteredIcons.sort((a, b) => b.popularity - a.popularity),
+    // Remarque : Adaptez cette partie selon votre schéma et la façon dont vous stockez les tags
+    const icons = await prisma.icon.findMany({
+      where: {
+        tags: {
+          hasEvery: searchWords,
+        },
+      },
+      take: 200,
+      orderBy: {
+        popularity: 'desc',
+      },
     })
+
+    return NextResponse.json(
+      { icons },
+      {
+        headers: { 'Content-Type': 'application/json' },
+      }
+    )
   } catch (error) {
     console.log(error)
-    return NextResponse.json({ error: 'message' }, { status: 500 })
+    return NextResponse.json(
+      { error: 'An error occurred' },
+      {
+        status: 500,
+        headers: { 'Content-Type': 'application/json' },
+      }
+    )
   }
 }
 

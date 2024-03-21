@@ -1,11 +1,9 @@
 import React from 'react'
-import icons from '@/data/icons.json'
-import legacyIcons from '@/data/legacy_icons.json'
 import siteMetadata from '@/data/siteMetadata'
 import { ResolvingMetadata, Metadata } from 'next'
 import Content from './Content'
-import { Icon } from 'types'
 import { notFound } from 'next/navigation'
+import { fetchIconById } from '@/lib/icons'
 
 type Props = {
   params: { search: string }
@@ -16,9 +14,7 @@ export async function generateMetadata(
   { params, searchParams }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const icon =
-    (icons as Icon[]).find((icon) => icon.id === searchParams.id) ??
-    (legacyIcons as Icon[]).find((icon) => icon.id === searchParams.id)
+  const icon = await fetchIconById(searchParams.id as string)
   if (!icon) return {} as Metadata
   return {
     metadataBase: new URL(siteMetadata.siteUrl),
@@ -67,9 +63,7 @@ export async function generateMetadata(
 }
 
 const Page = async ({ searchParams }: { searchParams: { name: string; id: string } }) => {
-  const icon =
-    (icons as Icon[]).find((icon) => icon.id === searchParams.id) ??
-    (legacyIcons as Icon[]).find((icon) => icon.id === searchParams.id)
+  const icon = await fetchIconById(searchParams.id as string)
 
   if (!icon) return notFound()
   return <Content {...icon} />
