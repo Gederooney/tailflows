@@ -41,7 +41,7 @@ module.exports = {
         sans: ['var(--font-poppins)', 'var(--font-space-grotesk)', ...fontFamily.sans],
       },
       colors: {
-        primary: colors.pink,
+        primary: colors.rose,
         secondary: {
           50: '#275E90',
           100: '#235683',

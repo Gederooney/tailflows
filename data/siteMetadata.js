@@ -7,7 +7,7 @@ const siteMetadata = {
     'Tout en un pour développer avec tailwindcss. Générer des nuances de couleurs t plus encore',
   language: 'FR-fr',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://www.tailflows.com/',
+  siteUrl: 'https://www.tailflows.com',
   siteRepo: '',
   siteLogo: '',
   socialBanner: '',

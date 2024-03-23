@@ -1,31 +1,122 @@
-import React from 'react'
-import { allCoreContent, sortPosts } from 'pliny/utils/contentlayer'
-import { MDXLayoutRenderer } from 'pliny/mdx-components'
+import 'css/prism.css'
+import 'katex/dist/katex.css'
+
+import PageTitle from '@/components/PageTitle'
 import { components } from '@/components/MDXComponents'
-import { Section } from '@/components/Newsletter'
+import { MDXLayoutRenderer } from 'pliny/mdx-components'
+import { sortPosts, coreContent, allCoreContent } from 'pliny/utils/contentlayer'
+import { allBlogs, allAuthors } from 'contentlayer/generated'
+import type { Authors, Blog } from 'contentlayer/generated'
+import PostSimple from '@/layouts/PostSimple'
+import PostLayout from '@/layouts/PostLayout'
+import PostBanner from '@/layouts/PostBanner'
+import { Metadata } from 'next'
+import siteMetadata from '@/data/siteMetadata'
+import { notFound } from 'next/navigation'
 
-const POSTS_PER_PAGE = 5
-
-export const generateStaticParams = async () => {
-  // const totalPages = Math.ceil(allUis.length / POSTS_PER_PAGE)
-  // const paths = Array.from({ length: totalPages }, (_, i) => ({ page: (i + 1).toString() }))
-
-  return []
+const defaultLayout = 'PostLayout'
+const layouts = {
+  PostSimple,
+  PostLayout,
+  PostBanner,
 }
 
-export default function Page({ params }: { params: { slug: string } }) {
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string }
+}): Promise<Metadata | undefined> {
+  const slug = decodeURI(params.slug)
+  const post = allBlogs.find((p) => p.slug === slug)
+  const authorList = post?.authors || ['default']
+  const authorDetails = authorList.map((author) => {
+    const authorResults = allAuthors.find((p) => p.slug === author)
+    return coreContent(authorResults as Authors)
+  })
+  if (!post) {
+    return
+  }
+
+  const publishedAt = new Date(post.date).toISOString()
+  const modifiedAt = new Date(post.lastmod || post.date).toISOString()
+  const authors = authorDetails.map((author) => author.name)
+  let imageList = [siteMetadata.socialBanner]
+  if (post.images) {
+    imageList = typeof post.images === 'string' ? [post.images] : post.images
+  }
+  const ogImages = imageList.map((img) => {
+    return {
+      url: img.includes('http') ? img : siteMetadata.siteUrl + img,
+    }
+  })
+
+  return {
+    title: post.title,
+    description: post.excerpt,
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      siteName: siteMetadata.title,
+      locale: 'fr_FR',
+      type: 'article',
+      publishedTime: publishedAt,
+      modifiedTime: modifiedAt,
+      url: './',
+      images: ogImages,
+      authors: authors.length > 0 ? authors : [siteMetadata.author],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt,
+      images: imageList,
+    },
+  }
+}
+
+export const generateStaticParams = async () => {
+  const paths = allBlogs.map((p) => ({ slug: p.slug }))
+
+  return paths
+}
+
+export default async function Page({ params }: { params: { slug: string } }) {
+  const slug = decodeURI(params.slug)
+  // Filter out drafts in production
+  const sortedCoreContents = allCoreContent(sortPosts(allBlogs))
+  const postIndex = sortedCoreContents.findIndex((p) => p.slug === slug)
+  if (postIndex === -1) {
+    return notFound()
+  }
+
+  const prev = sortedCoreContents[postIndex + 1]
+  const next = sortedCoreContents[postIndex - 1]
+  const post = allBlogs.find((p) => p.slug === slug) as Blog
+  const authorList = post?.authors || ['default']
+  const authorDetails = authorList.map((author) => {
+    const authorResults = allAuthors.find((p) => p.slug === author)
+    return coreContent(authorResults as Authors)
+  })
+  const mainContent = coreContent(post)
+  const jsonLd = post.structuredData
+  jsonLd['author'] = authorDetails.map((author) => {
+    return {
+      '@type': 'Person',
+      name: author.name,
+    }
+  })
+
+  const Layout = layouts[post.layout || defaultLayout]
+
   return (
-    <>
-      <div className="min-h-full py-16">
-        <h1 className="max-w-2xl mx-auto mb-8 text-5xl font-bold text-center dark:text-white animate-pulse text-secondary-900">
-          Bientôt disponible
-        </h1>
-        <p className="max-w-xl mx-auto mb-8 text-lg text-center dark:text-white text-secondary-900">
-          Nous travaillons fort pour que cette page soit disponible bientôt. Revenez nous voir
-          bientôt et Restez connecté!
-        </p>
-        <Section />
-      </div>
-    </>
+    <div className="max-w-5xl mx-auto">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <Layout content={mainContent} authorDetails={authorDetails} next={next} prev={prev}>
+        <MDXLayoutRenderer code={post.body.code} components={components} toc={post.toc} />
+      </Layout>
+    </div>
   )
 }

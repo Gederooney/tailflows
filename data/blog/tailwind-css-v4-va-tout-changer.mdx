@@ -1,0 +1,143 @@
+---
+title: 'Nouveautés de Tailwind CSS v4 : Une Révolution dans le Développement Front-End'
+metaTitle: "Tailwindcss v4, tout ce qu'il faut savoir sur la nouvelle version"
+description: 'Découvrez toutes les nouveautés de Tailwind CSS v4.0 Alpha. En plus de tout ce qui avait été dit il y a quelques mois lors de la keynote, Tailwindcss ajoute plusieurs nouvelles fonctionnalités qui changeront à tout jamais notre expérience de développement.'
+slug: 'tailwindcss-v4-va-tout-changer'
+excerpt: 'Tailwind CSS v4.0 Alpha introduit le nouvel engine Oxyde qui avait été annoncé il y a plusieurs mois. Le parseur qui initialement devait faire son apparition avec la version 3.x.x sera finalement dans la version 4.0.0 avec plusieurs autres fonctionnalités que la compagnie a annoncé à travers un article de blog.'
+date: '2024-03-23'
+tags: ['tailwind css', 'guide', 'css']
+draft: false
+authors: ['gederooney']
+images: ["/static/images/blog/tailwindcss-v4-alpha.webp"]
+---
+
+L'annonce de la version 4.0 Alpha de Tailwind CSS par [Adam Wathan](https://twitter.com/adamwathan), le créateur de Tailwindcss, est un game changer. Cette nouvelle version est une transformation profonde qui promet de changer notre manière de travailler avec le framework. Avec des améliorations significatives telles que le nouveau moteur Oxyde, une détection automatique du contenu améliorée, Tailwind CSS v4.0 Alpha se positionne encore plus comme un outil incontournable pour nous, les développeurs. Dans cet article, je ferai un passage rapide sur toutes les nouvelles fonctionnalités auxquelles vous pouvez vous attendre dans la v4.
+
+<Image width={1280} height={600} src="/static/images/blog/tailwindcss-v4-alpha.webp" />
+
+### Le Nouvel Engine Oxyde
+
+Tailwind CSS v4.0 dévoile son nouveau compilateur Oxyde, annoncé il y a déjà quelques mois. Oxyde est enfin disponible dans la [version 4 alpha](https://github.com/tailwindlabs/tailwindcss/tree/next). Adam Wathan annonce que le nouvel engin compile jusqu'à 10 fois plus vite que son prédécesseur. Il est complètement autonome, plus léger et ne dépend plus de plugins externes comme postcss.
+
+### Des Plugins Intégrés
+
+Jusqu'à la dernière version stable de [tailwindcss](https://www.npmjs.com/package/tailwindcss), on avait besoin de plusieurs dépendances pour lancer un projet. La version 4.0 vient avec ses propres outils intégrés. Elle est basée sur [Lightning CSS](https://lightningcss.dev/). Cela nous évite l'installation de modules comme postcss-import ou autoprefixer. Vous pouvez donc utiliser `@import` ou encore l'encapsulation directement dans votre fichier css sans rien d'autre que Tailwindcss.
+
+### Support des nouvelles fonctionnalités de CSS
+
+La nouvelle version alpha intègre les classes pour utiliser les [container queries](https://www.alsacreations.com/article/lire/1915-Les-Container-Queries-en-CSS.html) et le `@layer` que vous pouvez utiliser pour définir l'ordre d'application des styles. Il y a également de nouvelles classes comme `color-mix-*` pour modifier l'opacité de la couleur sur un élément. Avec cet ensemble, nous pouvons faire des compositions de classes utilitaires plus avancées pour créer des sites web plus dynamiques que jamais.
+
+### Compositions de variantes
+
+C'est la nouveauté que j'aime le plus. La composition de variantes permet dorénavant de composer plusieurs sélecteurs pour obtenir un comportement unique. Par exemple, on peut réaliser des compositions comme `group-has-focus:opacity-100` pour détecter directement qu'un élément au sein d'un groupe est en état de focus. Adam Wathan dit qu'il n'y a plus de limite à ce qu'on peut faire tant qu'on peut l'imaginer : `group-not-has-peer-not-data-active:underline`.
+
+Personnellement, je trouve que cela ajoute une possibilité infinie à la créativité, surtout lorsqu'on utilisera du JavaScript.
+
+```html
+<div class="group">
+  <div class="group-has-[&:focus]:opacity-100">
+    <div class="group-has-focus:opacity-100">
+      <!-- ... -->
+    </div>
+  </div>
+</div>
+```
+
+### Zéro configuration - Que du CSS
+
+`tailwind.config.js` n'est plus une obligation. Tailwindcss évolue vers une version où l'on n'aura plus besoin de configurations. Il est maintenant possible de tout définir comme des variables css directement dans le fichier css principal en utilisant `@theme{}`.
+
+En fonction de la manière dont vous avez intégré tailwindcss dans votre projet, Oxyde déterminera les fichiers que vous utilisez et générera le css de manière automatique. Voici la nouvelle façon de créer nos variables dans un fichier css en utilisant `@theme{}` :
+
+```css
+@import 'tailwindcss';
+
+@theme {
+  --color-*: initial;
+
+  --color-gray-50: #f8fafc;
+  --color-gray-100: #f1f5f9;
+  --color-gray-200: #e2e8f0;
+  /* ... */
+  --color-green-800: #3f6212;
+  --color-green-900: #365314;
+  --color-green-950: #1a2e05;
+}
+```
+
+Vous pouvez explorer [le thème par défaut ici](https://github.com/tailwindlabs/tailwindcss/blob/next/packages/tailwindcss/theme.css).
+
+Allons-y, voici votre section révisée pour plus de clarté et de précision, tout en conservant le style et les expressions originaux :
+
+### Essayer la nouvelle version
+
+Pour tester la nouvelle version de Tailwind CSS, voici les étapes à suivre selon votre environnement de développement :
+
+1. **Pour les projets utilisant [Vite](https://vitejs.dev/)**
+
+   Suivez ces étapes pour intégrer Tailwind CSS :
+
+   Installez Tailwind CSS et le plugin Vite pour Tailwind CSS en utilisant npm :
+
+   ```bash
+   npm install tailwindcss@next @tailwindcss/vite@next
+   ```
+
+Ensuite, ajoutez le plugin Tailwind CSS à votre configuration Vite dans le fichier `vite-config.{ts/js}` :
+
+```typescript
+import tailwindcss from '@tailwindcss/vite'
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  plugins: [tailwindcss()],
+})
+```
+
+Pour terminer, ajoutez Tailwind CSS à votre fichier CSS principal :
+
+```css
+@import 'tailwindcss';
+```
+
+2. **Pour les projets utilisant PostCSS**
+
+   Procédez comme suit :
+
+   Installez Tailwind CSS et le plugin PostCSS pour Tailwind CSS via npm :
+
+   ```bash
+   npm install tailwindcss@next @tailwindcss/postcss@next
+   ```
+
+   Ajoutez le plugin Tailwind CSS à votre configuration PostCSS dans le fichier `postcss.config.js` :
+
+   ```javascript
+   module.exports = {
+     plugins: {
+       '@tailwindcss/postcss': {},
+     },
+   }
+   ```
+
+   Enfin, intégrez Tailwind CSS dans votre fichier CSS principal :
+
+   ```css
+   @import 'tailwindcss';
+   ```
+
+### Ce qui va changer
+
+La nouvelle version apporte des changements significatifs, notamment la suppression de certaines classes utilitaires qui n'étaient plus documentées. Voici les classes que vous ne devriez plus utiliser dans vos projets :
+
+- `text-opacity-*`
+- `flex-grow-*`
+- `decoration-slice`
+
+Concernant les couleurs des bordures, elles étaient par défaut définies sur `gray-200`. Désormais, la couleur des bordures sera par défaut sur `currentColor`. Vous pouvez continuer d'utiliser notre [génerateur de nuances](/generateur-nuances-couleurs-tailwind-css) et notre outils pour créer des [dégradés de couleurs](/generateur-gradient-tailwindcss).
+
+Les anneaux (`rings`) utilisés sur les inputs, auparavant de `3px` par défaut, seront maintenant de `1px` par défaut, également en `currentColor`.
+
+### Conclusion
+
+Avec la version 4.0, Tailwind CSS ne se contente pas d'introduire des améliorations techniques; il repense l'expérience de développement front-end. Les nouvelles fonctionnalités et améliorations promettent de rendre la création de sites et d'applications web non seulement plus rapide, mais aussi plus intuitive. C'est un moment excitant pour faire partie de la communauté Tailwind CSS et de voir comment ces changements influenceront nos projets futurs.

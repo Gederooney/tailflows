@@ -1,11 +1,11 @@
 import 'css/tailwind.css'
 import 'pliny/search/algolia.css'
 import 'css/prism.css'
-
+import { getServerSession } from 'next-auth'
+import SessionProvider from '@/components/auth/SessionProvider'
 import { Space_Grotesk, Poppins } from 'next/font/google'
 import { Analytics, AnalyticsConfig } from 'pliny/analytics'
 import Header from '@/components/Navigation/Header'
-import SectionContainer from '@/components/SectionContainer'
 import Footer from '@/components/Footer'
 import siteMetadata from '@/data/siteMetadata'
 import { ThemeProviders } from './theme-providers'
@@ -62,7 +62,8 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const session = await getServerSession()
   return (
     <html
       lang={siteMetadata.language}
@@ -108,13 +109,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
 
       <body className="antialiased bg-white secondary-950 dark:bg-secondary-900 dark:text-gray-50/50">
-        <ThemeProviders>
-          <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
-          <Header />
-          <main className="relative h-full mb-auto">{children}</main>
-          <Footer />
-          <CookieBanner />
-        </ThemeProviders>
+        <SessionProvider session={session}>
+          <ThemeProviders>
+            <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
+            <Header />
+            <main className="relative h-full mb-auto lg:min-h-[700px]">{children}</main>
+            <Footer />
+            <CookieBanner />
+          </ThemeProviders>
+        </SessionProvider>
       </body>
     </html>
   )

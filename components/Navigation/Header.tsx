@@ -7,6 +7,9 @@ import Link from '../Link'
 import MobileNav from './MobileNav'
 import ThemeSwitch from '../ThemeSwitch'
 import SearchButton from '../SearchButton'
+import AuthDropdown from '@/components/auth/Button'
+import { useSession } from 'next-auth/react'
+import ProfileButton from '../auth/ProfileButton'
 
 const Header = () => {
   const [openDropdown, setOpenDropdown] = useState(false)
@@ -23,6 +26,8 @@ const Header = () => {
     '#0f2f4c',
     '#081827',
   ]
+
+  const session = useSession()
 
   useEffect(() => {
     if (openDropdown) {
@@ -69,7 +74,13 @@ const Header = () => {
                 Outils
               </button>
 
-              <div className={openDropdown ? 'h-auto w-auto' : 'h-0 w-0 overflow-hidden relative'}>
+              <div
+                className={
+                  openDropdown
+                    ? 'h-auto w-auto opacity-100 pointer-events-auto'
+                    : 'pointer-events-none overflow-hidden relative opacity-0'
+                }
+              >
                 <span className="absolute block w-4 h-4 border-t border-r border-secondary-950/10 dark:border-gray-50/10  z-[10001] top-[200%] -rotate-45 rounded-[.2rem] translate-y-[.2rem] left-[1/2] translate-x-1/2 bg-gray-50/20 backdrop-blur-lg dark:bg-secondary-800/10 tooltipanchor"></span>
                 <div className="absolute  -translate-x-1/2 border border-secondary-950/10 dark:border-gray-50/10 top-[250%] w-[40rem] left-1/2 rounded-xl  z-[10000] overflow-hidden shadow-xl dark:shadow-gray-700/10 bg-transparent">
                   <ul className="relative grid grid-cols-2 gap-8 p-4 bg-gray-50/20 backdrop-blur-lg dark:bg-secondary-800/10">
@@ -136,6 +147,7 @@ const Header = () => {
               ))}
           </ul>
           <ThemeSwitch />
+          {session.data?.user ? <ProfileButton /> : <AuthDropdown />}
         </div>
       </div>
 
