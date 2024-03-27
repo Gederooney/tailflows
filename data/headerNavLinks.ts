@@ -34,11 +34,11 @@ export const mobileNav = [
   },
   {
     href: '/generateur-gradient-tailwindcss',
-    title: "Créateur d'ombres de portée",
+    title: 'Générateur de gradient',
   },
   {
     href: '/generateur-box-shadow',
-    title: 'Générateur de gradient',
+    title: "Créateur d'ombres de portée",
   },
   {
     href: '/templates',
