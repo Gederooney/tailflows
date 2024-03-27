@@ -68,10 +68,10 @@ const Page = () => {
                   </svg>
 
                   <div className="relative">
-                    <h3 className="text-base font-semibold tracking-tight text-secondary-900 dark:text-gray-50 pt-8 lg:pt-0">
+                    <h3 className="text-base font-semibold tracking-tight text-secondary-900 dark:text-gray-50 pt-8 lg:pt-0 text-left">
                       {p.title}
                     </h3>
-                    <div className="mt-2 mb-4 prose prose-gray prose-a:relative prose-a:z-10 dark:prose-dark line-clamp-2 text-gray-500 dark:text-gray-400">
+                    <div className="text-left mt-2 mb-4 prose prose-gray prose-a:relative prose-a:z-10 dark:prose-dark line-clamp-2 text-gray-500 dark:text-gray-400">
                       <p>{p.excerpt}</p>
                     </div>
                     <dl className="absolute left-0 top-0 lg:left-auto lg:right-full lg:mr-[calc(6.5rem+1px)]">

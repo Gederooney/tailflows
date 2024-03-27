@@ -1,0 +1,133 @@
+---
+title: 'Comment Installer et Utiliser TailwindCSS v4 Alpha'
+metaTitle: 'Guide Complet Pour Installer et Utiliser TailwindCSS v4 Alpha'
+description: 'Dans ce guide complet, découvrez comment installer et utiliser la nouvelle version de TailwindCSS v4 dans vos projets, avec des étapes simples et des exemples concrets.'
+slug: 'guide-complet-pour-installer-et-utiliser-tailwindcss-v4-alpha'
+excerpt: "Apprenez étape par étape comment intégrer la nouvelle version de TailwindCSS dans vos projets. Découvrez les nouveautés sans avoir besoin d'un fichier config.js et explorez de nouvelles façons de configurer."
+date: '2024-03-26'
+tags: ['tailwind css', 'guide', 'css', 'installation']
+draft: false
+authors: ['gederooney']
+images: ['/static/images/blog/guide-tailwindcss-v4-alpha']
+---
+
+Dans un article paru le 6 mars 2024 sur le [blog officiel](https://tailwindcss.com/blog) de TailwindCSS, [Adam Wathan](https://twitter.com/adamwathan) a présenté la nouvelle version du framework CSS. Cet article détaille les fonctionnalités intégrées dans la v4 et celles qui ont été retirées. Pour ceux qui ne sont pas encore au courant des changements, j'ai écrit un [article ici](/blog/tailwind-css-v4-va-tout-changer) qui résume bien le tout.
+
+Entre la version stable actuelle 3.4.1 et la version 4-alpha, de nombreux changements ont été apportés. TailwindCSS v4.0.0 alpha se distingue des versions précédentes, notamment parce que le fichier de configuration n'est plus obligatoire. Dans cet article, je vais vous montrer comment utiliser la version 4 alpha dans différents projets.
+
+<Image
+  width={1280}
+  height={600}
+  src="/static/images/blog/guide-tailwindcss-v4-alpha.webp"
+  alt="Guide complet pour installer tailwindcss v4 alpha"
+/>
+
+## Projet Vite
+
+Selon Adam Wathan, utiliser [Vite](https://vitejs.dev/) est le moyen le plus rapide et le plus efficace. TailwindCSS propose désormais son propre plugin ViteJS que vous pouvez installer facilement. Si vous avez commencé votre projet avec Vite, voici comment ajouter la version 4.0.0 alpha de TailwindCSS :
+
+```bash
+npm install tailwindcss@next @tailwindcss/vite@next
+```
+
+Ensuite, importez TailwindCSS dans le fichier de configuration Vite `vite.config.js` et déclarez-le dans les plugins :
+
+```javascript
+import tailwindcss from '@tailwindcss/vite'
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  plugins: [tailwindcss()],
+})
+```
+
+Pour finir, ajoutez simplement :
+
+```css
+@import 'tailwindcss';
+```
+
+dans votre fichier CSS global. Et voilà, vous pouvez maintenant essayer TailwindCSS dans votre projet Vite.
+
+## Projet Next.js et autres avec Postcss
+
+Lorsque vous n'utilisez pas Vite, le processus reste similaire pour presque tous les autres frameworks. Prenons l'exemple de [Next.js](https://nextjs.org/).
+
+Commencez par créer un projet Next.js :
+
+```bash
+npm create next-app tailwind-v4
+```
+
+Répondez à toutes les questions. Lorsqu'on vous demande si vous souhaitez utiliser TailwindCSS, répondez non. Continuez et terminez la configuration.
+
+```bash
+npm install tailwindcss@next @tailwindcss/postcss@next
+```
+
+Créez un fichier `postcss.config.js` et ajoutez le code suivant :
+
+```javascript
+module.exports = {
+  plugins: {
+    '@tailwindcss/postcss': {},
+  },
+}
+```
+
+Enfin, ajoutez TailwindCSS dans votre fichier CSS global :
+
+```css
+@import 'tailwindcss';
+```
+
+Avant d'aller plus loin, j'aimerais vous informer qu'une vaste sélection de [templates gratuits TailwindCSS](http://localhost:3000/templates) est disponible pour vos différents projets. Après avoir exploré le web, j'ai sélectionné pour vous les meilleurs templates.
+
+## Dans un projet Node.js...
+
+Pour un projet Node.js ou similaire, il est nécessaire d'installer le nouveau CLI de TailwindCSS. Ensuite, compilez manuellement le CSS et utilisez le CSS compilé dans un fichier de sortie. En supposant que votre projet Node.js est déjà configuré, suivez les étapes suivantes :
+
+```bash
+npm install tailwindcss@next @tailwindcss/cli@next
+```
+
+Créez un fichier d'entrée CSS que je vais nommer `input.css`. Dans ce fichier, importez TailwindCSS :
+
+```css
+@import 'tailwindcss';
+```
+
+Depuis le terminal, compilez le CSS en exécutant :
+
+```bash
+npx @tailwindcss/cli@next -i chemin/vers/input.css -o chemin/vers/output.css
+```
+
+où `output.css` est le fichier qui contiendra le CSS compilé. N'oubliez pas de l'ajouter à vos fichiers HTML.
+
+Pour compiler automatiquement lors de modifications, vous pouvez combiner [Concurrently](https://www.npmjs.com/package/concurrently) et [Nodemon](https://www.npmjs.com/package/nodemon).
+
+## Plus de fichier tailwind.config.js
+
+Pour utiliser des valeurs personnalisées dans la v4 alpha, vous devez ajouter un objet `@theme` directement dans le fichier CSS où TailwindCSS a été importé. Voici comment procéder :
+
+```css
+@import 'tailwindcss';
+@import 'tailwindcss/preflight' layer(base);
+@import 'tailwindcss/utilities' layer(utilities);
+
+@theme {
+  --color-*: initial;
+  --color-gray-50: #f8fafc;
+  --color-gray-100: #f1f5f9;
+  --color-gray-200: #e2e8f0;
+  /* ... */
+  --color-green-800: #3f6212;
+  --color-green-900: #365314;
+  --color-green-950: #1a2e05;
+}
+```
+
+Consultez le [répertoire Git du projet](https://github.com/tailwindlabs/tailwindcss/blob/next/packages/tailwindcss/theme.css) pour voir toutes les valeurs par défaut et les noms des champs que vous pouvez ajouter dans l'objet `@theme()`.
+
+Maintenant, je vous ai montré plusieurs façons d'utiliser TailwindCSS v4 dans les projets React, Node.js, Next.js, et Vue...
