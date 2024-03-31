@@ -41,6 +41,7 @@ const Header = () => {
       document.body.removeEventListener('click', close)
     }
   }, [openDropdown])
+
   return (
     <header className="relative w-full shadow dark:border-b border-white/5">
       <div className="items-center justify-between hidden gap-8 px-6 py-2 mx-auto lg:flex max-w-7xl">
@@ -162,9 +163,10 @@ const Header = () => {
             </div>
           </Link>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-4">
           <ThemeSwitch />
           <SearchButton />
+          {session.data?.user ? <ProfileButton /> : <AuthDropdown />}
           <MobileNav />
         </div>
       </div>

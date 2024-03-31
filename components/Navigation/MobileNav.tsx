@@ -42,10 +42,7 @@ const MobileNav = () => {
         </svg>
       </button>
       <div
-        style={{
-          zIndex: 2000,
-        }}
-        className={`fixed left-0 top-0 h-full w-full transform bg-gray-50/20 opacity-95 duration-300 ease-in-out dark:bg-secondary-800/20 backdrop-blur-lg dark:opacity-[0.98] ${
+        className={`fixed left-0 top-0 h-full w-full transform bg-gray-50/20 opacity-95 duration-300 ease-in-out dark:bg-secondary-800/20 backdrop-blur-lg dark:opacity-[0.98] z-[20001] ${
           navShow ? 'translate-x-0' : 'translate-x-full'
         }`}
       >

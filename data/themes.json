@@ -1305,7 +1305,8 @@
     "id": "KrcHZE40cSOatCXRnc1711031158856FlbSYHk2jQL0q3yBmaNISw",
     "actions": [],
     "metaTitle": "Template Gratuit Tailwindcss Nextjs restaurant et cuisine"
-  },{
+  },
+  {
     "created_at": 1711244148349,
     "title": "tailnext",
     "frameworks": ["Nextjs", "HTML5", "tailwindcss", "React"],
@@ -1378,5 +1379,147 @@
     "id": "J8tnaXBxRoXbQIns31711245879684uI0rtfTseWxXBCxdgE5EWWM9w",
     "actions": [],
     "metaTitle": "Template Gratuit Tailwindcss HTML5 Pour Landing Page de Saas"
+  },
+  {
+    "created_at": 1711745986678,
+    "title": "screwfast",
+    "frameworks": ["Astro", "tailwindcss"],
+    "categories": ["Landing", "documentation", "blog"],
+    "colors": ["#F85B28", "#262626", "#E5E5E5", "#E9B22B"],
+    "slug": "screwfast-template-gratuit-astro-tailwindcss-landing-page-blog-documentation",
+    "author": "mearashadowfax",
+    "description": [
+      "Un template moderne et polyvalent pour créer vos sites web de documentation, blog, ou les sites web de votre entreprise. Développé avec Astro et Tailwind CSS, le modèle est rapidement personnalisable. ScrewFast est optimisé à la fois pour le web et le mobile.",
+      "Que vous présentiez un portfolio, lanciez une page d'atterrissage d'entreprise ou gériez un blog, ScrewFast offre tout ce dont vous avez besoin. En combinant la puissance d'Astro, Tailwind CSS et Preline UI, ce modèle offre une solution fonctionnelle et esthétiquement agréable pour votre présence sur le web."
+    ],
+    "popularity": 10,
+    "images": ["/static/images/themes/screwfast.webp"],
+    "tags": [
+      "template gratuit Html5 tailwindcss",
+      "template de siteweb tailwindcss",
+      "Optimisé pour le contact",
+      "Optimisé pour les moteurs de recherches",
+      "rapide et léger",
+      "HTML",
+      "Template gratuit pour portfolio et documentation",
+      "template gratuit siteweb d'entreprise",
+      "template gratuit pour saas",
+      "template gratuit site web de start up",
+      "template gratuit de site web blog",
+      "template gratuit de landing page"
+    ],
+    "preview_link": "https://screwfast.uk",
+    "download_link": "https://github.com/mearashadowfax/ScrewFast/archive/refs/heads/main.zip",
+    "repos": "https://github.com/mearashadowfax/ScrewFast",
+    "repos_api_url": "https://api.github.com/repos/mearashadowfax/ScrewFast",
+    "features": [
+      "Page d'accueil",
+      "Page de blog",
+      "Page de produit",
+      "Page de services",
+      "Page d'authentification",
+      "Page de connexion"
+    ],
+    "id": "1XUekgAFdpVTYqIw6nxdaeiWrAQ2jtc8d5tPHIyxsbE1711745986678",
+    "actions": [],
+    "metaTitle": "Template de Site Web Gratuit Astro Tailwindcss Pour Landing Page - Blog - Documentation"
+  },
+  {
+    "created_at": 1711755625116,
+    "title": "Dashui Admin",
+    "frameworks": ["Nextjs", "tailwindcss", "React"],
+    "categories": ["Admin", "NextJS", "Dashboard", "Landing", "React"],
+    "colors": ["#1E293B", "#6354FA", "#FCFCFE"],
+    "slug": "codescandydashuiadmin-template-gratuit-nextjs-tailwindcss-dashboard-admin-tableau-de-bord",
+    "author": "codescandy",
+    "description": [
+      "Template gratuit de tableau de bord administrateur. Ce template fait avec Nextjs et Tailwindcss offre un bon tableau de bord d'administration. Il dispose également de plusieurs pages comme une landing page, une page de d'authentification pour lancer rapidement un site web pour votre start up.",
+      "Dash UI est magnifiquement conçu, composé d'éléments d'interface utilisateur élaborés avec expertise pour la création de sites web et applications web de haute qualité en utilisant les technologies web — HTML, Tailwind CSS et JavaScript."
+    ],
+    "popularity": 12,
+    "images": [
+      "/static/images/themes/codescandydashuiadmin.webp",
+      "/static/images/themes/codescandydashuiadmin-2.webp"
+    ],
+    "tags": [
+      "template gratuit Html5 tailwindcss",
+      "template de siteweb tailwindcss",
+      "template admin dashboard",
+      "Rapide et Léger",
+      "HTML tailwindcss",
+      "Template gratuit pour landing page",
+      "template gratuit siteweb d'entreprise",
+      "template gratuit pour saas",
+      "template gratuit site web de start up",
+      "template gratuit de site web blog",
+      "template gratuit de landing page"
+    ],
+    "preview_link": "https://dashui.codescandy.com/tailwindcss/index.html",
+    "download_link": "https://github.com/codescandy/dashui-tailwindcss/archive/refs/heads/main.zip",
+    "repos": "https://github.com/codescandy/dashui-tailwindcss",
+    "repos_api_url": "https://api.github.com/repos/codescandy/dashui-tailwindcss",
+    "features": [
+      "Page de Profile",
+      "Page de Paramètres",
+      "Page de Facturation",
+      "Page de Prix",
+      "Page d'Erreur 404",
+      "Page d'authentification",
+      "Page de connexion",
+      "Page d'administration",
+      "Plusieurs Composants"
+    ],
+    "id": "1XUekgAFdpVTYqIw6nxdaeiWrAQ2j1711797119873",
+    "actions": [],
+    "metaTitle": "Template Gratuit De Tableau De Bord Admin Nextjs Tailwindcss"
+  },
+  {
+    "created_at": 1711800228361,
+    "title": "Dashui Admin",
+    "frameworks": ["Astro", "tailwindcss"],
+    "categories": ["Astro", "Blog", "Landing", "Saas"],
+    "colors": ["#1C1C1C", "#FFFFFF"],
+    "slug": "zeon-studio-astroplate-template-gratuit-astro-tailwindcss-blog-landing-page-saas",
+    "author": "zeon-studio",
+    "description": [
+      "Astroplate est un template de démarrage gratuit construit avec Astro, TailwindCSS et TypeScript, offrant tout ce dont vous avez besoin pour lancer votre projet Astro. Commencez avec Astroplate et économisez des heures de travail. À cause de sa versatilité, le template peut être utilisé pour une landing page, un siteweb de blog, un saas, un siteweb de startup pour ne citer que ceux la.",
+      "Le template inclut une bonne liste de page dont une page de contact, de blog, de formulaire de contact. Le template dispose également d'un theme sombre et d'un theme claire. Il est facile a customiser"
+    ],
+    "popularity": 12,
+    "images": [
+      "/static/images/themes/astroplate-zeon-studio-light.webp",
+      "/static/images/themes/astroplate-zeon-studio-dark.webp"
+    ],
+    "tags": [
+      "template gratuit Html5 tailwindcss",
+      "template de siteweb tailwindcss",
+      "template admin dashboard",
+      "Rapide et Léger",
+      "HTML tailwindcss",
+      "Template gratuit pour landing page",
+      "template gratuit siteweb d'entreprise",
+      "template gratuit pour saas",
+      "template gratuit site web de start up",
+      "template gratuit de site web blog",
+      "template gratuit de landing page",
+      "Template gratuit astro",
+      "Astro TailwindCSS"
+    ],
+    "preview_link": "https://zeon.studio/preview?project=astroplate",
+    "download_link": "https://github.com/zeon-studio/astroplate/archive/refs/heads/main.zip",
+    "repos": "https://github.com/zeon-studio/astroplate",
+    "repos_api_url": "https://api.github.com/repos/zeon-studio/astroplate",
+    "features": [
+      "Page de Blog",
+      "Page de Contact",
+      "Page de Catégorie",
+      "Page de Prix",
+      "Page d'Erreur 404",
+      "Page d'authentification",
+      "Page d'auteurs"
+    ],
+    "id": "1XUekgAFdpVTYqIw6nxdaeiWrAQ2j1711800228361",
+    "actions": [],
+    "metaTitle": "Template Gratuit Pour Créer Un Siteweb Avec Astro Et Tailwindcss"
   }
 ]

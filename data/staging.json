@@ -1,37 +1,49 @@
 {
-  "created_at": 1711245879684,
-  "title": "smartaix",
-  "frameworks": ["HTML5", "tailwindcss"],
-  "categories": ["Landing", "saas", "startup"],
-  "colors": ["#F8F7F7", "#49407F"],
-  "slug": "smartaix-template-gratuit-html-tailwindcss-saas-starup",
-  "author": "DesignToCodes",
+  "created_at": 1711800228361,
+  "title": "Dashui Admin",
+  "frameworks": ["Astro", "tailwindcss"],
+  "categories": ["Astro", "Blog", "Landing", "Saas"],
+  "colors": ["#1C1C1C", "#FFFFFF"],
+  "slug": "zeon-studio-astroplate-template-gratuit-astro-tailwindcss-blog-landing-page-saas",
+  "author": "zeon-studio",
   "description": [
-    "Si vous êtes à la recherche de template de landing page pour saas développé avec tailwindcss, alors SmartAiX peut être la meilleure option pour vous! Cette landing page pour saas est construite avec HTML5, CSS3, Tailwindcss et Slick Slider. Ainsi, vous pouvez bénéficier d'une expérience fluide et facilement personnalisable. Ce Design de landing Page de saas Gratuit est adaptable et personnalisable, vous offrant un affichage incroyable et idéal pour votre application.",
-    "Les utilisateurs peuvent facilement naviguer et explorer les fonctionnalités et découvrir votre offre grâce à son interface conviviale et son design moderne.  Ce template présentera votre application au monde sous une forme unique. Ce template captive sans effort les utilisateurs, raconte une histoire convaincante et, en fin de compte, stimule les conversions."
+    "Astroplate est un template de démarrage gratuit construit avec Astro, TailwindCSS et TypeScript, offrant tout ce dont vous avez besoin pour lancer votre projet Astro. Commencez avec Astroplate et économisez des heures de travail. À cause de sa versatilité, le template peut être utilisé pour une landing page, un siteweb de blog, un saas, un siteweb de startup pour ne citer que ceux la.",
+    "Le template inclut une bonne liste de page dont une page de contact, de blog, de formulaire de contact. Le template dispose également d'un theme sombre et d'un theme claire. Il est facile a customiser"
   ],
-  "popularity": 13,
-  "images": ["/static/images/themes/smartaix.webp"],
+  "popularity": 12,
+  "images": [
+    "/static/images/themes/astroplate-zeon-studio-light.webp",
+    "/static/images/themes/astroplate-zeon-studio-dark.webp"
+  ],
   "tags": [
     "template gratuit Html5 tailwindcss",
     "template de siteweb tailwindcss",
-    "Optimisé pour le contact",
-    "Optimisé pour les moteurs de recherches",
-    "rapide et léger",
-    "HTML",
-    "Optimisation d'image",
+    "template admin dashboard",
+    "Rapide et Léger",
+    "HTML tailwindcss",
+    "Template gratuit pour landing page",
     "template gratuit siteweb d'entreprise",
     "template gratuit pour saas",
     "template gratuit site web de start up",
     "template gratuit de site web blog",
-    "template gratuit de landing page"
+    "template gratuit de landing page",
+    "Template gratuit astro",
+    "Astro TailwindCSS"
   ],
-  "preview_link": "https://live.designtocodes.com/OnePage/smartaix/index.html",
-  "download_link": "https://github.com/DesignToCodes/SmartAiX-Free-Tailwind-CSS-App-Landing-Page-Template-For-Developers/archive/refs/heads/main.zip",
-  "repos": "https://github.com/DesignToCodes/SmartAiX-Free-Tailwind-CSS-App-Landing-Page-Template-For-Developers",
-  "repos_api_url": "https://api.github.com/repos/DesignToCodes/SmartAiX-Free-Tailwind-CSS-App-Landing-Page-Template-For-Developers",
-  "features": [],
-  "id": "J8tnaXBxRoXbQIns31711245879684uI0rtfTseWxXBCxdgE5EWWM9w",
+  "preview_link": "https://zeon.studio/preview?project=astroplate",
+  "download_link": "https://github.com/zeon-studio/astroplate/archive/refs/heads/main.zip",
+  "repos": "https://github.com/zeon-studio/astroplate",
+  "repos_api_url": "https://api.github.com/repos/zeon-studio/astroplate",
+  "features": [
+    "Page de Blog",
+    "Page de Contact",
+    "Page de Catégorie",
+    "Page de Prix",
+    "Page d'Erreur 404",
+    "Page d'authentification",
+    "Page d'auteurs"
+  ],
+  "id": "1XUekgAFdpVTYqIw6nxdaeiWrAQ2j1711800228361",
   "actions": [],
-  "metaTitle": "Template Gratuit Tailwindcss Nextjs pour lancer Votre Siteweb"
+  "metaTitle": "Template Gratuit Pour Créer Un Siteweb Avec Astro Et Tailwindcss"
 }
