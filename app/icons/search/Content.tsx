@@ -79,8 +79,8 @@ const Content = (icon: Icon) => {
             dangerouslySetInnerHTML={{ __html: svg }}
           ></button>
         </div>
-        <div className="flex flex-col flex-1 min-h-[16rem] max-h-[23rem]">
-          <div className="flex flex-wrap items-center justify-center flex-grow-0 flex-shrink-0 w-full gap-4 my-4 md:h-12">
+        <div className="flex flex-col flex-1 h-auto ">
+          <div className="flex flex-wrap items-center justify-center flex-grow-0 flex-shrink-0 w-full gap-4 my-4">
             <ActionButton
               classname="flex items-center justify-center gap-1 px-4 py-2 text-xs border rounded-md border-secondary-600 bg-secondary-600 text-gray-50 min-w-[10rem]"
               actionMethod={() => {
@@ -151,86 +151,85 @@ const Content = (icon: Icon) => {
               <span>Télécharger PNG</span>
             </ActionButton>
           </div>
-          <div className="flex-1 overflow-hidden rounded-lg bg-secondary-700">
-            <div className="w-full h-full">
-              <div className="flex items-center justify-between h-12 gap-4 pr-2 border-b border-gray-50/10 bg-secondary-600 text-gray-50">
-                <div className="relative flex items-center justify-start flex-grow-0 flex-shrink-0 h-12 gap-0">
-                  <button
-                    className={`relative z-20 inline-block w-20 text-xs h-full hover:bg-secondary-400/50 ${
-                      activeCodeString === 'svg' ? 'disabled' : null
-                    }`}
-                    onClick={(e) => {
-                      e.preventDefault()
-                      setActiveCodeString((prev) => 'svg')
-                    }}
-                  >
-                    Code SVG
-                  </button>
-                  <button
-                    className={`relative z-20 inline-block w-20 text-xs h-full hover:bg-secondary-400/50 ${
-                      activeCodeString === 'jsx' ? 'disabled' : null
-                    }`}
-                    onClick={(e) => {
-                      e.preventDefault()
-                      setActiveCodeString((prev) => 'jsx')
-                    }}
-                  >
-                    Code JSX
-                  </button>
-                  <button
-                    className={`relative z-20 inline-block w-20 text-xs h-full hover:bg-secondary-400/50 ${
-                      activeCodeString === 'dataurl' ? 'disabled' : null
-                    }`}
-                    onClick={(e) => {
-                      e.preventDefault()
-                      setActiveCodeString((prev) => 'dataurl')
-                    }}
-                  >
-                    Data URL
-                  </button>
-                  <span
-                    className={`absolute top-0 left-0 z-10 inline-block w-20 h-full bg-secondary-400 transition-transform duration-100 ease-in ${
-                      activeCodeString === 'svg'
-                        ? 'translate-x-0'
-                        : activeCodeString === 'jsx'
-                          ? 'translate-x-20'
-                          : activeCodeString === 'dataurl'
-                            ? 'translate-x-40'
-                            : null
-                    }`}
-                  ></span>
-                </div>
-                <div className="">
-                  <ActionButton
-                    classname=""
-                    actionMethod={() => {
-                      copyToClipboard(svgStrings[activeCodeString])
-                    }}
-                    sucessChildren={<span className="text-xs">copié !</span>}
-                  >
-                    <span className="inline-block w-4 h-4">
-                      <svg
-                        className="w-full h-full fill-current"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M0 0h24v24H0z" fill="none"></path>
-                        <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"></path>
-                        .{' '}
-                      </svg>
-                    </span>
-                  </ActionButton>
+          <div className="h-[350px] shrink-0 grow-0">
+            <div className="relative w-full h-full overflow-auto text-sm rounded-xl">
+              <div className="absolute top-0 left-0 z-10 w-full h-12 bg-secondary-600">
+                <div className="flex justify-between w-full h-full">
+                  <div className="relative flex items-center justify-start flex-grow-0 flex-shrink-0 h-12 gap-0 text-gray-50">
+                    <button
+                      className={`relative z-20 inline-block w-20 text-xs h-full hover:bg-secondary-400/50 ${
+                        activeCodeString === 'svg' ? 'disabled' : null
+                      }`}
+                      onClick={(e) => {
+                        e.preventDefault()
+                        setActiveCodeString((prev) => 'svg')
+                      }}
+                    >
+                      Code SVG
+                    </button>
+                    <button
+                      className={`relative z-20 inline-block w-20 text-xs h-full hover:bg-secondary-400/50 ${
+                        activeCodeString === 'jsx' ? 'disabled' : null
+                      }`}
+                      onClick={(e) => {
+                        e.preventDefault()
+                        setActiveCodeString((prev) => 'jsx')
+                      }}
+                    >
+                      Code JSX
+                    </button>
+                    <button
+                      className={`relative z-20 inline-block w-20 text-xs h-full hover:bg-secondary-400/50 ${
+                        activeCodeString === 'dataurl' ? 'disabled' : null
+                      }`}
+                      onClick={(e) => {
+                        e.preventDefault()
+                        setActiveCodeString((prev) => 'dataurl')
+                      }}
+                    >
+                      Data URL
+                    </button>
+                    <span
+                      className={`absolute top-0 left-0 z-10 inline-block w-20 h-full bg-secondary-400 transition-transform duration-100 ease-in ${
+                        activeCodeString === 'svg'
+                          ? 'translate-x-0'
+                          : activeCodeString === 'jsx'
+                            ? 'translate-x-20'
+                            : activeCodeString === 'dataurl'
+                              ? 'translate-x-40'
+                              : null
+                      }`}
+                    ></span>
+                  </div>
+                  <div className="flex items-center h-full px-2 text-gray-50">
+                    <ActionButton
+                      classname=""
+                      actionMethod={() => {
+                        copyToClipboard(svgStrings[activeCodeString])
+                      }}
+                      sucessChildren={<span className="text-xs">copié !</span>}
+                    >
+                      <span className="inline-block w-4 h-4">
+                        <svg
+                          className="w-full h-full fill-current"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"></path>
+                        </svg>
+                      </span>
+                    </ActionButton>
+                  </div>
                 </div>
               </div>
-              <div className="w-full text-xs grow-0">
-                <div className="p-8 overflow-scroll bg-secondary-700">
-                  <pre className="overflow-auto">
-                    <code
-                      className="text-[#7dd3fc] break-words whitespace-pre-wrap"
-                      dangerouslySetInnerHTML={{ __html: codeString[activeCodeString] }}
-                    ></code>
-                  </pre>
-                </div>
+              <div className="relative h-full p-3 overflow-scroll bg-secondary-700">
+                <pre className="mt-12 overflow-auto">
+                  <code
+                    className="text-[#7dd3fc] break-words whitespace-pre-wrap"
+                    dangerouslySetInnerHTML={{ __html: codeString[activeCodeString] }}
+                  ></code>
+                </pre>
               </div>
             </div>
           </div>

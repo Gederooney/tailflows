@@ -401,14 +401,12 @@ const Content = () => {
                 ></path>
               </svg>
             </a>
-            <h1 className="max-w-3xl mx-auto mb-4 text-4xl font-extrabold leading-none tracking-tight text-secondary-950 md:text-5xl lg:text-6xl dark:text-gray-50">
-              Créez facilement votre box shadow avec notre{' '}
-              <span className="sr-only">outil gratuit</span>
+            <h1 className="max-w-3xl mx-auto mb-4 text-4xl font-bold leading-none tracking-tight text-secondary-950 md:text-5xl lg:text-4xl dark:text-gray-50">
+              Créez facilement votre box shadow avec notre outil gratuit
             </h1>
             <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
-              Lancez-vous dans la personnalisation de box shadow avec notre générateur intuitif.
               Créez des ombres uniques pour vos projets, et obtenez instantanément la configuration
-              pour TailwindCSS, accompagnée d'exemples pratiques.{' '}
+              pour TailwindCSS.
               <span className="sr-only">
                 Préférez-vous utiliser du HTML ou du CSS directement ? Copiez simplement le code
                 généré pour votre box shadow et intégrez-le à votre design en un clin d'œil.

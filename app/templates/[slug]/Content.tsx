@@ -204,7 +204,13 @@ const Content = (theme: Props) => {
                 <h2 className="text-lg font-bold">{theme.title}</h2>
                 <div className="flex gap-4 my-2">
                   <span className="font-medium">Auteur:</span>
-                  <span>{theme.author}</span>
+                  <Link
+                    target="_blank"
+                    className="hover:underline"
+                    href={`https://github.com/${theme.author}`}
+                  >
+                    {theme.author}
+                  </Link>
                 </div>
                 <div className="flex gap-4 my-2">
                   <span className="font-medium">License:</span>
@@ -216,7 +222,7 @@ const Content = (theme: Props) => {
                     {theme.categories.map((key: string) => (
                       <div
                         key={`${theme.id + key}`}
-                        className="px-2 py-1 bg-gray-100 rounded-md dark:bg-secondary-600"
+                        className="px-2 py-1 bg-gray-100 rounded-md dark:bg-secondary-600 shrink-0 grow-0"
                       >
                         <span className="text-xs font-light">{key}</span>
                       </div>
