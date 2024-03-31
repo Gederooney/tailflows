@@ -42,6 +42,14 @@ export default function Home({ posts }) {
                 </div>
               ))}
           </div>
+          <div className="flex justify-center gap-3 mt-8">
+            <Link
+              className="inline-flex items-center justify-center px-4 py-3 text-sm font-medium text-center text-white border border-transparent rounded-full gap-x-3 bg-gradient-to-tl from-secondary-600 to-secondary-300 hover:from-secondary-300 hover:to-secondary-600 focus:outline-none focus:ring-2 focus:ring-secondary-600 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-800"
+              href="/templates"
+            >
+              Tous les templates
+            </Link>
+          </div>
         </div>
       </section>
       <Newsletter />

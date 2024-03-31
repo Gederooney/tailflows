@@ -113,9 +113,9 @@ const Content = (theme: Props) => {
     <>
       <section className="my-12">
         <div className="px-6 mx-auto max-w-7xl">
-          <div className="relative flex flex-col gap-8 md:flex-row">
+          <div className="relative flex flex-col gap-4 md:gap-8 md:flex-row">
             <div className="w-full md:flex-1 md:px-12">
-              <div className="w-full">
+              <div className="w-full rounded-lg overflow-hidden border border-secondary-950/10 dark:border-gray-50/10">
                 <Image
                   className="object-cover w-full h-auto"
                   src={theme.images[0]}
@@ -128,7 +128,7 @@ const Content = (theme: Props) => {
                 <Link
                   href={theme.download_link}
                   download={theme.title}
-                  className="flex items-center gap-2 px-6 py-2 border rounded-md shadow"
+                  className="flex items-center gap-2 px-6 py-2 border rounded-md shadow border-secondary-950/10 dark:border-gray-50/10"
                 >
                   <span>
                     <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current">
@@ -140,22 +140,22 @@ const Content = (theme: Props) => {
                       </g>
                     </svg>
                   </span>
-                  <span>Télécharger</span>
+                  <span className="hidden md:inline-block">Télécharger</span>
                 </Link>
                 <Link
                   target="_blank"
                   href={theme.repos}
-                  className="flex items-center gap-2 px-6 py-2 border rounded-md shadow"
+                  className="flex items-center gap-2 px-6 py-2 border rounded-md shadow bg-secondary-400 text-gray-50 dark:text-gray-500 dark:border-gray-50/10 dark:bg-secondary-600"
                 >
                   <span>
                     <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current">
                       <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                     </svg>
                   </span>
-                  <span>Repos</span>
+                  <span className="hidden md:inline-block">Repos</span>
                 </Link>
                 <button
-                  className="flex items-center gap-2 px-6 py-2 border rounded-md shadow"
+                  className="flex items-center gap-2 px-6 py-2 border rounded-md shadow border-secondary-950/10 dark:border-gray-50/10 "
                   onClick={(e) => {
                     e.stopPropagation()
                     removeBodyOverflow()
@@ -168,12 +168,12 @@ const Content = (theme: Props) => {
                       <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" />
                     </svg>
                   </span>
-                  <span>Démos</span>
+                  <span className="hidden md:inline-block">Démos</span>
                 </button>
                 <Link
                   target="_blank"
                   href={theme.preview_link}
-                  className="flex items-center gap-2 px-6 py-2 border rounded-md shadow"
+                  className="flex items-center gap-2 px-6 py-2 border rounded-md shadow bg-secondary-400 text-gray-50 dark:text-gray-500 dark:border-gray-50/10 dark:bg-secondary-600"
                 >
                   <span>
                     <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current">
@@ -181,21 +181,23 @@ const Content = (theme: Props) => {
                       <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zm2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z" />
                     </svg>
                   </span>
-                  <span>Site web</span>
+                  <span className="hidden md:inline-block">Site web</span>
                 </Link>
               </div>
-              <div className="grid w-full grid-cols-2 gap-4 my-32">
-                {theme.images.slice(1).map((img: string) => (
-                  <Image
-                    key={img}
-                    className="object-cover w-full h-auto basis-1/2"
-                    src={img}
-                    height={1600}
-                    width={1200}
-                    alt={theme.title}
-                  />
-                ))}
-              </div>
+              {theme.images.length > 1 ? (
+                <div className="grid w-full grid-cols-2 gap-4 my-32">
+                  {theme.images.slice(1).map((img: string) => (
+                    <Image
+                      key={img}
+                      className="object-cover w-full h-auto basis-1/2"
+                      src={img}
+                      height={1600}
+                      width={1200}
+                      alt={theme.title}
+                    />
+                  ))}
+                </div>
+              ) : null}
             </div>
             <div className="sticky top-0 w-full text-sm grow-0 shrink-0 md:w-1/3 md:p-4">
               <div className="w-full pb-4 mb-4 border-b border-secondary-50/10 dark:border-primary-50/10">
