@@ -315,7 +315,7 @@ const data = [
   {
     title: 'footer',
     href: '/exemples/template-footer-gratuit-tailwindcss',
-    description: '1 templates',
+    description: '4 templates',
     image: `<svg width="350" height="250" viewBox="0 0 350 250" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g clip-path="url(#clip0_193_36)">
     <mask id="mask0_193_36" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="350" height="250">

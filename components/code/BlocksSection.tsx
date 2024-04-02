@@ -37,7 +37,7 @@ const html = `<html lang="fr">
       }
     </style>
   </head>
-  <body class="bg-white h-screen flex items-center justify-center">
+  <body class="bg-white h-screen lg:flex items-center justify-center">
     <!--content-->
     <script type="text/javascript">
     <!--script-->
@@ -48,18 +48,11 @@ const html = `<html lang="fr">
 const BlocksSection = ({ name, id, htmlBody, script, height }: Props) => {
   const [code, setCode] = useState('')
   const [currentTab, setCurrentTab] = useState<'code' | 'preview'>('preview')
+  const [device, setDevice] = useState<'mobile' | 'tablet' | 'desktop'>('desktop')
   const iframe = useRef<HTMLIFrameElement>(null)
 
   useEffect(() => {
     const highlightedCode = formatCode(htmlBody).then((code) => setCode(code ?? ''))
-    // if (iframe.current) {
-    //   const content = iframe.current.contentDocument
-    //   if (content) {
-    //     setHeight(content.body?.scrollHeight)
-    //     return
-    //   }
-    // }
-    // setHeight(800)
     return
   }, [])
 
@@ -67,7 +60,7 @@ const BlocksSection = ({ name, id, htmlBody, script, height }: Props) => {
     <section className="px-4">
       <div className="w-full overflow-hidden border shadow rounded-xl border-gray-950/10 dark:border-gray-50/10">
         <div className="relative  bg-secondary-700 flex flex-col">
-          <header className="w-full h-14 bg-secondary-500">
+          <header className="w-full h-14 bg-secondary-500 relative">
             <div className="flex items-center justify-between w-full h-full">
               <div className="relative w-64 h-full">
                 <span
@@ -114,9 +107,12 @@ const BlocksSection = ({ name, id, htmlBody, script, height }: Props) => {
                   <span>Code</span>
                 </button>
               </div>
-              <div className="items-center justify-center hidden gap-4 text-gray-300 md:flex flex-1">
-                <button className="grid p-1 rounded-md border-gray-300/10 hover:border place-content-center hover:bg-gray-300/10">
-                  <span className="inline-block w-6 h-6">
+              <div className="items-center justify-center hidden gap-4 text-gray-300 md:flex absolute left-1/2 -translate-x-1/2">
+                <button
+                  className="grid p-2 rounded-md border-gray-300/10 border place-content-center hover:bg-gray-300/20 bg-gray-300/10"
+                  onClick={() => setDevice('mobile')}
+                >
+                  <span className="inline-block w-4 h-4">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="w-full h-full stroke-current fill-none "
@@ -130,8 +126,11 @@ const BlocksSection = ({ name, id, htmlBody, script, height }: Props) => {
                     </svg>
                   </span>
                 </button>
-                <button className="grid p-1 rounded-md border-gray-300/10 hover:border place-content-center hover:bg-gray-300/10">
-                  <span className="inline-block w-6 h-6">
+                <button
+                  className="grid p-2 rounded-md border-gray-300/10 border place-content-center hover:bg-gray-300/20 bg-gray-300/10"
+                  onClick={() => setDevice('tablet')}
+                >
+                  <span className="inline-block w-4 h-4">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="w-full h-full fill-current "
@@ -141,8 +140,11 @@ const BlocksSection = ({ name, id, htmlBody, script, height }: Props) => {
                     </svg>
                   </span>
                 </button>
-                <button className="grid p-1 rounded-md border-gray-300/10 hover:border place-content-center hover:bg-gray-300/10">
-                  <span className="inline-block w-6 h-6">
+                <button
+                  className="grid p-2 rounded-md border-gray-300/10 border place-content-center hover:bg-gray-300/20 bg-gray-300/10"
+                  onClick={() => setDevice('desktop')}
+                >
+                  <span className="inline-block w-4 h-4">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="w-full h-full fill-current "
@@ -153,7 +155,7 @@ const BlocksSection = ({ name, id, htmlBody, script, height }: Props) => {
                   </span>
                 </button>
               </div>
-              <div className="absolute flex items-start justify-end w-auto text-gray-300 pe-4 right-0">
+              <div className=" flex items-start justify-end w-auto text-gray-300 pe-4">
                 <ActionButton
                   actionMethod={() => {
                     copyToClipboard(`<html>
@@ -161,7 +163,7 @@ const BlocksSection = ({ name, id, htmlBody, script, height }: Props) => {
                     </html>`)
                   }}
                   sucessChildren={
-                    <span className="inline-block w-6 h-6">
+                    <span className="inline-block w-4 h-4">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="w-full h-full fill-current "
@@ -171,9 +173,9 @@ const BlocksSection = ({ name, id, htmlBody, script, height }: Props) => {
                       </svg>
                     </span>
                   }
-                  classname="grid p-1 rounded-md border-gray-300/10 hover:border place-content-center hover:bg-gray-300/10"
+                  classname="grid p-2 rounded-md border-gray-300/10 border place-content-center hover:bg-gray-300/20 bg-gray-300/10"
                 >
-                  <span className="inline-block w-6 h-6">
+                  <span className="inline-block w-4 h-4">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="w-full h-full fill-current "
@@ -213,7 +215,7 @@ const BlocksSection = ({ name, id, htmlBody, script, height }: Props) => {
               }}
             ></div>
             <div
-              className="relative z-[5] w-full  bg-transparent flex"
+              className={`relative z-[5] bg-transparent w-full`}
               style={{ height: `calc(${height}px - 3.5rem)`, maxHeight: '800px' }}
             >
               {currentTab === 'preview' ? (
@@ -222,7 +224,7 @@ const BlocksSection = ({ name, id, htmlBody, script, height }: Props) => {
                   id="hero-travel"
                   title="test"
                   loading="lazy"
-                  className="w-full h-full m-0 bg-secondary-700"
+                  className={`w-full h-full m-auto ${device === 'mobile' ? 'max-w-md' : device === 'tablet' ? 'max-w-5xl' : 'w-full'}`}
                   srcDoc={html
                     .replace('<!--content-->', htmlBody)
                     .replace('<!--script-->', script ?? '')}
