@@ -11,6 +11,7 @@ export async function getTheme({ id, slug }: { id?: string; slug?: string }) {
 
     const res = await fetch(url, {
       method: 'GET',
+      next: { revalidate: 3600 * 24 },
     })
     if (!res.ok) return null
 
