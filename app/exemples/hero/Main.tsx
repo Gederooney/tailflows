@@ -4,6 +4,7 @@ import BlocksSection from '@/components/code/BlocksSection'
 
 const data = [
   {
+    height: 800,
     name: 'travel',
     id: ``,
     title: 'Hero section barre de recherche tailwind CSS',
@@ -293,6 +294,7 @@ const data = [
 `,
   },
   {
+    height: 800,
     name: 'restaurant',
     title: 'Hero section avancée avec filtres',
     description:
@@ -1103,113 +1105,114 @@ const data = [
     `,
   },
   {
+    height: 900,
     name: 'podcast',
     id: '',
     title: 'Hero Section Blog & Podcast Élégante',
     description:
       "Boostez votre blog ou podcast avec notre Hero Section dédiée, fusionnant élégance et fonctionnalité. Avec un titre engageant, une description inspirante, un bouton CTA dynamique, et une illustration attrayante, elle capte l'attention et encourage l'interaction dès le premier regard.",
     htmlBody: `
-    <body class="h-screen bg-white">
+    <div>
     <header
-      class="flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full bg-white text-sm py-3 sm:py-0 dark:bg-slate-950">
-      <nav
-        class="relative max-w-[85rem] w-full mx-auto  sm:flex sm:items-center sm:justify-between px-4 sm:px-6 lg:px-8"
-        aria-label="Global">
-        <div class="flex items-center justify-between">
-          <a
-            href="https://tailflows.com/"
-            class="flex items-center space-x-3 rtl:space-x-reverse">
-            <div class="flex flex-row items-center gap-1 mr-3 text-gray-950 dark:text-gray-500">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                class="">
-                <g fill="currentColor" fill-rule="evenodd" clip-rule="evenodd">
-                  <path
-                    d="M0 10C0 4.477 4.477 0 10 0s10 4.477 10 10-4.477 10-10 10H.006q.219-.36.61-.618c.423-.278.922-.295 1.475-.314.853-.03 1.833-.064 2.86-1.068H10a8 8 0 1 0-8-8v6.443c-.604.128-1.246.422-1.906 1.135L0 17.683z"></path>
-                  <path
-                    d="M10 3.962A6.04 6.04 0 0 0 3.962 10v5.845a1.7 1.7 0 0 0 .639-.245q1.115-.732.829-2.317.944 1.446.528 2.755H10a6.038 6.038 0 1 0 0-12.076"></path>
-                </g></svg
-              >
-              <span class="text-xl select-none">tailflows</span>
-            </div>
-          </a>
-          <div class="sm:hidden">
-            <button
-              type="button"
-              class="hs-collapse-toggle w-9 h-9 flex justify-center items-center text-sm font-semibold rounded-lg border border-gray-200 text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-              data-hs-collapse="#navbar-collapse-with-animation"
-              aria-controls="navbar-collapse-with-animation"
-              aria-label="Toggle navigation">
-              <svg
-                class="hs-collapse-open:hidden w-4 h-4"
-                width="16"
-                height="16"
-                fill="currentColor"
-                viewBox="0 0 16 16">
+    class="flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full bg-white text-sm py-3 sm:py-0 dark:bg-slate-950">
+    <nav
+      class="relative max-w-[85rem] w-full mx-auto  sm:flex sm:items-center sm:justify-between px-4 sm:px-6 lg:px-8"
+      aria-label="Global">
+      <div class="flex items-center justify-between">
+        <a
+          href="https://tailflows.com/"
+          class="flex items-center space-x-3 rtl:space-x-reverse">
+          <div class="flex flex-row items-center gap-1 mr-3 text-gray-950 dark:text-gray-500">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              class="">
+              <g fill="currentColor" fill-rule="evenodd" clip-rule="evenodd">
                 <path
-                  fill-rule="evenodd"
-                  d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
-              </svg>
-              <svg
-                class="hs-collapse-open:block flex-shrink-0 hidden w-4 h-4"
-                width="16"
-                height="16"
-                fill="currentColor"
-                viewBox="0 0 16 16">
+                  d="M0 10C0 4.477 4.477 0 10 0s10 4.477 10 10-4.477 10-10 10H.006q.219-.36.61-.618c.423-.278.922-.295 1.475-.314.853-.03 1.833-.064 2.86-1.068H10a8 8 0 1 0-8-8v6.443c-.604.128-1.246.422-1.906 1.135L0 17.683z"></path>
                 <path
-                  d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
-              </svg>
-            </button>
+                  d="M10 3.962A6.04 6.04 0 0 0 3.962 10v5.845a1.7 1.7 0 0 0 .639-.245q1.115-.732.829-2.317.944 1.446.528 2.755H10a6.038 6.038 0 1 0 0-12.076"></path>
+              </g></svg
+            >
+            <span class="text-xl select-none">tailflows</span>
           </div>
+        </a>
+        <div class="sm:hidden">
+          <button
+            type="button"
+            class="hs-collapse-toggle w-9 h-9 flex justify-center items-center text-sm font-semibold rounded-lg border border-gray-200 text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+            data-hs-collapse="#navbar-collapse-with-animation"
+            aria-controls="navbar-collapse-with-animation"
+            aria-label="Toggle navigation">
+            <svg
+              class="hs-collapse-open:hidden w-4 h-4"
+              width="16"
+              height="16"
+              fill="currentColor"
+              viewBox="0 0 16 16">
+              <path
+                fill-rule="evenodd"
+                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+            </svg>
+            <svg
+              class="hs-collapse-open:block flex-shrink-0 hidden w-4 h-4"
+              width="16"
+              height="16"
+              fill="currentColor"
+              viewBox="0 0 16 16">
+              <path
+                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
         </div>
+      </div>
+      <div
+        id="navbar-collapse-with-animation"
+        class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow sm:block">
         <div
-          id="navbar-collapse-with-animation"
-          class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow sm:block">
-          <div
-            class="flex flex-col gap-y-4 gap-x-0 mt-5 sm:flex-row sm:items-center sm:justify-end sm:gap-y-0 sm:gap-x-7 sm:mt-0 sm:ps-7">
-            <a
-              class="font-medium text-indigo-600 sm:py-6 dark:text-indigo-500"
-              href="#"
-              aria-current="page"
-              >Accueil</a
-            >
-            <a
-              class="font-medium text-gray-500 hover:text-gray-400 sm:py-6 dark:text-gray-400 dark:hover:text-gray-500"
-              href="#"
-              >Contact</a
-            >
-            <a
-              class="font-medium text-gray-500 hover:text-gray-400 sm:py-6 dark:text-gray-400 dark:hover:text-gray-500"
-              href="#"
-              >Panier</a
-            >
-            <a
-              class="font-medium text-gray-500 hover:text-gray-400 sm:py-6 dark:text-gray-400 dark:hover:text-gray-500"
-              href="#"
-              >Blog</a
-            >
+          class="flex flex-col gap-y-4 gap-x-0 mt-5 sm:flex-row sm:items-center sm:justify-end sm:gap-y-0 sm:gap-x-7 sm:mt-0 sm:ps-7">
+          <a
+            class="font-medium text-indigo-600 sm:py-6 dark:text-indigo-500"
+            href="#"
+            aria-current="page"
+            >Accueil</a
+          >
+          <a
+            class="font-medium text-gray-500 hover:text-gray-400 sm:py-6 dark:text-gray-400 dark:hover:text-gray-500"
+            href="#"
+            >Contact</a
+          >
+          <a
+            class="font-medium text-gray-500 hover:text-gray-400 sm:py-6 dark:text-gray-400 dark:hover:text-gray-500"
+            href="#"
+            >Panier</a
+          >
+          <a
+            class="font-medium text-gray-500 hover:text-gray-400 sm:py-6 dark:text-gray-400 dark:hover:text-gray-500"
+            href="#"
+            >Blog</a
+          >
 
-            <a
-              class="flex items-center gap-x-2 font-medium text-gray-500 hover:text-indigo-600 sm:border-s sm:border-gray-300 sm:my-6 sm:ps-6 dark:border-gray-700 dark:text-gray-400 dark:hover:text-indigo-500"
-              href="#">
-              <svg
-                class="flex-shrink-0 w-4 h-4"
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                viewBox="0 0 16 16">
-                <path
-                  d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
-              </svg>
-              Mon compte
-            </a>
-          </div>
+          <a
+            class="flex items-center gap-x-2 font-medium text-gray-500 hover:text-indigo-600 sm:border-s sm:border-gray-300 sm:my-6 sm:ps-6 dark:border-gray-700 dark:text-gray-400 dark:hover:text-indigo-500"
+            href="#">
+            <svg
+              class="flex-shrink-0 w-4 h-4"
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              viewBox="0 0 16 16">
+              <path
+                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+            </svg>
+            Mon compte
+          </a>
         </div>
-      </nav>
-    </header>
+      </div>
+    </nav>
+  </header>
     <!-- Hero -->
     <section
       class="relative flex items-center w-full bg-white dark:bg-slate-950">
@@ -2615,7 +2618,8 @@ const data = [
       </div>
     </section>
     <!-- End Hero -->
-  </body>`,
+    </div>
+`,
   },
 ]
 
@@ -2627,7 +2631,7 @@ const Main = () => {
         <div className="relative overflow-hidden bg-gradient-to-b from-transparent to-white to-[90%] py-12 space-y-8 dark:to-secondary-900">
           <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-10">
             <div className="max-w-4xl mx-auto mt-5 text-center">
-              <h2 className="block text-3xl font-bold text-gray-800 md:text-5xl lg:text-6xl dark:text-gray-200">
+              <h2 className="block text-3xl font-bold text-gray-800 md:text-5xl lg:text-4xl dark:text-gray-200 max-w-2xl mx-auto">
                 Templates de Hero Sections Tailwind CSS Gratuits
               </h2>
             </div>

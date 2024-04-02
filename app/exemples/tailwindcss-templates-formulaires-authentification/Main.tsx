@@ -3,6 +3,7 @@ import React from 'react'
 
 const data = [
   {
+    height: 800,
     name: 'default',
     id: '',
     title: 'Template Connexion Épuré avec Tailwind CSS',
@@ -355,6 +356,7 @@ const data = [
 			window.onload = auth.init()`,
   },
   {
+    height: 800,
     name: 'default',
     id: '',
     title: 'Template Connexion Simple & Élégant Tailwind CSS',
@@ -712,6 +714,7 @@ const data = [
 			window.onload = auth.init()`,
   },
   {
+    height: 800,
     name: 'moderne',
     id: '',
     title: 'Template Inscription Moderne Tailwind CSS',
@@ -1398,6 +1401,7 @@ const data = [
       auth.init()`,
   },
   {
+    height: 800,
     name: 'dynamique',
     id: '',
     title: 'Template Authentification Dynamique Tailwind CSS',
@@ -1808,7 +1812,7 @@ const Main = () => {
         <div className="relative overflow-hidden bg-gradient-to-b from-transparent to-white to-[90%] py-12 space-y-8 dark:to-secondary-900">
           <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-10">
             <div className="mx-auto mt-5 text-center max-w-7xl">
-              <h2 className="block text-3xl font-bold text-gray-800 md:text-5xl lg:text-6xl dark:text-gray-200">
+              <h2 className="block text-3xl font-bold text-gray-800 md:text-5xl lg:text-4xl dark:text-gray-200 max-w-2xl mx-auto">
                 Templates d'Authentification Tailwind CSS: Connexion et Inscription
               </h2>
             </div>

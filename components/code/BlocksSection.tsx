@@ -37,7 +37,7 @@ const html = `<html lang="fr">
       }
     </style>
   </head>
-  <body class="h-screen bg-white">
+  <body class="bg-white h-screen flex items-center justify-center">
     <!--content-->
     <script type="text/javascript">
     <!--script-->
@@ -45,29 +45,28 @@ const html = `<html lang="fr">
   </body>
 </html>`
 
-const BlocksSection = ({ name, id, htmlBody, script }: Props) => {
-  const [height, setHeight] = useState(800)
+const BlocksSection = ({ name, id, htmlBody, script, height }: Props) => {
   const [code, setCode] = useState('')
   const [currentTab, setCurrentTab] = useState<'code' | 'preview'>('preview')
   const iframe = useRef<HTMLIFrameElement>(null)
 
   useEffect(() => {
     const highlightedCode = formatCode(htmlBody).then((code) => setCode(code ?? ''))
-    if (iframe.current) {
-      const content = iframe.current.contentDocument
-      if (content) {
-        setHeight(content.body?.scrollHeight)
-        return
-      }
-    }
-    setHeight(800)
+    // if (iframe.current) {
+    //   const content = iframe.current.contentDocument
+    //   if (content) {
+    //     setHeight(content.body?.scrollHeight)
+    //     return
+    //   }
+    // }
+    // setHeight(800)
     return
   }, [])
 
   return (
     <section className="px-4">
       <div className="w-full overflow-hidden border shadow rounded-xl border-gray-950/10 dark:border-gray-50/10">
-        <div className="relative min-h-[42rem] bg-secondary-700 flex flex-col">
+        <div className="relative  bg-secondary-700 flex flex-col">
           <header className="w-full h-14 bg-secondary-500">
             <div className="flex items-center justify-between w-full h-full">
               <div className="relative w-64 h-full">
@@ -115,7 +114,7 @@ const BlocksSection = ({ name, id, htmlBody, script }: Props) => {
                   <span>Code</span>
                 </button>
               </div>
-              <div className="items-center justify-center hidden gap-4 text-gray-300 md:flex">
+              <div className="items-center justify-center hidden gap-4 text-gray-300 md:flex flex-1">
                 <button className="grid p-1 rounded-md border-gray-300/10 hover:border place-content-center hover:bg-gray-300/10">
                   <span className="inline-block w-6 h-6">
                     <svg
@@ -154,7 +153,7 @@ const BlocksSection = ({ name, id, htmlBody, script }: Props) => {
                   </span>
                 </button>
               </div>
-              <div className="flex items-start justify-end w-auto text-gray-300 pe-4">
+              <div className="absolute flex items-start justify-end w-auto text-gray-300 pe-4 right-0">
                 <ActionButton
                   actionMethod={() => {
                     copyToClipboard(`<html>
@@ -214,7 +213,7 @@ const BlocksSection = ({ name, id, htmlBody, script }: Props) => {
               }}
             ></div>
             <div
-              className="relative z-[5] w-full  bg-transparent"
+              className="relative z-[5] w-full  bg-transparent flex"
               style={{ height: `calc(${height}px - 3.5rem)`, maxHeight: '800px' }}
             >
               {currentTab === 'preview' ? (

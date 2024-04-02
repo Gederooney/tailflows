@@ -4,13 +4,13 @@ import BlocksSection from '@/components/code/BlocksSection'
 
 const data = [
   {
+    height: 600,
     name: 'default',
     id: '',
     description:
       "Captez l'attention même en cas d'erreur avec notre template 404, mettant en vedette une illustration SVG unique et un texte explicatif. Élégant et informatif, ce design guide vos visiteurs perdus avec style et clarté.",
     title: 'Template 404 avec Illustration SVG',
-    htmlBody: `<body>
-    <section class="flex w-screen h-screen">
+    htmlBody: `<section class="flex w-screen h-screen">
       <div class="m-auto">
         <div class="w-64 h-64 mx-auto sm:h-96 sm:w-96">
           <svg
@@ -145,16 +145,16 @@ const data = [
         </p>
       </div>
     </section>
-  </body>`,
+`,
   },
   {
+    height: 600,
     name: 'default',
     id: '',
     description:
       "Notre template 404 sans illustration met l'accent sur un texte d'erreur 404 imposant, accompagné d'une description claire et de deux boutons pratiques : signaler un problème et retour à la page d'accueil. Simple mais efficace pour maintenir l'engagement utilisateur.",
     title: 'Template 404 Texte Accentué & Boutons Utiles',
-    htmlBody: `<body>
-    <section class="grid w-screen h-screen">
+    htmlBody: `<section class="grid w-screen h-screen">
       <div class="m-auto">
         <div class="">
           <h1
@@ -194,9 +194,10 @@ const data = [
       </ul>
       <span> &copy; 2024 tailflows </span>
     </div>
-  </body>`,
+`,
   },
   {
+    height: 600,
     name: 'default',
     id: '',
     description:
@@ -241,13 +242,13 @@ const data = [
   </body>`,
   },
   {
+    height: 600,
     name: 'default',
     id: '',
     description:
       "Découvrez notre template 404 divisé : la gauche présente le titre, le texte explicatif et les boutons d'action, tandis que la droite met en valeur une image thématique. Une approche équilibrée qui allie information et esthétique pour une page d'erreur harmonieuse.",
     title: 'Template 404 Bifurqué : Texte & Image',
-    htmlBody: ` <body>
-    <section class="grid w-screen h-screen md:grid-cols-2 md:grid-rows-1">
+    htmlBody: `<section class="grid w-screen h-screen md:grid-cols-2 md:grid-rows-1">
       <div class="relative z-10 grid">
         <div class="px-4 m-auto">
           <h1
@@ -292,7 +293,7 @@ const data = [
           background-image: url('https://images.unsplash.com/photo-1511282419954-ef8b90aec22b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
         "></div>
     </section>
-  </body>`,
+`,
   },
 ]
 
@@ -304,7 +305,7 @@ const Main = () => {
         <div className="relative overflow-hidden bg-gradient-to-b from-transparent to-white to-[90%] py-12 space-y-8 dark:to-secondary-900">
           <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-10">
             <div className="mx-auto mt-5 text-center max-w-7xl">
-              <h2 className="block text-3xl font-bold text-gray-800 md:text-5xl lg:text-6xl dark:text-gray-200">
+              <h2 className="block text-3xl font-bold text-gray-800 md:text-5xl lg:text-4xl dark:text-gray-200 max-w-2xl mx-auto">
                 Templates 404 Tailwind CSS : Page d'Erreur Personnalisée
               </h2>
             </div>
