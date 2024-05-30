@@ -145,5 +145,5 @@ export function svgToDataURL(svgString: string) {
 
 export const convertRange =
   (mini: number, maxi: number, minf: number, maxf: number) => (x: number) => {
-    return ((x - mini) / (maxi - mini)) * (maxf - minf) + minf
+    return Math.round(((x - mini) / (maxi - mini)) * (maxf - minf) + minf)
   }

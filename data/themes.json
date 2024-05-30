@@ -1521,5 +1521,76 @@
     "id": "1XUekgAFdpVTYqIw6nxdaeiWrAQ2j1711800228361",
     "actions": [],
     "metaTitle": "Template Gratuit Pour Créer Un Siteweb Avec Astro Et Tailwindcss"
+  },
+  {
+    "created_at": 1717099329113,
+    "title": "Daniel Blog-template",
+    "frameworks": ["Astro", "tailwindcss"],
+    "categories": ["Astro", "Blog"],
+    "colors": ["#A47DB6", "#FFFFFF", "#000000"],
+    "slug": "template-blog-template-gratuit-astro-tailwindcss-blog",
+    "author": "danielcgilibert",
+    "description": [
+      "Blog-template est un template gratuit pour lancer votre blog en quelques minutes avec Astro et Tailwindcss. Il dispose d'une page de blog, d'une page de catégories et de thèmes sombre et claire. Vous pouvez utiliser la table des matière incluse pour naviguer rapidement entre les sections de article. "
+    ],
+    "popularity": 10,
+    "images": ["/static/images/themes/danielcgilibert-blog-template-astro.webp"],
+    "tags": [
+      "template gratuit Html5 tailwindcss",
+      "template de siteweb tailwindcss",
+      "template de blog tailwindcss",
+      "Rapide et Léger",
+      "HTML tailwindcss",
+      "template gratuit de site web blog",
+      "template gratuit de landing page",
+      "Template gratuit astro",
+      "Astro TailwindCSS"
+    ],
+    "preview_link": "https://blog-template-gray.vercel.app/",
+    "download_link": "https://github.com/danielcgilibert/blog-template/archive/refs/heads/main.zip",
+    "repos": "https://github.com/danielcgilibert/blog-template",
+    "repos_api_url": "https://api.github.com/repos/danielcgilibert/blog-template",
+    "features": ["Page de Blog", "Page De categories", "Thèmes sombre et claire"],
+    "id": "1XUekgAFdpVTY1717099329113qIw6nxdaeiWrAQ2j",
+    "actions": [],
+    "metaTitle": "Template Gratuit Pour Créer Un Blog Avec Astro Et Tailwindcss"
+  },
+  {
+    "created_at": 1717103660508,
+    "title": "Cadence",
+    "frameworks": ["React", "tailwindcss", "Typescript"],
+    "categories": ["React", "Tailwindcss", "Typescript"],
+    "colors": ["#FFFFFF", "#000000"],
+    "slug": "cadence-template-gratuit-pour-commerce-electronique",
+    "author": "Hestia-Arc",
+    "description": [
+      "Template de site web e-commerce gratuit pour les développeurs qui veulent créer un site web de commerce électronique avec React et Tailwindcss. Il est facile à personnaliser et à intégrer dans votre projet. Il dispose d'une page de blog, une page pour les catégories de produits, une page de produits, un panier et un espace client. Sone design moderne et épuré vous permettra de créer un site web de commerce électronique professionnel."
+    ],
+    "popularity": 14,
+    "images": ["/static/images/themes/cadence-ecommerce-template.webp"],
+    "tags": [
+      "template gratuit Html5 tailwindcss",
+      "template de siteweb tailwindcss",
+      "template de blog tailwindcss",
+      "Rapide et Léger",
+      "HTML tailwindcss",
+      "template gratuit de site web blog",
+      "template gratuit de landing page",
+      "React TailwindCSS et typescript"
+    ],
+    "preview_link": "https://cadence-store.vercel.app/",
+    "download_link": "https://github.com//Hestia-Arc/cadence-store/archive/refs/heads/main.zip",
+    "repos": "https://github.com/Hestia-Arc/cadence-store",
+    "repos_api_url": "https://api.github.com/repos/Hestia-Arc/cadence-store",
+    "features": [
+      "Page de Blog",
+      "Page De categories",
+      "Page de produits",
+      "Panier",
+      "Espace Client"
+    ],
+    "id": "1XUekgAFdpVTY1717103660508qIw6nxdaeiWrAQ2j",
+    "actions": [],
+    "metaTitle": "Template Gratuit Pour Commerce Electronique avec React, typescript et Tailwindcss"
   }
 ]

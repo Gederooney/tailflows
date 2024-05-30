@@ -1,49 +1,32 @@
 {
-  "created_at": 1711800228361,
-  "title": "Dashui Admin",
-  "frameworks": ["Astro", "tailwindcss"],
-  "categories": ["Astro", "Blog", "Landing", "Saas"],
-  "colors": ["#1C1C1C", "#FFFFFF"],
-  "slug": "zeon-studio-astroplate-template-gratuit-astro-tailwindcss-blog-landing-page-saas",
-  "author": "zeon-studio",
+  "created_at": 1717103660508,
+  "title": "Cadence",
+  "frameworks": ["React", "tailwindcss", "Typescript"],
+  "categories": ["React", "Tailwindcss", "Typescript"],
+  "colors": ["#FFFFFF", "#000000"],
+  "slug": "cadence-template-gratuit-pour-commerce-electronique",
+  "author": "Hestia-Arc",
   "description": [
-    "Astroplate est un template de démarrage gratuit construit avec Astro, TailwindCSS et TypeScript, offrant tout ce dont vous avez besoin pour lancer votre projet Astro. Commencez avec Astroplate et économisez des heures de travail. À cause de sa versatilité, le template peut être utilisé pour une landing page, un siteweb de blog, un saas, un siteweb de startup pour ne citer que ceux la.",
-    "Le template inclut une bonne liste de page dont une page de contact, de blog, de formulaire de contact. Le template dispose également d'un theme sombre et d'un theme claire. Il est facile a customiser"
+    "Template de site web e-commerce gratuit pour les développeurs qui veulent créer un site web de commerce électronique avec React et Tailwindcss. Il est facile à personnaliser et à intégrer dans votre projet. Il dispose d'une page de blog, une page pour les catégories de produits, une page de produits, un panier et un espace client. Sone design moderne et épuré vous permettra de créer un site web de commerce électronique professionnel."
   ],
-  "popularity": 12,
-  "images": [
-    "/static/images/themes/astroplate-zeon-studio-light.webp",
-    "/static/images/themes/astroplate-zeon-studio-dark.webp"
-  ],
+  "popularity": 14,
+  "images": ["/static/images/themes/cadence-ecommerce-template.webp"],
   "tags": [
     "template gratuit Html5 tailwindcss",
     "template de siteweb tailwindcss",
-    "template admin dashboard",
+    "template de blog tailwindcss",
     "Rapide et Léger",
     "HTML tailwindcss",
-    "Template gratuit pour landing page",
-    "template gratuit siteweb d'entreprise",
-    "template gratuit pour saas",
-    "template gratuit site web de start up",
     "template gratuit de site web blog",
     "template gratuit de landing page",
-    "Template gratuit astro",
-    "Astro TailwindCSS"
+    "React TailwindCSS et typescript"
   ],
-  "preview_link": "https://zeon.studio/preview?project=astroplate",
-  "download_link": "https://github.com/zeon-studio/astroplate/archive/refs/heads/main.zip",
-  "repos": "https://github.com/zeon-studio/astroplate",
-  "repos_api_url": "https://api.github.com/repos/zeon-studio/astroplate",
-  "features": [
-    "Page de Blog",
-    "Page de Contact",
-    "Page de Catégorie",
-    "Page de Prix",
-    "Page d'Erreur 404",
-    "Page d'authentification",
-    "Page d'auteurs"
-  ],
-  "id": "1XUekgAFdpVTYqIw6nxdaeiWrAQ2j1711800228361",
+  "preview_link": "https://cadence-store.vercel.app/",
+  "download_link": "https://github.com//Hestia-Arc/cadence-store/archive/refs/heads/main.zip",
+  "repos": "https://github.com/Hestia-Arc/cadence-store",
+  "repos_api_url": "https://api.github.com/repos/Hestia-Arc/cadence-store",
+  "features": ["Page de Blog", "Page De categories", "Page de produits", "Panier", "Espace Client"],
+  "id": "1XUekgAFdpVTY1717103660508qIw6nxdaeiWrAQ2j",
   "actions": [],
-  "metaTitle": "Template Gratuit Pour Créer Un Siteweb Avec Astro Et Tailwindcss"
+  "metaTitle": "Template Gratuit Pour Commerce Electronique avec React, typescript et Tailwindcss"
 }
