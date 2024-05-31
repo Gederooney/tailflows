@@ -38,7 +38,7 @@ export const mobileNav = [
   },
   {
     href: '/liste-de-couleurs-tailwindcss',
-    title: 'Couleurs par défaut tailwindcss',
+    title: 'La palette de couleurs de Tailwindcss',
   },
   {
     href: '/generateur-box-shadow',
