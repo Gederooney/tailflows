@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import { useColorUseCases } from '../context/ColorUseCases'
+import { useColorUseCases, ColorUseCasesContextState } from '../context/ColorUseCases'
 import Select from './Select'
 
 const Controls = () => {

@@ -8,7 +8,7 @@ import React, {
   ReactNode,
 } from 'react'
 
-interface ColorUseCasesContextState {
+export interface ColorUseCasesContextState {
   useCase:
     | 'text'
     | 'bg'
