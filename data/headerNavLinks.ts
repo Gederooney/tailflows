@@ -37,6 +37,10 @@ export const mobileNav = [
     title: 'Générateur de gradient',
   },
   {
+    href: '/liste-de-couleurs-tailwindcss',
+    title: 'Couleurs par défaut tailwindcss',
+  },
+  {
     href: '/generateur-box-shadow',
     title: "Créateur d'ombres de portée",
   },

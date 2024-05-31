@@ -85,10 +85,10 @@ const Header = () => {
                 <span className="absolute block w-4 h-4 border-t border-r border-secondary-950/10 dark:border-gray-50/10  z-[10001] top-[200%] -rotate-45 rounded-[.2rem] translate-y-[.2rem] left-[1/2] translate-x-1/2 bg-gray-50/20 backdrop-blur-lg dark:bg-secondary-800/10 tooltipanchor"></span>
                 <div className="absolute  -translate-x-1/2 border border-secondary-950/10 dark:border-gray-50/10 top-[250%] w-[40rem] left-1/2 rounded-xl  z-[10000] overflow-hidden shadow-xl dark:shadow-gray-700/10 bg-transparent">
                   <ul className="relative grid grid-cols-2 gap-8 p-4 bg-gray-50/20 backdrop-blur-lg dark:bg-secondary-800/10">
-                    <li className="col-span-2">
+                    <li className="col-span-1">
                       <Link href="/generateur-nuances-couleurs-tailwind-css" className="space-y-2">
                         <h2 className="text-sm font-bold ">Géneratuer de nuances</h2>
-                        <p className="text-xs font-light w-96">
+                        <p className="text-xs font-light w-full text-wrap break-words">
                           Génerer des nuances de couleurs avec notre cercle chromatique et exporter
                           le resultat au format tailwindcss, html ou css
                         </p>
@@ -118,6 +118,15 @@ const Header = () => {
                         <div className="w-full h-20 rounded-md bg-[linear-gradient(69.99569637232901deg,_#2a00ff_-40%,_#D92727_140%)]"></div>
                       </Link>
                     </li>
+                    <li className="col-span-1">
+                      <Link href="/liste-de-couleurs-tailwindcss" className="space-y-2">
+                        <h2 className="text-sm font-bold ">Liste des couleurs</h2>
+                        <p className="text-xs font-light w-full">
+                          Liste des couleurs de tailwindcss avec leurs cas d'utilisation.
+                        </p>
+                      </Link>
+                    </li>
+
                     <li className="">
                       <Link className="space-y-2 text-sm font-bold" href="/generateur-box-shadow">
                         <h2 className="text-sm font-bold ">Ombre de portée</h2>

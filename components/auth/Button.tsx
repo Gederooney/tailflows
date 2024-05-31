@@ -77,23 +77,23 @@ const Dropdown = () => {
           <div className="">
             <form action="" className="space-y-2 px-2 text-xs dark:text-gray-100">
               <div className="relative">
-                <label className="sr-only" htmlFor="auth-email">
+                <label className="sr-only" htmlFor="auth-email-desktop">
                   Email
                 </label>
                 <input
                   placeholder="Email"
-                  id="auth-email"
+                  id="auth-email-desktop"
                   type="email"
                   className="h-10 bg-transparent border border-secondary-900/10 w-full focus:outline-none focus:ring-0 rounded-md dark:border-gray-50/10 focus:border-secondary-900/10 text-xs"
                 />
               </div>
               <div>
-                <label className="sr-only" htmlFor="password">
+                <label className="sr-only" htmlFor="auth-password-desktop">
                   Mot de passe
                 </label>
                 <input
                   placeholder="Mot de passe"
-                  id="password"
+                  id="auth-password-desktop"
                   type="password"
                   className="h-10 bg-transparent border border-secondary-900/10 w-full focus:outline-none focus:ring-0 rounded-md dark:border-gray-50/10 focus:border-secondary-900/10 text-xs"
                 />

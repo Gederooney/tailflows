@@ -386,3 +386,20 @@ input[type='number']::-webkit-outer-spin-button {
     transform: rotateX(-10deg) scale(0.8);
   }
 }
+
+.cr-color-name-label-v {
+  left: calc(50% - 0.5rem);
+  line-height: 1;
+  padding-top: 0.5rem;
+  position: relative;
+  transform: rotate(180deg);
+  white-space: nowrap;
+  writing-mode: vertical-rl;
+}
+
+/* cancel the vertical */
+.cr-color-name-label-h{
+  writing-mode: horizontal-tb;
+  transform: rotate(0deg);
+  
+}
