@@ -1592,5 +1592,87 @@
     "id": "1XUekgAFdpVTY1717103660508qIw6nxdaeiWrAQ2j",
     "actions": [],
     "metaTitle": "Template Gratuit Pour Commerce Electronique avec React, typescript et Tailwindcss"
+  },
+  {
+    "created_at": 1718151632994,
+    "title": "Marcos Ecommerce Template",
+    "slug": "marcos-ecommerce-template-gratuit-nextjs",
+    "frameworks": ["Nextjs", "HTML5", "tailwindcss", "Stripe", "mongoDb"],
+    "categories": ["Ecommerce", "Nextjs"],
+    "colors": ["#000000", "#FAFAFA"],
+    "author": "MarcosCamara01",
+    "description": [
+      "Marcos Ecommerce Template est un template de commerce électronique Next.js gratuit et open-source pour les magasins en ligne. Il est livré avec une optimisation d'image avec Next/image. Vous y trouverez également une page de détails de produit, une page de catégorie, une page de panier et une liste de souhait. Le templapte ajoute aussi de l'authentification sur le site."
+    ],
+    "popularity": 9,
+    "images": ["/static/images/themes/MarcosCamara01-commerce.webp"],
+    "tags": [
+      "Nextjs 14.0.3 Ecommerce Template",
+      "HTML",
+      "Optimisation d'image avec Next/image",
+      "Page de panier",
+      "Page de détails de produit",
+      "Page de catégorie",
+      "Page de liste de souhait",
+      "template gratuit pour commerce électronique"
+    ],
+    "preview_link": "https://ecommerce-template-mpc.vercel.app/",
+    "download_link": "https://github.com/MarcosCamara01/ecommerce-template/archive/refs/heads/master.zip",
+    "repos": "https://github.com/MarcosCamara01/ecommerce-template",
+    "repos_api_url": "https://api.github.com/repos/MarcosCamara01/ecommerce-template",
+    "features": [
+      "Page de détails de produit",
+      "Optimisation d'image avec Next/image",
+      "Page de catégorie",
+      "Page de panier",
+      "Page de liste de souhait",
+      "Authentification",
+      "Template gratuit pour commerce électronique",
+      "Nextjs 14.0.3",
+      "App Router"
+    ],
+    "id": "f7tRWRS0PEAPxesp1718151632994dgJTmFT0L669CXud9I",
+    "actions": [],
+    "metaTitle": "Marcos Template gratuit de commerce électronique Next.js"
+  },
+  {
+    "created_at": 1718156214168,
+    "title": "Shadcdn Landing Page",
+    "slug": "shadcdn-landing-page-template-gratuit",
+    "frameworks": ["Nextjs", "HTML5", "tailwindcss", "Shadcdn"],
+    "categories": ["Landing", "Nextjs"],
+    "colors": ["#D64AA4", "#000000", "#FFFFFF", "#EA590C"],
+    "author": "nobruf",
+    "description": [
+      "Shadcdn Landing Page est un template gratuit pour les pages de destination. Il est basé sur Next.js et Tailwind CSS. Il est facile à personnaliser et à intégrer dans votre projet. Il est également optimisé pour les performances et le référencement.",
+      "Le template vient avec un theme sombre et clair. Il contient plusieurs sections comme l'en-tête, les fonctionnalités, les témoignages, les prix, les FAQ, le pied de page, etc."
+    ],
+    "popularity": 25,
+    "images": ["/static/images/themes/shadcdn-landing-page.webp"],
+    "tags": [
+      "HTML",
+      "Optimisation d'image avec Next/image",
+      "Landing page",
+      "Template gratuit page d'atterrissage",
+      "Nextjs 14.2.3",
+      "App Router"
+    ],
+    "preview_link": "https://shadcn-landing-page-livid.vercel.app/",
+    "download_link": "https://github.com/nobruf/shadcn-landing-page/archive/refs/heads/master.zip",
+    "repos": "https://github.com/nobruf/shadcn-landing-page",
+    "repos_api_url": "https://api.github.com/repos/nobruf/shadcn-landing-page",
+    "features": [
+      "Thème sombre et clair",
+      "Plusieurs sections",
+      "Facile à personnaliser",
+      "Section de témoignages",
+      "Section de prix",
+      "Section FAQ",
+      "Optimisé pour les performances",
+      "Optimisé pour le référencement"
+    ],
+    "id": "f7tRWRS0PEAP1718156214168dgJTmFT0L669CXud9I",
+    "actions": [],
+    "metaTitle": "Shadcdn Landing Page - Template gratuit pour les pages de destination"
   }
 ]
