@@ -16,6 +16,10 @@ const headerNavLinks = [
     href: '/blog',
     title: 'Blog',
   },
+  {
+    title: 'UIs',
+    href: '/ui',
+  },
 ]
 
 export const mobileNav = [
@@ -51,6 +55,10 @@ export const mobileNav = [
   {
     href: '/blog',
     title: 'Blog',
+  },
+  {
+    title: 'UIs',
+    href: '/ui',
   },
 ]
 

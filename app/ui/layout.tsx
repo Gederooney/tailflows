@@ -4,15 +4,15 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteMetadata.siteUrl),
-  title: `Exemples - ${siteMetadata.title}`,
+  title: `UIs - ${siteMetadata.title}`,
   description:
-    'Exemples de composants et de pages web gratuits créés avec Tailwindcss et HTML5 pour accélérer le développement web.',
+    "Liste d'interfaces utilisateur (UI) crées avec HTML5 et Tailwindcss pour accélérer le développement web.",
   openGraph: {
-    title: `Exemples - ${siteMetadata.title}`,
+    title: `UIs - ${siteMetadata.title}`,
     description:
-      'Exemples de composants et de pages web gratuits créés avec Tailwindcss et HTML5 pour accélérer le développement web.',
+      "Liste d'interfaces utilisateur (UI) crées avec HTML5 et Tailwindcss pour accélérer le développement web.",
     url: './',
-    siteName: `Exemples - ${siteMetadata.title}`,
+    siteName: `Uis - ${siteMetadata.title}`,
     images: [siteMetadata.socialBanner],
     locale: 'en_US',
     type: 'website',

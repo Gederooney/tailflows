@@ -1,32 +1,28 @@
 {
-  "created_at": 1717103660508,
-  "title": "Cadence",
-  "frameworks": ["React", "tailwindcss", "Typescript"],
-  "categories": ["React", "Tailwindcss", "Typescript"],
-  "colors": ["#FFFFFF", "#000000"],
-  "slug": "cadence-template-gratuit-pour-commerce-electronique",
-  "author": "Hestia-Arc",
+  "created_at": 1718282837250,
+  "title": "AgenceX",
+  "frameworks": ["Astro", "tailwindcss"],
+  "categories": ["Agence", "Portfolio", "Landing", "Astro"],
+  "colors": ["#FFFFFF", "#2E8253", "#030712", "#1C4ED8", "#101827"],
+  "slug": "AgenceX-template-gratuit-astro-et-tailwindcss-pour-agence-digitale",
+  "author": "unify-ui-dev",
   "description": [
-    "Template de site web e-commerce gratuit pour les développeurs qui veulent créer un site web de commerce électronique avec React et Tailwindcss. Il est facile à personnaliser et à intégrer dans votre projet. Il dispose d'une page de blog, une page pour les catégories de produits, une page de produits, un panier et un espace client. Sone design moderne et épuré vous permettra de créer un site web de commerce électronique professionnel."
+    "AgenceX est un template gratuit de page d'atterrissage pour les agences digitales. Il est conçu avec Astro. Avec ce template, vous avez un theme sombre et claire."
   ],
-  "popularity": 14,
-  "images": ["/static/images/themes/cadence-ecommerce-template.webp"],
-  "tags": [
-    "template gratuit Html5 tailwindcss",
-    "template de siteweb tailwindcss",
-    "template de blog tailwindcss",
-    "Rapide et Léger",
-    "HTML tailwindcss",
-    "template gratuit de site web blog",
-    "template gratuit de landing page",
-    "React TailwindCSS et typescript"
+  "popularity": 12,
+  "images": ["/static/images/themes/agencex-digital-agency.webp"],
+  "tags": ["Astro", "tailwindcss", "Agence", "Portfolio", "Landing"],
+  "preview_link": "https://agencex-astro.vercel.app/",
+  "download_link": "https://github.com/unify-ui-dev/agency-landing-page-Astrojs/archive/refs/heads/main.zip",
+  "repos": "https://github.com/unify-ui-dev/agency-landing-page-Astrojs",
+  "repos_api_url": "https://api.github.com/repos/unify-ui-dev/agency-landing-page-Astrojs",
+  "features": [
+    "Theme sombre et claire",
+    "Section de service",
+    "Section A-propos",
+    "Section de fonctionnalités"
   ],
-  "preview_link": "https://cadence-store.vercel.app/",
-  "download_link": "https://github.com//Hestia-Arc/cadence-store/archive/refs/heads/main.zip",
-  "repos": "https://github.com/Hestia-Arc/cadence-store",
-  "repos_api_url": "https://api.github.com/repos/Hestia-Arc/cadence-store",
-  "features": ["Page de Blog", "Page De categories", "Page de produits", "Panier", "Espace Client"],
-  "id": "1XUekgAFdpVTY1717103660508qIw6nxdaeiWrAQ2j",
+  "id": "1XUekgAFdpVT17182828372506nxdaeiWrAQ2j",
   "actions": [],
-  "metaTitle": "Template Gratuit Pour Commerce Electronique avec React, typescript et Tailwindcss"
+  "metaTitle": "AgenceX - Template gratuit Astro et tailwindcss pour agence digitale"
 }

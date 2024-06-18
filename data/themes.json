@@ -1674,5 +1674,33 @@
     "id": "f7tRWRS0PEAP1718156214168dgJTmFT0L669CXud9I",
     "actions": [],
     "metaTitle": "Shadcdn Landing Page - Template gratuit pour les pages de destination"
+  },
+  {
+    "created_at": 1718282837250,
+    "title": "AgenceX",
+    "frameworks": ["Astro", "tailwindcss"],
+    "categories": ["Agence", "Portfolio", "Landing", "Astro"],
+    "colors": ["#FFFFFF", "#2E8253", "#030712", "#1C4ED8", "#101827"],
+    "slug": "AgenceX-template-gratuit-astro-et-tailwindcss-pour-agence-digitale",
+    "author": "unify-ui-dev",
+    "description": [
+      "AgenceX est un template gratuit de page d'atterrissage pour les agences digitales. Il est conçu avec Astro. Avec ce template, vous avez un theme sombre et claire."
+    ],
+    "popularity": 12,
+    "images": ["/static/images/themes/agencex-digital-agency.webp"],
+    "tags": ["Astro", "tailwindcss", "Agence", "Portfolio", "Landing"],
+    "preview_link": "https://agencex-astro.vercel.app/",
+    "download_link": "https://github.com/unify-ui-dev/agency-landing-page-Astrojs/archive/refs/heads/main.zip",
+    "repos": "https://github.com/unify-ui-dev/agency-landing-page-Astrojs",
+    "repos_api_url": "https://api.github.com/repos/unify-ui-dev/agency-landing-page-Astrojs",
+    "features": [
+      "Theme sombre et claire",
+      "Section de service",
+      "Section A-propos",
+      "Section de fonctionnalités"
+    ],
+    "id": "1XUekgAFdpVT17182828372506nxdaeiWrAQ2j",
+    "actions": [],
+    "metaTitle": "AgenceX - Template gratuit Astro et tailwindcss pour agence digitale"
   }
 ]
