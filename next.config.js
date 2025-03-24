@@ -7,7 +7,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 // You might need to insert additional domains in script-src if you are using external services
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-eval' 'unsafe-inline' giscus.app https://cdn.tailwindcss.com www.googletagmanager.com https://www.gstatic.com/recaptcha/releases/ https://www.google.com/recaptcha/api.js https://www.gstatic.com/recaptcha/releases/vm_YDiq1BiI3a8zfbIPZjtF2/recaptcha__fr.js https://va.vercel-scripts.com/v1/script.debug.js https://cdn.tailwindcss.com/ https://www.gstatic.com/recaptcha/releases/QquE1_MNjnFHgZF4HPsEcf_2/recaptcha__fr.js;
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' giscus.app https://cdn.tailwindcss.com www.googletagmanager.com https://www.gstatic.com/recaptcha/releases/ https://www.google.com/recaptcha/api.js https://www.gstatic.com/recaptcha/releases/vm_YDiq1BiI3a8zfbIPZjtF2/recaptcha__fr.js https://va.vercel-scripts.com/v1/script.debug.js https://cdn.tailwindcss.com/ https://www.gstatic.com/recaptcha/releases/QquE1_MNjnFHgZF4HPsEcf_2/recaptcha__fr.js https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5471011044031314;
   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
   img-src * blob: data:;
   media-src *.s3.amazonaws.com;
