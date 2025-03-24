@@ -126,7 +126,7 @@ const EditPanel = () => {
           <div className="">
             <h3 className="font-medium uppercase">Cercle chromatique</h3>
             <Wheel
-              key={'gradient-generator-wheel'}
+              // key='gradient-generator-wheel'
               style={{
                 light: { bg: 'transparent', inputBg: 'transparent', textColor: '210,1%,98%' },
                 dark: { bg: 'transparent', inputBg: 'transparent', textColor: '210,1%,98%' },

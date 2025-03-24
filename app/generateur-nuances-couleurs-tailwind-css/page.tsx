@@ -19,7 +19,7 @@ const SucessChildren = () => (
     <span className="inline-block w-6 text-green-500">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="w-auto h-4 fill-current"
+        className="h-4 w-auto fill-current"
         viewBox="0 -960 960 960"
       >
         <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" />
@@ -57,7 +57,7 @@ const Page = () => {
   }
 
   return (
-    <div className="grid grid-cols-1 gap-8 px-4 py-12 mx-auto md:grid-cols-2 lg:grid-cols-3 max-w-7xl">
+    <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 py-12 md:grid-cols-2 lg:grid-cols-3">
       <div className="max-w-xl space-y-4 lg:col-span-2">
         <h1 className="max-w-xl text-2xl font-bold">
           Créez des Nuances Parfaites avec PaletteFlows : L’Outil pour Tailwind CSS et Au-Delà
@@ -78,7 +78,7 @@ const Page = () => {
               <Palette handleClick={handlePaletteColorClick} shades={palette} />
             </div>
 
-            <section className="w-full mb-16 space-y-4">
+            <section className="mb-16 w-full space-y-4">
               <div className="flex items-center justify-between">
                 <h2 className="font-bold">Nuances</h2>
                 <div className="flex items-center justify-center gap-4 text-sm">
@@ -103,7 +103,7 @@ const Page = () => {
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 54 33"
-                        className="w-auto h-2 ml-1"
+                        className="ml-1 h-2 w-auto"
                       >
                         <g clipPath="url(#prefix__clip0)">
                           <path

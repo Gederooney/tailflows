@@ -78,7 +78,7 @@ const Preview = ({ siteUrl, handleClose }: { siteUrl: string; handleClose: () =>
           style={{ height: '100%', width: '100%' }}
         ></iframe>
         <button
-          className="absolute top-0 right-0 w-8 h-8 p-2 -translate-x-1/2 -translate-y-1/2 border rounded-full bg-gray-50 border-secondary-950/20"
+          className="absolute top-0 right-0 w-8 h-8 p-2 -translate-x-1/2 -translate-y-1/2 border rounded-full border-secondary-950/20 bg-gray-50"
           onClick={(e) => {
             handleClose()
             addBodyOverflow()
@@ -113,9 +113,9 @@ const Content = (theme: Props) => {
     <>
       <section className="my-12">
         <div className="px-6 mx-auto max-w-7xl">
-          <div className="relative flex flex-col gap-4 md:gap-8 md:flex-row">
+          <div className="relative flex flex-col gap-4 md:flex-row md:gap-8">
             <div className="w-full md:flex-1 md:px-12">
-              <div className="w-full rounded-lg overflow-hidden border border-secondary-950/10 dark:border-gray-50/10">
+              <div className="w-full overflow-hidden border rounded-lg border-secondary-950/10 dark:border-gray-50/10">
                 <Image
                   className="object-cover w-full h-auto"
                   src={theme.images[0]}
@@ -145,7 +145,7 @@ const Content = (theme: Props) => {
                 <Link
                   target="_blank"
                   href={theme.repos}
-                  className="flex items-center gap-2 px-6 py-2 border rounded-md shadow bg-secondary-400 text-gray-50 dark:text-gray-500 dark:border-gray-50/10 dark:bg-secondary-600"
+                  className="flex items-center gap-2 px-6 py-2 border rounded-md shadow bg-secondary-400 text-gray-50 dark:border-gray-50/10 dark:bg-secondary-600 dark:text-gray-500"
                 >
                   <span>
                     <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current">
@@ -173,7 +173,7 @@ const Content = (theme: Props) => {
                 <Link
                   target="_blank"
                   href={theme.preview_link}
-                  className="flex items-center gap-2 px-6 py-2 border rounded-md shadow bg-secondary-400 text-gray-50 dark:text-gray-500 dark:border-gray-50/10 dark:bg-secondary-600"
+                  className="flex items-center gap-2 px-6 py-2 border rounded-md shadow bg-secondary-400 text-gray-50 dark:border-gray-50/10 dark:bg-secondary-600 dark:text-gray-500"
                 >
                   <span>
                     <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current">
@@ -199,7 +199,7 @@ const Content = (theme: Props) => {
                 </div>
               ) : null}
             </div>
-            <div className="sticky top-0 w-full text-sm grow-0 shrink-0 md:w-1/3 md:p-4">
+            <div className="sticky top-0 w-full text-sm shrink-0 grow-0 md:w-1/3 md:p-4">
               <div className="w-full pb-4 mb-4 border-b border-secondary-50/10 dark:border-primary-50/10">
                 <h2 className="text-lg font-bold">{theme.title}</h2>
                 <div className="flex gap-4 my-2">
@@ -222,7 +222,7 @@ const Content = (theme: Props) => {
                     {theme.categories.map((key: string) => (
                       <div
                         key={`${theme.id + key}`}
-                        className="px-2 py-1 bg-gray-100 rounded-md dark:bg-secondary-600 shrink-0 grow-0"
+                        className="px-2 py-1 bg-gray-100 rounded-md shrink-0 grow-0 dark:bg-secondary-600"
                       >
                         <span className="text-xs font-light">{key}</span>
                       </div>
@@ -251,7 +251,7 @@ const Content = (theme: Props) => {
                         return (
                           <div
                             key={`${theme.id + key}`}
-                            className={`h-10 w-20 flex items-center justify-center px-2 py-1 rounded-md text-xs font-thin shadow gap-1 shrink-0 grow-0 ${
+                            className={`flex h-10 w-20 shrink-0 grow-0 items-center justify-center gap-1 rounded-md px-2 py-1 text-xs font-thin shadow ${
                               color.luminance() > 0.5 ? 'text-secondary-950' : 'text-primary-50'
                             }`}
                             style={{

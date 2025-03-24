@@ -24,7 +24,7 @@ const LightnessWheel = ({
       ref={circleRef}
       role="button"
       tabIndex={-1}
-      className="absolute inset-0 rounded-full pointer-events-auto"
+      className="pointer-events-auto absolute inset-0 rounded-full"
       style={{
         backgroundImage: `linear-gradient(hsl(${h}, ${s}%, 10%), hsl(${h}, ${s}%, 50%), hsl(${h}, ${s}%, 95%))`,
       }}
@@ -44,7 +44,7 @@ const ColorWheel = ({
       role="button"
       tabIndex={-1}
       style={{ background: `${getWheelBg()}` }}
-      className="absolute inset-0 rounded-full pointer-events-auto"
+      className="pointer-events-auto absolute inset-0 rounded-full"
     ></div>
   )
 }

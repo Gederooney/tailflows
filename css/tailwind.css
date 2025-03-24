@@ -228,13 +228,7 @@ main {
   );
 }
 
-/* For modern browsers supporting webkit */
-input[type='number']::-webkit-inner-spin-button,
-input[type='number']::-webkit-outer-spin-button {
-  -webkit-appearance: none; /* Remove default appearance */
-  margin: 0; /* Remove default margin */
-}
-
+ccc
 .conic-gradient-animation {
   transition: background 1s ease-in-out;
 }

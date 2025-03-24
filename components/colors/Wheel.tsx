@@ -43,7 +43,7 @@ const Wheel = ({
   return (
     // @ts-ignore
     <section
-      className={`min-w-[200px] max-w-[350px] m-auto py-8 px-2   rounded-md space-y-8 ${
+      className={`m-auto min-w-[200px] max-w-[350px] space-y-8 rounded-md   px-2 py-8 ${
         withShadow
           ? 'bg-gray-50 shadow-[-8px_-8px_16px_4px_#00000040,_8px_8px_16px_4px_#00000040] dark:bg-secondary-800'
           : null
@@ -61,11 +61,11 @@ const Wheel = ({
           }
         : null)}
     >
-      <div className="relative w-full p-2 m-auto rounded-full cursor-pointer dark:border dark:border-gray-50/20 aspect-square">
+      <div className="relative m-auto aspect-square w-full cursor-pointer rounded-full p-2 dark:border dark:border-gray-50/20">
         <Circle color={hex} getCoordinates={handleLightness} key="lightnessbg" isLightness={true} />
         <Picker coordinates={lightness} type={PickerType.LIGHTNESSPICKER} key="lightness-picker" />
-        <div className="relative w-full h-full p-2 m-auto rounded-full pointer-events-auto bg-gray-50 dark:bg-gray-100">
-          <div className="relative w-full h-full rounded-full">
+        <div className="pointer-events-auto relative m-auto h-full w-full rounded-full bg-gray-50 p-2 dark:bg-gray-100">
+          <div className="relative h-full w-full rounded-full">
             <Circle key="wheelBg" getCoordinates={handlePicker} isLightness={false} />
             <Picker coordinates={picker} type={PickerType.COLORWHEELPICKER} key="color-picker" />
 

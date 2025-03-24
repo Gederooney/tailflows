@@ -161,7 +161,7 @@ const ControlsNumberInput = ({
           value={value}
           className={
             style ??
-            'text-center w-full h-full bg-transparent border border-secondary-950/10 text-xs rounded-md dark:border-gray-50/10'
+            'h-full w-full rounded-md border border-secondary-950/10 bg-transparent text-center text-xs dark:border-gray-50/10'
           }
         />
       </div>
@@ -205,7 +205,7 @@ const Controls = ({ onChange, shadow, onDelete }: ControlsProps) => {
       </div>
       <div className="flex flex-wrap gap-2 ">
         <div className="relative w-20 ">
-          <span className="absolute text-xs -translate-y-1/2 pointer-events-none top-1/2 left-1">
+          <span className="absolute text-xs -translate-y-1/2 pointer-events-none left-1 top-1/2">
             x:
           </span>
           <ControlsNumberInput
@@ -219,7 +219,7 @@ const Controls = ({ onChange, shadow, onDelete }: ControlsProps) => {
           />
         </div>
         <div className="relative w-20 ">
-          <span className="absolute text-xs -translate-y-1/2 pointer-events-none top-1/2 left-1">
+          <span className="absolute text-xs -translate-y-1/2 pointer-events-none left-1 top-1/2">
             y:
           </span>
           <ControlsNumberInput
@@ -233,7 +233,7 @@ const Controls = ({ onChange, shadow, onDelete }: ControlsProps) => {
           />
         </div>
         <div className="relative w-20 ">
-          <span className="absolute text-xs -translate-y-1/2 pointer-events-none top-1/2 left-1">
+          <span className="absolute text-xs -translate-y-1/2 pointer-events-none left-1 top-1/2">
             flou:
           </span>
           <ControlsNumberInput
@@ -248,7 +248,7 @@ const Controls = ({ onChange, shadow, onDelete }: ControlsProps) => {
           />
         </div>
         <div className="relative w-30 ">
-          <span className="absolute text-xs -translate-y-1/2 pointer-events-none top-1/2 left-1">
+          <span className="absolute text-xs -translate-y-1/2 pointer-events-none left-1 top-1/2">
             prop:
           </span>
           <ControlsNumberInput
@@ -314,7 +314,7 @@ const Controls = ({ onChange, shadow, onDelete }: ControlsProps) => {
           </div>
 
           <div className="relative w-32 ">
-            <span className="absolute text-xs -translate-y-1/2 pointer-events-none top-1/2 left-1">
+            <span className="absolute text-xs -translate-y-1/2 pointer-events-none left-1 top-1/2">
               Opacité:
             </span>
             <ControlsNumberInput
@@ -378,13 +378,13 @@ const Content = () => {
     <>
       <section className="relative">
         <div className="absolute inset-0 z-0 bg-heroPatternLight dark:bg-heroPatternDark"></div>
-        <div className="bg-gradient-to-b from-transparent to-white to-[90%] py-12 space-y-8 dark:to-secondary-900 relative z-[1]">
-          <div className="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-12">
+        <div className="relative z-[1] space-y-8 bg-gradient-to-b from-transparent to-white to-[90%] py-12 dark:to-secondary-900">
+          <div className="max-w-screen-xl px-4 py-8 mx-auto text-center lg:px-12 lg:py-16">
             <a
               href="#examples"
-              className="inline-flex items-center justify-between px-1 py-1 pr-4 text-sm text-gray-700 bg-gray-100 rounded-full mb-7 dark:bg-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700"
+              className="inline-flex items-center justify-between px-1 py-1 pr-4 text-sm text-gray-700 bg-gray-100 rounded-full mb-7 hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700"
             >
-              <span className="text-xs bg-primary-600 rounded-full text-white px-4 py-1.5 mr-3">
+              <span className="mr-3 rounded-full bg-primary-600 px-4 py-1.5 text-xs text-white">
                 voir
               </span>{' '}
               <span className="text-sm font-medium">plus de 180 exemples</span>
@@ -401,10 +401,10 @@ const Content = () => {
                 ></path>
               </svg>
             </a>
-            <h1 className="max-w-3xl mx-auto mb-4 text-4xl font-bold leading-none tracking-tight text-secondary-950 md:text-5xl lg:text-4xl dark:text-gray-50">
+            <h1 className="max-w-3xl mx-auto mb-4 text-4xl font-bold leading-none tracking-tight text-secondary-950 dark:text-gray-50 md:text-5xl lg:text-4xl">
               Créez facilement votre box shadow avec notre outil gratuit
             </h1>
-            <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
+            <p className="mb-8 text-lg font-normal text-gray-500 dark:text-gray-400 sm:px-16 lg:text-xl xl:px-48">
               Créez des ombres uniques pour vos projets, et obtenez instantanément la configuration
               pour TailwindCSS.
               <span className="sr-only">
@@ -416,14 +416,14 @@ const Content = () => {
           </div>
         </div>
       </section>
-      <div className="max-w-[90rem] mx-auto">
+      <div className="mx-auto max-w-[90rem]">
         <div className="px-4" id="generate">
           <div className="grid box-shadow-grid">
             <section className="py-16 space-y-4 overflow-scroll hide-scrollbar grid-a">
               <div className="flex items-center gap-2">
                 <span>Ajouter une couche: </span>
                 <button
-                  className="flex items-center justify-center font-medium text-center border rounded-full h-9 mx9auto w-9 bg-secondary-50 hover:bg-secondary-600 text-gray-50 dark:border-primary-50/10"
+                  className="flex items-center justify-center font-medium text-center border rounded-full mx9auto h-9 w-9 bg-secondary-50 text-gray-50 hover:bg-secondary-600 dark:border-primary-50/10"
                   onClick={(e) => {
                     e.preventDefault()
                     e.stopPropagation()
@@ -468,11 +468,11 @@ const Content = () => {
                 ))}
               </div>
             </section>
-            <section className="grid-b max-h-[500px] py-16 md:sticky top-0">
+            <section className="grid-b top-0 max-h-[500px] py-16 md:sticky">
               <div className="">
-                <div className="max-w-[300px] mx-auto">
+                <div className="mx-auto max-w-[300px]">
                   <div
-                    className="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-slate-900 dark:border-gray-700 dark:shadow-slate-700/[.7]"
+                    className="flex flex-col rounded-xl border bg-white shadow-sm dark:border-gray-700 dark:bg-slate-900 dark:shadow-slate-700/[.7]"
                     style={{
                       boxShadow: cssString,
                     }}
@@ -498,7 +498,7 @@ const Content = () => {
                 </div>
               </div>
             </section>
-            <section className="md:sticky top-0 grid-c max-h-[700px]">
+            <section className="grid-c top-0 max-h-[700px] md:sticky">
               <div className="h-full py-16">
                 <p className="text-sm font-bold">Tailwind.config.js</p>
                 <div className="h-[400px]">
@@ -507,7 +507,7 @@ const Content = () => {
                       <div className="flex justify-between w-full h-full">
                         <div className="relative flex items-center justify-start flex-grow-0 flex-shrink-0 h-12 gap-0 text-gray-50">
                           <button
-                            className={`relative z-20 inline-block text-center w-20 text-xs h-full hover:bg-secondary-400/50 `}
+                            className={`relative z-20 inline-block h-full w-20 text-center text-xs hover:bg-secondary-400/50 `}
                             onClick={(e) => {
                               e.preventDefault()
                               setActiveCodeString((prev) => 'config')
@@ -516,7 +516,7 @@ const Content = () => {
                             config.js
                           </button>
                           <button
-                            className={`relative text-center z-20 inline-block w-20 text-xs h-full hover:bg-secondary-400/50 `}
+                            className={`relative z-20 inline-block h-full w-20 text-center text-xs hover:bg-secondary-400/50 `}
                             onClick={(e) => {
                               e.preventDefault()
                               setActiveCodeString((prev) => 'html')
@@ -525,7 +525,7 @@ const Content = () => {
                             html
                           </button>
                           <button
-                            className={`relative text-center z-20 inline-block w-20 text-xs h-full hover:bg-secondary-400/50 `}
+                            className={`relative z-20 inline-block h-full w-20 text-center text-xs hover:bg-secondary-400/50 `}
                             onClick={(e) => {
                               e.preventDefault()
                               setActiveCodeString((prev) => 'css')
@@ -534,7 +534,7 @@ const Content = () => {
                             css
                           </button>
                           <span
-                            className={`absolute top-0 left-0 z-10 inline-block w-20 h-full bg-secondary-400 transition-transform duration-100 ease-in ${
+                            className={`absolute left-0 top-0 z-10 inline-block h-full w-20 bg-secondary-400 transition-transform duration-100 ease-in ${
                               activeCodeString === 'config'
                                 ? 'translate-x-0'
                                 : activeCodeString === 'html'
@@ -576,7 +576,7 @@ const Content = () => {
                     </div>
                     <div className="relative h-full p-3 overflow-scroll bg-secondary-700">
                       <pre className="mt-12 overflow-auto">
-                        <code className="text-[#7dd3fc] break-words whitespace-pre-wrap">
+                        <code className="whitespace-pre-wrap break-words text-[#7dd3fc]">
                           {activeCodeString === 'config'
                             ? config.replace('<--shadow-->', cssString)
                             : activeCodeString === 'html'
@@ -595,12 +595,12 @@ const Content = () => {
         <Guide />
 
         <section className="">
-          <div className="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-12">
+          <div className="max-w-screen-xl px-4 py-8 mx-auto text-center lg:px-12 lg:py-16">
             <a
               href="#generate"
-              className="inline-flex items-center justify-between px-1 py-1 pr-4 text-sm text-gray-700 bg-gray-100 rounded-full mb-7 dark:bg-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700"
+              className="inline-flex items-center justify-between px-1 py-1 pr-4 text-sm text-gray-700 bg-gray-100 rounded-full mb-7 hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700"
             >
-              <span className="text-xs bg-primary-600 rounded-full text-white px-4 py-1.5 mr-3">
+              <span className="mr-3 rounded-full bg-primary-600 px-4 py-1.5 text-xs text-white">
                 Nouveau
               </span>{' '}
               <span className="text-sm font-medium">Créez le votre avec le générateur</span>
@@ -617,10 +617,10 @@ const Content = () => {
                 ></path>
               </svg>
             </a>
-            <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-secondary-950 md:text-5xl lg:text-6xl dark:text-gray-50">
+            <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-secondary-950 dark:text-gray-50 md:text-5xl lg:text-6xl">
               plus de 180 exemple de shadows
             </h1>
-            <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
+            <p className="mb-8 text-lg font-normal text-gray-500 dark:text-gray-400 sm:px-16 lg:text-xl xl:px-48">
               Ici, nous avons pris la peine de faire la plus longue liste de box shadow avec
               tailwindcss. Trouvez celui qui vous convient le mieux et copiez le code css, html ou
               config tailwindcss selon vos choix.
@@ -635,7 +635,7 @@ const Content = () => {
               return (
                 <div
                   key={shadow.shadow + index}
-                  className="relative flex flex-col items-center justify-center w-40 h-40 border rounded-md cursor-pointer border-gray-950/10 dark:border-gray-50/10 group"
+                  className="relative flex flex-col items-center justify-center w-40 h-40 border rounded-md cursor-pointer group border-gray-950/10 dark:border-gray-50/10"
                   style={{
                     boxShadow: shadow.vanillaCSS,
                   }}
@@ -680,3 +680,6 @@ const Content = () => {
 }
 
 export default Content
+
+
+

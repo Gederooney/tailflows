@@ -11,6 +11,7 @@ import siteMetadata from '@/data/siteMetadata'
 import { ThemeProviders } from './theme-providers'
 import { Metadata } from 'next'
 import { CookieBanner } from '@/components/popover'
+import GoogleAdsense from './Adsens'
 
 const space_grotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -108,16 +109,17 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
 
-      <body className="antialiased bg-white secondary-950 dark:bg-secondary-900 dark:text-gray-50/50">
+      <body className="secondary-950 bg-white antialiased dark:bg-secondary-900 dark:text-gray-50/50">
         <SessionProvider session={session}>
           <ThemeProviders>
             <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
             <Header />
-            <main className="relative h-full mb-auto lg:min-h-[700px]">{children}</main>
+            <main className="relative mb-auto h-full lg:min-h-[700px]">{children}</main>
             <Footer />
             <CookieBanner />
           </ThemeProviders>
         </SessionProvider>
+        <GoogleAdsense pId="5471011044031314" />
       </body>
     </html>
   )
