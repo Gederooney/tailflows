@@ -108,6 +108,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
       <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+      <meta name="google-adsense-account" content="ca-pub-5471011044031314"></meta>
 
       <body className="secondary-950 bg-white antialiased dark:bg-secondary-900 dark:text-gray-50/50">
         <SessionProvider session={session}>
@@ -119,7 +120,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             <CookieBanner />
           </ThemeProviders>
         </SessionProvider>
-        <GoogleAdsense pId="5471011044031314" />
       </body>
     </html>
   )
